@@ -1,3 +1,5 @@
+import { loadFontSafely } from "../../main/utils";
+
 export async function renderInput(nodeData: any): Promise<FrameNode> {
   const inputContainer = figma.createFrame();
   inputContainer.layoutMode = 'VERTICAL';
@@ -11,7 +13,8 @@ export async function renderInput(nodeData: any): Promise<FrameNode> {
   // Label (jeśli istnieje)
   if (nodeData.properties?.label) {
     const label = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const font = await loadFontSafely('Inter', 'Medium');
+    label.fontName = font;
     label.characters = nodeData.properties.label;
     label.fontSize = 14;
     label.fills = [{ type: 'SOLID', color: { r: 0.17, g: 0.24, b: 0.31 }, opacity: 1 }];
@@ -33,7 +36,8 @@ export async function renderInput(nodeData: any): Promise<FrameNode> {
   // Placeholder text
   if (nodeData.properties?.placeholder) {
     const placeholderText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const font = await loadFontSafely('Inter', 'Regular');
+    placeholderText.fontName = font;
     placeholderText.characters = nodeData.properties.placeholder;
     placeholderText.fontSize = 14;
     placeholderText.fills = [{ type: 'SOLID', color: { r: 0.6, g: 0.6, b: 0.6 }, opacity: 1 }];
@@ -45,7 +49,8 @@ export async function renderInput(nodeData: any): Promise<FrameNode> {
   // Helper text (jeśli istnieje)
   if (nodeData.properties?.helperText) {
     const helper = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const font = await loadFontSafely('Inter', 'Regular');
+    helper.fontName = font;
     helper.characters = nodeData.properties.helperText;
     helper.fontSize = 12;
     helper.fills = [{ type: 'SOLID', color: { r: 0.42, g: 0.45, b: 0.5 }, opacity: 1 }];

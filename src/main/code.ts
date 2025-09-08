@@ -1,98 +1,250 @@
 import { parseAndValidate } from './parser';
 import { renderTree } from './renderer';
 import { log } from './utils';
+import { logger } from './logger';
 
-console.log('🚀 Plugin code loaded!');
+console.log('🚀 DRAFTLY - Plugin code loaded!');
 
+// Enhanced message handling with detailed logging
 figma.ui.onmessage = async (msg) => {
-  console.log('📨 Received message:', msg);
+  log(`📨 Otrzymano wiadomość typu: ${msg.type}`);
   
   if (msg.type === 'render-json') {
-    log('Otrzymano JSON z pliku.');
+    const importType = msg.importType || 'default';
+    log(`📥 Rozpoczynam przetwarzanie JSON z pliku, typ: ${importType}`, 'log', null, importType);
     const data = parseAndValidate(msg.data);
     if (data) {
-      await renderTree(data);
+      log('✅ JSON zwalidowany, rozpoczynam renderowanie...', 'log', null, importType);
+      try {
+        await renderTree(data);
+        log('🎉 Import zakończony pomyślnie', 'log', null, importType, 1);
+      } catch (error: any) {
+        log(`❌ KRYTYCZNY BŁĄD podczas renderowania: ${error.message}`, 'error', error, importType);
+        console.error('Full error:', error);
+      }
+    } else {
+      log('❌ Walidacja JSON nie powiodła się', 'error', null, importType);
     }
   }
 
-  if (msg.type === 'render-url') {
-    const url = msg.data;
-    log(`Pobieranie danych z URL: ${url}`);
+  if (msg.type === 'render-folder') {
+    const folderData = msg.data;
+    const importType = msg.importType;
+    const filesCount = Object.keys(folderData).length;
+    log(`📁 Renderowanie folderu w trybie: ${importType}`, 'log', null, importType, filesCount);
+    log(`📊 Znaleziono ${filesCount} plików`, 'log', null, importType, filesCount);
+    
     try {
-      const response = await fetch(url);
-      const jsonString = await response.text();
-      const data = parseAndValidate(jsonString);
-      if (data) {
-        await renderTree(data);
-      }
-    } catch (e: any) {
-      log(`Błąd podczas pobierania z URL: ${e.message}`, 'error');
+      await renderTree(folderData, importType);
+      log('🎉 Import folderu zakończony pomyślnie', 'log', null, importType, filesCount);
+    } catch (error: any) {
+      log(`❌ BŁĄD podczas renderowania folderu: ${error.message}`, 'error', error, importType, filesCount);
     }
   }
   
   if (msg.type === 'setting-change') {
-    console.log('⚙️ Setting changed:', msg.data);
-    // Przechowywaj ustawienia w figma.clientStorage
     figma.clientStorage.setAsync(msg.data.setting, msg.data.value);
   }
 
-  if (msg.type === 'log') {
-    console.log('[UI]', ...msg.data);
+  if (msg.type === 'export-logs') {
+    const logs = logger.getLogsForExport();
+    figma.ui.postMessage({
+      type: 'logs-export',
+      data: logs,
+      fileName: `draftly-logs-${new Date().toISOString().split('T')[0]}.json`
+    });
   }
 };
 
-// Use the new tabbed UI from code-simple.ts
-const uiHTML = `<!DOCTYPE html>
+const uiHTML = `
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Draftly Plugin</title>
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #ffffff; height: 100vh; display: flex; flex-direction: column; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background: #f8f9fa; 
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
     
-    .header { padding: 16px; border-bottom: 1px solid #e1e5e9; background: white; }
-    .logo { font-size: 16px; font-weight: 600; color: #2c2c2c; margin: 0; }
+    .header { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+      color: white; 
+      padding: 16px; 
+      text-align: center; 
+    }
+    .logo { font-size: 18px; font-weight: 700; margin: 0; }
     
-    .content { flex: 1; overflow-y: auto; padding: 16px; }
+    .content { 
+      flex: 1;
+      padding: 16px; 
+      padding-bottom: 70px;
+      overflow-y: auto;
+    }
     
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .main-tab-content { display: none; }
+    .main-tab-content.active { display: block; }
     
-    .bottom-nav { display: flex; border-top: 1px solid #e1e5e9; background: white; }
-    .nav-item { flex: 1; padding: 12px 8px; text-align: center; cursor: pointer; border: none; background: none; color: #666; font-size: 12px; transition: all 0.2s; }
+    /* Import section with sub-tabs */
+    .sub-nav { 
+      display: flex; 
+      background: white; 
+      border-radius: 8px; 
+      margin-bottom: 16px;
+      border: 1px solid #e1e5e9;
+    }
+    .sub-tab { 
+      flex: 1; 
+      padding: 10px 12px; 
+      text-align: center; 
+      cursor: pointer; 
+      border: none; 
+      background: none; 
+      color: #666; 
+      font-size: 13px; 
+      transition: all 0.2s;
+      border-radius: 8px;
+    }
+    .sub-tab.active { 
+      color: #18a0fb; 
+      background: #f0f8ff; 
+      font-weight: 500;
+    }
+    .sub-tab:hover:not(.active) { background: #f5f5f5; }
+    
+    .sub-content { display: none; }
+    .sub-content.active { display: block; }
+    
+    .bottom-nav { 
+      position: fixed; 
+      bottom: 0; 
+      left: 0; 
+      right: 0; 
+      background: white; 
+      border-top: 1px solid #e1e5e9; 
+      display: flex; 
+    }
+    .nav-item { 
+      flex: 1; 
+      padding: 12px 8px; 
+      text-align: center; 
+      cursor: pointer; 
+      border: none; 
+      background: none; 
+      color: #666; 
+      font-size: 12px; 
+      transition: all 0.2s; 
+    }
     .nav-item.active { color: #18a0fb; background: #f0f8ff; }
-    .nav-item:hover { background: #f5f5f5; }
+    .nav-item:hover:not(.active) { background: #f5f5f5; }
     
     .section { margin-bottom: 20px; }
     .section-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #2c2c2c; }
     .form-group { margin-bottom: 12px; }
     label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 4px; color: #2c2c2c; }
-    input[type="file"], input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid #d1d5d9; border-radius: 6px; font-size: 13px; }
+    input[type="file"], input[type="text"] { 
+      width: 100%; 
+      padding: 8px 12px; 
+      border: 1px solid #d1d5d9; 
+      border-radius: 6px; 
+      font-size: 13px; 
+    }
     input:focus { outline: none; border-color: #18a0fb; box-shadow: 0 0 0 3px rgba(24, 160, 251, 0.1); }
-    .btn-primary { width: 100%; padding: 8px 12px; background: #18a0fb; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; }
+    .btn-primary { 
+      width: 100%; 
+      padding: 8px 12px; 
+      background: #18a0fb; 
+      color: white; 
+      border: none; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      font-weight: 500; 
+      cursor: pointer; 
+      margin-bottom: 8px;
+    }
     .btn-primary:hover { background: #1590e8; }
-    .divider { text-align: center; color: #999; font-size: 12px; margin: 16px 0; position: relative; }
-    .divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #e1e5e9; z-index: 1; }
-    .divider span { background: white; padding: 0 12px; position: relative; z-index: 2; }
     
-    .status { font-size: 12px; color: #10b981; font-weight: 500; margin-bottom: 16px; }
+    .btn-secondary {
+      width: 100%; 
+      padding: 8px 12px; 
+      background: #6b7280; 
+      color: white; 
+      border: none; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      font-weight: 500; 
+      cursor: pointer; 
+      margin-bottom: 8px;
+    }
+    .btn-secondary:hover { background: #4b5563; }
     
-    .task-item { padding: 12px; border: 1px solid #e1e5e9; border-radius: 6px; margin-bottom: 8px; }
-    .task-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .task-desc { font-size: 12px; color: #666; }
-    .task-status { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 500; }
-    .task-status.completed { background: #dcfce7; color: #166534; }
-    .task-status.pending { background: #fef3c7; color: #92400e; }
-    .task-status.running { background: #dbeafe; color: #1d4ed8; }
+    .btn-danger {
+      width: 100%; 
+      padding: 8px 12px; 
+      background: #ef4444; 
+      color: white; 
+      border: none; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      font-weight: 500; 
+      cursor: pointer; 
+      margin-bottom: 8px;
+    }
+    .btn-danger:hover { background: #dc2626; }
     
-    .settings-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
-    .toggle { width: 40px; height: 20px; background: #e1e5e9; border-radius: 10px; position: relative; cursor: pointer; transition: background 0.2s; }
-    .toggle.active { background: #18a0fb; }
-    .toggle-thumb { width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: left 0.2s; }
-    .toggle.active .toggle-thumb { left: 22px; }
+    select {
+      width: 100%; 
+      padding: 8px 12px; 
+      border: 1px solid #d1d5d9; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      background: white;
+    }
+    select:focus { outline: none; border-color: #18a0fb; box-shadow: 0 0 0 3px rgba(24, 160, 251, 0.1); }
     
-    .version { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+    
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .status { 
+      font-size: 12px; 
+      color: #10b981; 
+      font-weight: 500; 
+      margin-bottom: 16px; 
+      padding: 8px 12px;
+      background: #f0fdf4;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+    }
+    
+    .version { 
+      text-align: center; 
+      font-size: 24px; 
+      font-weight: 700;
+      color: #2c2c2c; 
+      margin-top: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e1e5e9;
+    }
+    
+    .example-path {
+      font-size: 11px;
+      color: #666;
+      font-style: italic;
+      margin-top: 4px;
+    }
   </style>
 </head>
 <body>
@@ -101,77 +253,52 @@ const uiHTML = `<!DOCTYPE html>
   </div>
 
   <div class="content">
-    <div id="import-tab" class="tab-content active">
-      <div class="status">✅ Plugin gotowy do użycia</div>
+    <!-- Import Tab -->
+    <div id="import-tab" class="main-tab-content active">
+      <!-- Sub navigation -->
+      <div class="sub-nav">
+        <button class="sub-tab active" data-subtab="folder">📁 Import Folder</button>
+        <button class="sub-tab" data-subtab="file">📄 Import File</button>
+      </div>
       
-      <div class="section">
-        <div class="section-title">Import z pliku</div>
-        <div class="form-group">
-          <label for="file-input">Wybierz plik JSON</label>
-          <input id="file-input" type="file" accept=".json">
-        </div>
-      </div>
-
-      <div class="divider"><span>LUB</span></div>
-
-      <div class="section">
-        <div class="section-title">Import z URL</div>
-        <div class="form-group">
-          <label for="url-input">Podaj URL do pliku JSON</label>
-          <input id="url-input" type="text" placeholder="https://example.com/data.json">
-        </div>
-        <button id="url-button" class="btn-primary">Renderuj z URL</button>
-      </div>
-    </div>
-
-    <div id="task-tab" class="tab-content">
-      <div class="section">
-        <div class="section-title">Ostatnie zadania</div>
-        <div class="task-item">
-          <div class="task-title">Import Button Showcase</div>
-          <div class="task-desc">Zaimportowano 12 elementów</div>
-          <span class="task-status completed">Ukończone</span>
-        </div>
-        <div class="task-item">
-          <div class="task-title">Layout Examples</div>
-          <div class="task-desc">W trakcie renderowania...</div>
-          <span class="task-status running">W trakcie</span>
-        </div>
-      </div>
-    </div>
-
-    <div id="settings-tab" class="tab-content">
-      <div class="section">
-        <div class="section-title">Ustawienia renderowania</div>
-        <div class="settings-item">
-          <div>
-            <div style="font-weight: 500; font-size: 13px;">Auto Layout</div>
-            <div style="font-size: 11px; color: #666;">Automatycznie stosuj Auto Layout</div>
-          </div>
-          <div class="toggle active" data-setting="auto-layout">
-            <div class="toggle-thumb"></div>
-          </div>
-        </div>
-        <div class="settings-item">
-          <div>
-            <div style="font-weight: 500; font-size: 13px;">Zaawansowane cienie</div>
-            <div style="font-size: 11px; color: #666;">Renderuj efekty cieni</div>
-          </div>
-          <div class="toggle active" data-setting="shadows">
-            <div class="toggle-thumb"></div>
-          </div>
-        </div>
-        <div class="settings-item">
-          <div>
-            <div style="font-weight: 500; font-size: 13px;">Notyfikacje</div>
-            <div style="font-size: 11px; color: #666;">Pokazuj powiadomienia o postępie</div>
-          </div>
-          <div class="toggle active" data-setting="notifications">
-            <div class="toggle-thumb"></div>
+      <!-- Folder import -->
+      <div id="folder-content" class="sub-content active">
+        <div class="section">
+          <div class="section-title">Import Folder (Design System)</div>
+          <div class="form-group">
+            <label for="folder-input">Select folder with JSON files</label>
+            <input id="folder-input" type="file" webkitdirectory directory multiple>
+            <div class="example-path">Example: examples/design-system-1/</div>
           </div>
         </div>
       </div>
       
+      <!-- File import -->
+      <div id="file-content" class="sub-content">
+        <div class="section">
+          <div class="section-title">Import Single File</div>
+          <div class="form-group">
+            <label for="file-input">Choose JSON file</label>
+            <input id="file-input" type="file" accept=".json">
+            <div class="example-path">Example: examples/landing-page.json</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="settings-tab" class="main-tab-content">
+      
+      <!-- Logs Section -->
+      <div class="section">
+        <div class="section-title">📝 Logi</div>
+        
+        <div class="form-group">
+          <button class="btn-secondary" id="export-logs">📤 Eksportuj Logi</button>
+        </div>
+      </div>
+      
+      <!-- Version Section -->
       <div class="version">Draftly v1.0.0</div>
     </div>
   </div>
@@ -181,10 +308,6 @@ const uiHTML = `<!DOCTYPE html>
       <div>📥</div>
       <div>Import</div>
     </button>
-    <button class="nav-item" data-tab="task">
-      <div>📋</div>
-      <div>Task</div>
-    </button>
     <button class="nav-item" data-tab="settings">
       <div>⚙️</div>
       <div>Settings</div>
@@ -192,10 +315,9 @@ const uiHTML = `<!DOCTYPE html>
   </div>
 
   <script>
-    console.log('🚀 UI loaded with tabs!');
-    
+    // Main navigation
     const navItems = document.querySelectorAll('.nav-item');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const tabContents = document.querySelectorAll('.main-tab-content');
     
     navItems.forEach(item => {
       item.addEventListener('click', () => {
@@ -207,42 +329,96 @@ const uiHTML = `<!DOCTYPE html>
       });
     });
     
+    // Sub navigation for import
+    const subTabs = document.querySelectorAll('.sub-tab');
+    const subContents = document.querySelectorAll('.sub-content');
+    
+    subTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const contentId = tab.getAttribute('data-subtab') + '-content';
+        subTabs.forEach(t => t.classList.remove('active'));
+        subContents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(contentId).classList.add('active');
+      });
+    });
+    
+    // Folder import
+    document.getElementById('folder-input').addEventListener('change', function(event) {
+      const files = event.target.files;
+      if (files.length > 0) {
+        const folderData = {};
+        let loadedFiles = 0;
+        
+        Array.from(files).forEach(file => {
+          if (file.name.endsWith('.json')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              folderData[file.webkitRelativePath] = e.target.result;
+              loadedFiles++;
+              
+              if (loadedFiles === Array.from(files).filter(f => f.name.endsWith('.json')).length) {
+                parent.postMessage({ 
+                  pluginMessage: { 
+                    type: 'render-folder', 
+                    data: folderData,
+                    importType: 'design-system'
+                  } 
+                }, '*');
+              }
+            };
+            reader.readAsText(file);
+          }
+        });
+      }
+    });
+    
+    // File import
     document.getElementById('file-input').addEventListener('change', function(event) {
       const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
           const content = e.target.result;
-          parent.postMessage({ pluginMessage: { type: 'render-json', data: content } }, '*');
+          parent.postMessage({ 
+            pluginMessage: { 
+              type: 'render-json', 
+              data: content,
+              importType: 'single-file'
+            } 
+          }, '*');
         };
         reader.readAsText(file);
       }
     });
     
-    document.getElementById('url-button').addEventListener('click', function() {
-      const url = document.getElementById('url-input').value;
-      if (url) {
-        parent.postMessage({ pluginMessage: { type: 'render-url', data: url } }, '*');
-      }
+    // Export logs handler
+    document.getElementById('export-logs').addEventListener('click', function() {
+      parent.postMessage({ 
+        pluginMessage: { type: 'export-logs' } 
+      }, '*');
     });
     
-    const toggles = document.querySelectorAll('.toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const setting = this.getAttribute('data-setting');
-        const isActive = this.classList.contains('active');
-        parent.postMessage({ 
-          pluginMessage: { 
-            type: 'setting-change', 
-            data: { setting, value: isActive } 
-          } 
-        }, '*');
-      });
+    // Listen for log export data
+    window.addEventListener('message', function(event) {
+      if (event.data.pluginMessage && event.data.pluginMessage.type === 'logs-export') {
+        const { data, fileName } = event.data.pluginMessage;
+        
+        // Create download link
+        const blob = new Blob([data], { type: 'application/octet-stream' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
     });
   </script>
 </body>
 </html>`;
 
-figma.showUI(uiHTML, { width: 340, height: 420 });
-console.log('🎉 Plugin initialized successfully!');
+figma.showUI(uiHTML, { width: 400, height: 500 });
+console.log('🎉DRAFTLY - Plugin initialized successfully!');

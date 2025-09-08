@@ -1,3 +1,5 @@
+import { loadFontSafely } from "../../main/utils";
+
 export async function renderBadge(nodeData: any): Promise<FrameNode> {
   const badge = figma.createFrame();
   badge.layoutMode = 'HORIZONTAL';
@@ -54,7 +56,8 @@ export async function renderBadge(nodeData: any): Promise<FrameNode> {
   // Badge text
   if (nodeData.properties?.content || nodeData.text) {
     const badgeText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const font = await loadFontSafely('Inter', 'Medium');
+    badgeText.fontName = font;
     badgeText.characters = nodeData.properties?.content || nodeData.text || 'Badge';
     badgeText.fontSize = fontSize;
     badgeText.fills = [{ type: 'SOLID', color: textColor, opacity: 1 }];

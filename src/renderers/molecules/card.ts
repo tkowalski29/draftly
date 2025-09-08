@@ -1,3 +1,5 @@
+import { loadFontSafely } from "../../main/utils";
+
 export async function renderCard(nodeData: any): Promise<FrameNode> {
   const card = figma.createFrame();
   card.layoutMode = 'VERTICAL';
@@ -47,7 +49,8 @@ export async function renderCard(nodeData: any): Promise<FrameNode> {
   // Title
   if (nodeData.properties?.title) {
     const title = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
+    const titleFont = await loadFontSafely('Inter', 'Bold');
+    title.fontName = titleFont;
     title.characters = nodeData.properties.title;
     title.fontSize = 18;
     title.fills = [{ type: 'SOLID', color: { r: 0.11, g: 0.11, b: 0.11 }, opacity: 1 }];
@@ -57,7 +60,8 @@ export async function renderCard(nodeData: any): Promise<FrameNode> {
   // Description
   if (nodeData.properties?.description) {
     const description = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const descFont = await loadFontSafely('Inter', 'Regular');
+    description.fontName = descFont;
     description.characters = nodeData.properties.description;
     description.fontSize = 14;
     description.fills = [{ type: 'SOLID', color: { r: 0.42, g: 0.45, b: 0.5 }, opacity: 1 }];
@@ -95,7 +99,8 @@ export async function renderCard(nodeData: any): Promise<FrameNode> {
       }
       
       const buttonText = figma.createText();
-      await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+      const buttonFont = await loadFontSafely('Inter', 'Medium');
+      buttonText.fontName = buttonFont;
       buttonText.characters = action.text || 'Action';
       buttonText.fontSize = 14;
       buttonText.fills = [{ 

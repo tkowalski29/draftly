@@ -1,3 +1,5 @@
+import { loadFontSafely, hexToRgb } from "../../main/utils";
+
 export async function renderAvatar(nodeData: any): Promise<FrameNode> {
   const avatar = figma.createFrame();
   avatar.name = nodeData.name;
@@ -22,7 +24,8 @@ export async function renderAvatar(nodeData: any): Promise<FrameNode> {
     
     // Add image placeholder text
     const imagePlaceholder = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const font = await loadFontSafely('Inter', 'Regular');
+    imagePlaceholder.fontName = font;
     imagePlaceholder.characters = '📷';
     imagePlaceholder.fontSize = size * 0.4;
     imagePlaceholder.textAlignHorizontal = 'CENTER';
@@ -40,7 +43,8 @@ export async function renderAvatar(nodeData: any): Promise<FrameNode> {
     
     // Add initials text
     const initialsText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const font = await loadFontSafely('Inter', 'Medium');
+    initialsText.fontName = font;
     initialsText.characters = initials.substring(0, 2).toUpperCase();
     initialsText.fontSize = size * 0.4;
     initialsText.textAlignHorizontal = 'CENTER';
@@ -57,11 +61,3 @@ export async function renderAvatar(nodeData: any): Promise<FrameNode> {
   return avatar;
 }
 
-function hexToRgb(hex: string): { r: number, g: number, b: number } {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16) / 255,
-    g: parseInt(result[2], 16) / 255,
-    b: parseInt(result[3], 16) / 255
-  } : { r: 0.5, g: 0.5, b: 0.5 };
-}

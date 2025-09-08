@@ -1,3 +1,5 @@
+import { loadFontSafely } from "../../main/utils";
+
 export async function renderProductGrid(nodeData: any): Promise<FrameNode> {
   const grid = figma.createFrame();
   grid.layoutMode = 'VERTICAL';
@@ -19,7 +21,8 @@ export async function renderProductGrid(nodeData: any): Promise<FrameNode> {
     titleSection.resize(width, titleSection.height);
     
     const title = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
+    const titleFont = await loadFontSafely('Inter', 'Bold');
+    title.fontName = titleFont;
     title.characters = nodeData.properties.title;
     title.fontSize = 32;
     title.fills = [{ type: 'SOLID', color: { r: 0.11, g: 0.11, b: 0.11 }, opacity: 1 }];
@@ -28,7 +31,8 @@ export async function renderProductGrid(nodeData: any): Promise<FrameNode> {
     // View All button
     if (nodeData.properties?.showViewAll) {
       const viewAll = figma.createText();
-      await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+      const viewAllFont = await loadFontSafely('Inter', 'Medium');
+      viewAll.fontName = viewAllFont;
       viewAll.characters = 'View All →';
       viewAll.fontSize = 16;
       viewAll.fills = [{ type: 'SOLID', color: { r: 0.23, g: 0.4, b: 1 }, opacity: 1 }];
@@ -95,7 +99,8 @@ async function createProductCard(product: any, cardWidth: number): Promise<Frame
   // Product name
   if (product.name) {
     const name = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const nameFont = await loadFontSafely('Inter', 'Medium');
+    name.fontName = nameFont;
     name.characters = product.name;
     name.fontSize = 16;
     name.fills = [{ type: 'SOLID', color: { r: 0.11, g: 0.11, b: 0.11 }, opacity: 1 }];
@@ -113,7 +118,8 @@ async function createProductCard(product: any, cardWidth: number): Promise<Frame
   // Current price
   if (product.price) {
     const price = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
+    const priceFont = await loadFontSafely('Inter', 'Bold');
+    price.fontName = priceFont;
     price.characters = product.price;
     price.fontSize = 18;
     price.fills = [{ type: 'SOLID', color: { r: 0.11, g: 0.11, b: 0.11 }, opacity: 1 }];
@@ -123,7 +129,8 @@ async function createProductCard(product: any, cardWidth: number): Promise<Frame
   // Original price (if on sale)
   if (product.originalPrice) {
     const originalPrice = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const originalPriceFont = await loadFontSafely('Inter', 'Regular');
+    originalPrice.fontName = originalPriceFont;
     originalPrice.characters = product.originalPrice;
     originalPrice.fontSize = 14;
     originalPrice.fills = [{ type: 'SOLID', color: { r: 0.6, g: 0.6, b: 0.6 }, opacity: 1 }];
@@ -150,7 +157,8 @@ async function createProductCard(product: any, cardWidth: number): Promise<Frame
     badge.counterAxisSizingMode = 'AUTO';
     
     const badgeText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
+    const badgeFont = await loadFontSafely('Inter', 'Bold');
+    badgeText.fontName = badgeFont;
     badgeText.characters = 'SALE';
     badgeText.fontSize = 10;
     badgeText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 }, opacity: 1 }];
@@ -184,7 +192,8 @@ async function createProductCard(product: any, cardWidth: number): Promise<Frame
     
     // Rating text
     const ratingText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const ratingFont = await loadFontSafely('Inter', 'Regular');
+    ratingText.fontName = ratingFont;
     ratingText.characters = `(${product.reviews || 0})`;
     ratingText.fontSize = 12;
     ratingText.fills = [{ type: 'SOLID', color: { r: 0.6, g: 0.6, b: 0.6 }, opacity: 1 }];

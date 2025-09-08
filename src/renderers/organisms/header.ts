@@ -1,3 +1,5 @@
+import { hexToRgb,loadFontSafely } from "../../main/utils";
+
 export async function renderHeader(nodeData: any): Promise<FrameNode> {
   const header = figma.createFrame();
   header.layoutMode = 'HORIZONTAL';
@@ -46,7 +48,8 @@ export async function renderHeader(nodeData: any): Promise<FrameNode> {
     // Brand name
     if (nodeData.properties?.brand) {
       const brandText = figma.createText();
-      await figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
+      const brandFont = await loadFontSafely('Inter', 'Bold');
+      brandText.fontName = brandFont;
       brandText.characters = nodeData.properties.brand;
       brandText.fontSize = 18;
       brandText.fills = [{ type: 'SOLID', color: { r: 0.11, g: 0.11, b: 0.11 }, opacity: 1 }];
@@ -67,7 +70,8 @@ export async function renderHeader(nodeData: any): Promise<FrameNode> {
     
     for (const navItem of nodeData.properties.navigation) {
       const navLink = figma.createText();
-      await figma.loadFontAsync({ family: 'Inter', style: navItem.active ? 'Medium' : 'Regular' });
+      const navFont = await loadFontSafely('Inter', navItem.active ? 'Medium' : 'Regular');
+      navLink.fontName = navFont;
       navLink.characters = navItem.text;
       navLink.fontSize = 14;
       navLink.fills = [{ 
@@ -113,7 +117,8 @@ export async function renderHeader(nodeData: any): Promise<FrameNode> {
         }
         
         const buttonText = figma.createText();
-        await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+        const buttonFont = await loadFontSafely('Inter', 'Medium');
+        buttonText.fontName = buttonFont;
         buttonText.characters = action.text;
         buttonText.fontSize = 14;
         buttonText.fills = [{ 
@@ -136,15 +141,4 @@ export async function renderHeader(nodeData: any): Promise<FrameNode> {
   }
   
   return header;
-}
-
-function hexToRgb(hex: string): RGB {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16) / 255,
-        g: parseInt(result[2], 16) / 255,
-        b: parseInt(result[3], 16) / 255,
-      }
-    : { r: 0, g: 0, b: 0 };
 }

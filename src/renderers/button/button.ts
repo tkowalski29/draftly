@@ -1,4 +1,4 @@
-import { log } from "../../main/utils";
+import { loadFontSafely } from "../../main/utils";
 
 export async function renderButton(nodeData: any): Promise<FrameNode> {
   const button = figma.createFrame();
@@ -26,10 +26,10 @@ export async function renderButton(nodeData: any): Promise<FrameNode> {
   // Dodaj tekst jeśli jest określony
   if (nodeData.properties?.content || nodeData.text) {
     const textNode = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const font = await loadFontSafely('Inter', 'Medium');
+    textNode.fontName = font;
     textNode.characters = nodeData.properties?.content || nodeData.text || 'Button';
     textNode.fontSize = nodeData.properties?.fontSize || 16;
-    textNode.fontName = nodeData.properties?.font || { family: 'Inter', style: 'Medium' };
     
     // Biały tekst na kolorowym tle
     const textFill: SolidPaint = {

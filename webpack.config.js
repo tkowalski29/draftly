@@ -1,11 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = (env, argv) => ({
   mode: argv.mode === 'production' ? 'production' : 'development',
   entry: {
-    ui: './src/ui/index.tsx', // Entry point for the UI
-    code: './src/main/code-working.ts', // Entry point for the main thread - using working version
+    code: './src/main/code.ts', // Entry point for the main thread
   },
   output: {
     filename: '[name].js',
@@ -30,14 +28,7 @@ module.exports = (env, argv) => ({
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/ui/ui.html',
-      filename: 'ui.html',
-      chunks: ['ui'],
-      inject: 'body',
-    }),
-  ],
+  plugins: [],
   optimization: {
     runtimeChunk: false,
   },

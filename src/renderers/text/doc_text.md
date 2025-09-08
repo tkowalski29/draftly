@@ -33,7 +33,6 @@ Renderer do tworzenia elementów tekstowych w Figmie. Obsługuje różne czcionk
 - Pozycjonowanie
 
 ## Ważne uwagi
-- Przed ustawieniem tekstu i właściwości czcionki, należy załadować czcionkę używając `figma.loadFontAsync()`
 - Właściwość `content` jest wymagana do wyświetlenia tekstu
 - Tekst może być używany jako dziecko Frame z Auto Layout
 

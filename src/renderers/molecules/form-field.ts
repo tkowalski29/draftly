@@ -1,3 +1,5 @@
+import { loadFontSafely } from "../../main/utils";
+
 export async function renderFormField(nodeData: any): Promise<FrameNode> {
   const formField = figma.createFrame();
   formField.layoutMode = 'VERTICAL';
@@ -17,7 +19,8 @@ export async function renderFormField(nodeData: any): Promise<FrameNode> {
     labelContainer.itemSpacing = 4;
     
     const label = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    const labelFont = await loadFontSafely('Inter', 'Medium');
+    label.fontName = labelFont;
     label.characters = nodeData.properties.label;
     label.fontSize = 14;
     label.fills = [{ type: 'SOLID', color: { r: 0.17, g: 0.24, b: 0.31 }, opacity: 1 }];
@@ -26,7 +29,8 @@ export async function renderFormField(nodeData: any): Promise<FrameNode> {
     // Required indicator
     if (nodeData.properties?.required) {
       const required = figma.createText();
-      await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+      const requiredFont = await loadFontSafely('Inter', 'Medium');
+      required.fontName = requiredFont;
       required.characters = '*';
       required.fontSize = 14;
       required.fills = [{ type: 'SOLID', color: { r: 0.94, g: 0.27, b: 0.27 }, opacity: 1 }];
@@ -73,7 +77,8 @@ export async function renderFormField(nodeData: any): Promise<FrameNode> {
   
   // Input text
   const inputText = figma.createText();
-  await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+  const inputFont = await loadFontSafely('Inter', 'Regular');
+  inputText.fontName = inputFont;
   inputText.characters = nodeData.properties?.value || nodeData.properties?.placeholder || 'Input text';
   inputText.fontSize = 14;
   
@@ -99,7 +104,8 @@ export async function renderFormField(nodeData: any): Promise<FrameNode> {
   // Helper/Error text
   if (nodeData.properties?.helperText || nodeData.properties?.errorText) {
     const helperText = figma.createText();
-    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    const helperFont = await loadFontSafely('Inter', 'Regular');
+    helperText.fontName = helperFont;
     helperText.characters = nodeData.properties?.errorText || nodeData.properties?.helperText;
     helperText.fontSize = 12;
     
