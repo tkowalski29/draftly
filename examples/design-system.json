@@ -1,0 +1,511 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Design System",
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Design System Title",
+          "properties": {
+            "content": "Draftly Design System",
+            "x": 0,
+            "y": 0,
+            "fontSize": 36,
+            "font": {
+              "family": "Inter",
+              "style": "Bold"
+            },
+            "fills": [
+              {
+                "color": "#1F2937",
+                "opacity": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "FRAME",
+          "name": "Atoms Section",
+          "properties": {
+            "x": 0,
+            "y": 80,
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 32,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Atoms Title",
+              "properties": {
+                "content": "Atoms",
+                "fontSize": 24,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#374151",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "FRAME",
+              "name": "Icons Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 24,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "ICON",
+                  "name": "Small Icon",
+                  "properties": {
+                    "size": 16,
+                    "color": "#6B7280"
+                  }
+                },
+                {
+                  "type": "ICON",
+                  "name": "Medium Icon",
+                  "properties": {
+                    "size": 24,
+                    "color": "#3B82F6"
+                  }
+                },
+                {
+                  "type": "ICON",
+                  "name": "Large Icon",
+                  "properties": {
+                    "size": 32,
+                    "color": "#10B981"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Badges Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 16,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "BADGE",
+                  "name": "Default Badge",
+                  "text": "Default",
+                  "properties": {
+                    "variant": "default",
+                    "size": "medium"
+                  }
+                },
+                {
+                  "type": "BADGE",
+                  "name": "Primary Badge",
+                  "text": "Primary",
+                  "properties": {
+                    "variant": "primary",
+                    "size": "medium"
+                  }
+                },
+                {
+                  "type": "BADGE",
+                  "name": "Success Badge",
+                  "text": "Success",
+                  "properties": {
+                    "variant": "success",
+                    "size": "medium"
+                  }
+                },
+                {
+                  "type": "BADGE",
+                  "name": "Warning Badge",
+                  "text": "Warning",
+                  "properties": {
+                    "variant": "warning",
+                    "size": "medium"
+                  }
+                },
+                {
+                  "type": "BADGE",
+                  "name": "Danger Badge",
+                  "text": "Danger",
+                  "properties": {
+                    "variant": "danger",
+                    "size": "medium"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "INPUT",
+              "name": "Basic Input",
+              "properties": {
+                "label": "Email Address",
+                "placeholder": "Enter your email",
+                "width": 300,
+                "helperText": "We'll never share your email"
+              }
+            },
+            {
+              "type": "FRAME",
+              "name": "Avatars Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 16,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "AVATAR",
+                  "name": "Small Avatar",
+                  "properties": {
+                    "size": 32,
+                    "backgroundColor": "#3B82F6"
+                  }
+                },
+                {
+                  "type": "AVATAR",
+                  "name": "Medium Avatar",
+                  "properties": {
+                    "size": 40,
+                    "backgroundColor": "#10B981"
+                  }
+                },
+                {
+                  "type": "AVATAR",
+                  "name": "Large Avatar",
+                  "properties": {
+                    "size": 48,
+                    "backgroundColor": "#F59E0B"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "DIVIDER",
+              "name": "Section Divider",
+              "properties": {
+                "width": 400,
+                "height": 1,
+                "color": "#E5E7EB"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Molecules Section", 
+          "properties": {
+            "x": 0,
+            "y": 350,
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 32,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Molecules Title",
+              "properties": {
+                "content": "Molecules",
+                "fontSize": 24,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#374151",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "FRAME",
+              "name": "Form Fields Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 32,
+                  "alignment": "FLEX_START"
+                }
+              },
+              "children": [
+                {
+                  "type": "FORM_FIELD",
+                  "name": "Default Form Field",
+                  "properties": {
+                    "label": "Username",
+                    "placeholder": "Enter username",
+                    "width": 280,
+                    "state": "default",
+                    "helperText": "Choose a unique username"
+                  }
+                },
+                {
+                  "type": "FORM_FIELD",
+                  "name": "Error Form Field",
+                  "properties": {
+                    "label": "Password",
+                    "value": "123",
+                    "width": 280,
+                    "state": "error",
+                    "errorText": "Password too short",
+                    "required": true
+                  }
+                },
+                {
+                  "type": "FORM_FIELD",
+                  "name": "Success Form Field",
+                  "properties": {
+                    "label": "Email",
+                    "value": "user@example.com",
+                    "width": 280,
+                    "state": "success"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Cards Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 24,
+                  "alignment": "FLEX_START"
+                }
+              },
+              "children": [
+                {
+                  "type": "CARD",
+                  "name": "Basic Card",
+                  "properties": {
+                    "width": 300,
+                    "image": true,
+                    "imageHeight": 160,
+                    "title": "Card Title",
+                    "description": "This is a basic card component with image, title, and description.",
+                    "actions": [
+                      {
+                        "text": "Read More",
+                        "variant": "primary"
+                      },
+                      {
+                        "text": "Share",
+                        "variant": "secondary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CARD",
+                  "name": "Simple Card",
+                  "properties": {
+                    "width": 280,
+                    "title": "Simple Card",
+                    "description": "A card without image and with single action.",
+                    "actions": [
+                      {
+                        "text": "Learn More",
+                        "variant": "primary"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Navigation Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 24,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "NAVIGATION",
+                  "name": "Main Navigation",
+                  "properties": {
+                    "items": [
+                      {
+                        "text": "Home",
+                        "active": true
+                      },
+                      {
+                        "text": "Products",
+                        "active": false
+                      },
+                      {
+                        "text": "About",
+                        "active": false
+                      },
+                      {
+                        "text": "Contact",
+                        "active": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Stats Cards Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 24,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "STATS_CARD",
+                  "name": "Users Stats",
+                  "properties": {
+                    "number": "10,000+",
+                    "label": "Active Users",
+                    "color": "#3B82F6"
+                  }
+                },
+                {
+                  "type": "STATS_CARD",
+                  "name": "Projects Stats",
+                  "properties": {
+                    "number": "50,000+",
+                    "label": "Projects Created",
+                    "color": "#10B981"
+                  }
+                },
+                {
+                  "type": "STATS_CARD",
+                  "name": "Uptime Stats",
+                  "properties": {
+                    "number": "99.9%",
+                    "label": "Uptime",
+                    "color": "#F59E0B"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Organisms Section",
+          "properties": {
+            "x": 0,
+            "y": 750,
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 32,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Organisms Title",
+              "properties": {
+                "content": "Organisms",
+                "fontSize": 24,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#374151",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "HEADER",
+              "name": "Application Header",
+              "properties": {
+                "width": 1000,
+                "brand": "Draftly",
+                "logo": true,
+                "navigation": [
+                  {
+                    "text": "Home",
+                    "active": true
+                  },
+                  {
+                    "text": "Products"
+                  },
+                  {
+                    "text": "About"
+                  },
+                  {
+                    "text": "Contact"
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "button",
+                    "text": "Sign In",
+                    "variant": "secondary"
+                  },
+                  {
+                    "type": "button",
+                    "text": "Get Started",
+                    "variant": "primary"
+                  },
+                  {
+                    "type": "avatar"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

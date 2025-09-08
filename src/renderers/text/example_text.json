@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Text Examples",
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Basic Text",
+          "properties": {
+            "content": "Hello World",
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Styled Heading",
+          "properties": {
+            "content": "Main Heading",
+            "x": 0,
+            "y": 40,
+            "fontSize": 24,
+            "font": {
+              "family": "Inter",
+              "style": "Bold"
+            },
+            "fills": [
+              {
+                "color": "#1F2937",
+                "opacity": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Subtitle",
+          "properties": {
+            "content": "This is a subtitle with medium weight",
+            "x": 0,
+            "y": 80,
+            "fontSize": 16,
+            "font": {
+              "family": "Inter",
+              "style": "Medium"
+            },
+            "fills": [
+              {
+                "color": "#6B7280",
+                "opacity": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Body Text",
+          "properties": {
+            "content": "Regular body text for reading content",
+            "x": 0,
+            "y": 120,
+            "fontSize": 14,
+            "font": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fills": [
+              {
+                "color": "#374151",
+                "opacity": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Small Text",
+          "properties": {
+            "content": "Small caption or helper text",
+            "x": 0,
+            "y": 150,
+            "fontSize": 12,
+            "font": {
+              "family": "Inter",
+              "style": "Regular"
+            },
+            "fills": [
+              {
+                "color": "#9CA3AF",
+                "opacity": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Colored Text",
+          "properties": {
+            "content": "Colored accent text",
+            "x": 0,
+            "y": 180,
+            "fontSize": 16,
+            "font": {
+              "family": "Inter",
+              "style": "Medium"
+            },
+            "fills": [
+              {
+                "color": "#3B82F6",
+                "opacity": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Frame Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Basic Frame",
+          "properties": {
+            "x": 0,
+            "y": 0,
+            "width": 200,
+            "height": 100,
+            "fills": [
+              {
+                "color": "#F3F4F6",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 8
+          }
+        },
+        {
+          "type": "FRAME",
+          "name": "Auto Layout Horizontal",
+          "properties": {
+            "x": 0,
+            "y": 120,
+            "width": "HUG",
+            "height": "HUG",
+            "fills": [
+              {
+                "color": "#E5E7EB",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 12,
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 16,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 20,
+                "bottom": 20,
+                "left": 24,
+                "right": 24
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Label 1",
+              "properties": {
+                "content": "Item 1",
+                "fontSize": 14
+              }
+            },
+            {
+              "type": "TEXT",
+              "name": "Label 2", 
+              "properties": {
+                "content": "Item 2",
+                "fontSize": 14
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Auto Layout Vertical",
+          "properties": {
+            "x": 0,
+            "y": 200,
+            "width": 150,
+            "height": "HUG",
+            "fills": [
+              {
+                "color": "#DBEAFE",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 8,
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 12,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 16,
+                "bottom": 16,
+                "left": 16,
+                "right": 16
+              }
+            },
+            "stroke": [
+              {
+                "color": "#3B82F6",
+                "opacity": 0.5
+              }
+            ],
+            "strokeWeight": 1
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Title",
+              "properties": {
+                "content": "Title",
+                "fontSize": 16,
+                "font": { "family": "Inter", "style": "Bold" }
+              }
+            },
+            {
+              "type": "TEXT",
+              "name": "Subtitle",
+              "properties": {
+                "content": "Subtitle text",
+                "fontSize": 12
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

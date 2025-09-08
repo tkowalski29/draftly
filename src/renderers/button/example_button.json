@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Button Examples",
+      "children": [
+        {
+          "type": "BUTTON",
+          "name": "Default Button",
+          "text": "Click Me"
+        },
+        {
+          "type": "BUTTON",
+          "name": "Primary Button",
+          "text": "Primary Action",
+          "properties": {
+            "x": 0,
+            "y": 60,
+            "fills": [
+              {
+                "color": "#3B82F6",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 8,
+            "fontSize": 16,
+            "effects": [
+              {
+                "type": "DROP_SHADOW",
+                "color": "#000000",
+                "opacity": 0.15,
+                "offset": { "x": 0, "y": 2 },
+                "radius": 4
+              }
+            ]
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Secondary Button",
+          "text": "Secondary",
+          "properties": {
+            "x": 0,
+            "y": 120,
+            "fills": [
+              {
+                "color": "#FFFFFF",
+                "opacity": 1
+              }
+            ],
+            "stroke": [
+              {
+                "color": "#D1D5DB",
+                "opacity": 1
+              }
+            ],
+            "strokeWeight": 1,
+            "cornerRadius": 8,
+            "fontSize": 14
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Danger Button",
+          "text": "Delete",
+          "properties": {
+            "x": 0,
+            "y": 180,
+            "fills": [
+              {
+                "color": "#EF4444",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 6,
+            "fontSize": 14,
+            "effects": [
+              {
+                "type": "DROP_SHADOW",
+                "color": "#EF4444",
+                "opacity": 0.3,
+                "offset": { "x": 0, "y": 2 },
+                "radius": 8
+              }
+            ]
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Success Button",
+          "text": "Save Changes",
+          "properties": {
+            "x": 0,
+            "y": 240,
+            "fills": [
+              {
+                "color": "#10B981",
+                "opacity": 1
+              }
+            ],
+            "cornerRadius": 6,
+            "fontSize": 14
+          }
+        }
+      ]
+    }
+  ]
+}

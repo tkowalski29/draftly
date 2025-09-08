@@ -1,0 +1,1071 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Shopping Cart",
+      "children": [
+        {
+          "type": "HEADER",
+          "name": "Store Header",
+          "properties": {
+            "x": 0,
+            "y": 0,
+            "width": 1200,
+            "brand": "E-Shop",
+            "logo": true,
+            "navigation": [
+              {
+                "text": "Products",
+                "active": false
+              },
+              {
+                "text": "Categories",
+                "active": false
+              },
+              {
+                "text": "Cart",
+                "active": true
+              },
+              {
+                "text": "Account",
+                "active": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "button",
+                "text": "Search",
+                "variant": "secondary"
+              },
+              {
+                "type": "avatar"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FRAME",
+          "name": "Cart Container",
+          "properties": {
+            "x": 0,
+            "y": 80,
+            "width": 1200,
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 40,
+              "alignment": "FLEX_START",
+              "padding": {
+                "top": 40,
+                "bottom": 40,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "FRAME",
+              "name": "Cart Items Section",
+              "properties": {
+                "width": 720,
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "VERTICAL",
+                  "spacing": 24,
+                  "alignment": "FLEX_START"
+                }
+              },
+              "children": [
+                {
+                  "type": "TEXT",
+                  "name": "Cart Title",
+                  "properties": {
+                    "content": "Shopping Cart (3 items)",
+                    "fontSize": 28,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Bold"
+                    },
+                    "fills": [
+                      {
+                        "color": "#111827",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Cart Item 1",
+                  "properties": {
+                    "width": 720,
+                    "height": "HUG",
+                    "fills": [
+                      {
+                        "color": "#FFFFFF",
+                        "opacity": 1
+                      }
+                    ],
+                    "stroke": [
+                      {
+                        "color": "#E5E7EB",
+                        "opacity": 1
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "cornerRadius": 12,
+                    "autoLayout": {
+                      "direction": "HORIZONTAL",
+                      "spacing": 16,
+                      "alignment": "FLEX_START",
+                      "padding": {
+                        "top": 16,
+                        "bottom": 16,
+                        "left": 16,
+                        "right": 16
+                      }
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "RECTANGLE",
+                      "name": "Product Image 1",
+                      "properties": {
+                        "width": 100,
+                        "height": 100,
+                        "fills": [
+                          {
+                            "color": "#F3F4F6",
+                            "opacity": 1
+                          }
+                        ],
+                        "cornerRadius": 8
+                      }
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Product Details 1",
+                      "properties": {
+                        "width": "HUG",
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "VERTICAL",
+                          "spacing": 8,
+                          "alignment": "FLEX_START"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "name": "Product Name 1",
+                          "properties": {
+                            "content": "Premium Wireless Headphones",
+                            "fontSize": 18,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Medium"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Product Price 1",
+                          "properties": {
+                            "content": "$299.99",
+                            "fontSize": 20,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Bold"
+                            },
+                            "fills": [
+                              {
+                                "color": "#3B82F6",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "FRAME",
+                          "name": "Quantity Control 1",
+                          "properties": {
+                            "width": "HUG",
+                            "height": "HUG",
+                            "autoLayout": {
+                              "direction": "HORIZONTAL",
+                              "spacing": 8,
+                              "alignment": "CENTER"
+                            }
+                          },
+                          "children": [
+                            {
+                              "type": "BUTTON",
+                              "name": "Decrease Quantity",
+                              "text": "-",
+                              "properties": {
+                                "fills": [
+                                  {
+                                    "color": "#F9FAFB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "stroke": [
+                                  {
+                                    "color": "#D1D5DB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "strokeWeight": 1,
+                                "cornerRadius": 4,
+                                "fontSize": 14,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                }
+                              }
+                            },
+                            {
+                              "type": "TEXT",
+                              "name": "Quantity 1",
+                              "properties": {
+                                "content": "2",
+                                "fontSize": 16,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                },
+                                "fills": [
+                                  {
+                                    "color": "#111827",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "BUTTON",
+                              "name": "Increase Quantity",
+                              "text": "+",
+                              "properties": {
+                                "fills": [
+                                  {
+                                    "color": "#F9FAFB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "stroke": [
+                                  {
+                                    "color": "#D1D5DB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "strokeWeight": 1,
+                                "cornerRadius": 4,
+                                "fontSize": 14,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Item Actions 1",
+                      "properties": {
+                        "width": "HUG",
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "VERTICAL",
+                          "spacing": 8,
+                          "alignment": "FLEX_END"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "BUTTON",
+                          "name": "Remove Item",
+                          "text": "Remove",
+                          "properties": {
+                            "fills": [],
+                            "fontSize": 12,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Regular"
+                            }
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Item Total 1",
+                          "properties": {
+                            "content": "$599.98",
+                            "fontSize": 18,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Bold"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Cart Item 2",
+                  "properties": {
+                    "width": 720,
+                    "height": "HUG",
+                    "fills": [
+                      {
+                        "color": "#FFFFFF",
+                        "opacity": 1
+                      }
+                    ],
+                    "stroke": [
+                      {
+                        "color": "#E5E7EB",
+                        "opacity": 1
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "cornerRadius": 12,
+                    "autoLayout": {
+                      "direction": "HORIZONTAL",
+                      "spacing": 16,
+                      "alignment": "FLEX_START",
+                      "padding": {
+                        "top": 16,
+                        "bottom": 16,
+                        "left": 16,
+                        "right": 16
+                      }
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "RECTANGLE",
+                      "name": "Product Image 2",
+                      "properties": {
+                        "width": 100,
+                        "height": 100,
+                        "fills": [
+                          {
+                            "color": "#F3F4F6",
+                            "opacity": 1
+                          }
+                        ],
+                        "cornerRadius": 8
+                      }
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Product Details 2",
+                      "properties": {
+                        "width": "HUG",
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "VERTICAL",
+                          "spacing": 8,
+                          "alignment": "FLEX_START"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "name": "Product Name 2",
+                          "properties": {
+                            "content": "Smart Watch Series 8",
+                            "fontSize": 18,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Medium"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "FRAME",
+                          "name": "Price Row 2",
+                          "properties": {
+                            "width": "HUG",
+                            "height": "HUG",
+                            "autoLayout": {
+                              "direction": "HORIZONTAL",
+                              "spacing": 8,
+                              "alignment": "CENTER"
+                            }
+                          },
+                          "children": [
+                            {
+                              "type": "TEXT",
+                              "name": "Product Price 2",
+                              "properties": {
+                                "content": "$399.99",
+                                "fontSize": 20,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Bold"
+                                },
+                                "fills": [
+                                  {
+                                    "color": "#3B82F6",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "BADGE",
+                              "name": "Sale Badge",
+                              "text": "20% OFF",
+                              "properties": {
+                                "variant": "danger",
+                                "size": "small"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "FRAME",
+                          "name": "Quantity Control 2",
+                          "properties": {
+                            "width": "HUG",
+                            "height": "HUG",
+                            "autoLayout": {
+                              "direction": "HORIZONTAL",
+                              "spacing": 8,
+                              "alignment": "CENTER"
+                            }
+                          },
+                          "children": [
+                            {
+                              "type": "BUTTON",
+                              "name": "Decrease Quantity 2",
+                              "text": "-",
+                              "properties": {
+                                "fills": [
+                                  {
+                                    "color": "#F9FAFB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "stroke": [
+                                  {
+                                    "color": "#D1D5DB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "strokeWeight": 1,
+                                "cornerRadius": 4,
+                                "fontSize": 14,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                }
+                              }
+                            },
+                            {
+                              "type": "TEXT",
+                              "name": "Quantity 2",
+                              "properties": {
+                                "content": "1",
+                                "fontSize": 16,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                },
+                                "fills": [
+                                  {
+                                    "color": "#111827",
+                                    "opacity": 1
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "BUTTON",
+                              "name": "Increase Quantity 2",
+                              "text": "+",
+                              "properties": {
+                                "fills": [
+                                  {
+                                    "color": "#F9FAFB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "stroke": [
+                                  {
+                                    "color": "#D1D5DB",
+                                    "opacity": 1
+                                  }
+                                ],
+                                "strokeWeight": 1,
+                                "cornerRadius": 4,
+                                "fontSize": 14,
+                                "font": {
+                                  "family": "Inter",
+                                  "style": "Medium"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Item Actions 2",
+                      "properties": {
+                        "width": "HUG",
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "VERTICAL",
+                          "spacing": 8,
+                          "alignment": "FLEX_END"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "BUTTON",
+                          "name": "Remove Item 2",
+                          "text": "Remove",
+                          "properties": {
+                            "fills": [],
+                            "fontSize": 12,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Regular"
+                            }
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Item Total 2",
+                          "properties": {
+                            "content": "$399.99",
+                            "fontSize": 18,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Bold"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Continue Shopping",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "HORIZONTAL",
+                      "spacing": 16,
+                      "alignment": "CENTER",
+                      "padding": {
+                        "top": 24,
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 0
+                      }
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "BUTTON",
+                      "name": "Continue Shopping Button",
+                      "text": "← Continue Shopping",
+                      "properties": {
+                        "fills": [],
+                        "stroke": [
+                          {
+                            "color": "#3B82F6",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "cornerRadius": 6,
+                        "fontSize": 14,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Medium"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Order Summary",
+              "properties": {
+                "width": 400,
+                "height": "HUG",
+                "fills": [
+                  {
+                    "color": "#F9FAFB",
+                    "opacity": 1
+                  }
+                ],
+                "stroke": [
+                  {
+                    "color": "#E5E7EB",
+                    "opacity": 1
+                  }
+                ],
+                "strokeWeight": 1,
+                "cornerRadius": 12,
+                "autoLayout": {
+                  "direction": "VERTICAL",
+                  "spacing": 20,
+                  "alignment": "FLEX_START",
+                  "padding": {
+                    "top": 24,
+                    "bottom": 24,
+                    "left": 24,
+                    "right": 24
+                  }
+                }
+              },
+              "children": [
+                {
+                  "type": "TEXT",
+                  "name": "Summary Title",
+                  "properties": {
+                    "content": "Order Summary",
+                    "fontSize": 20,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Bold"
+                    },
+                    "fills": [
+                      {
+                        "color": "#111827",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Summary Details",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "VERTICAL",
+                      "spacing": 12,
+                      "alignment": "FLEX_START"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "FRAME",
+                      "name": "Subtotal Row",
+                      "properties": {
+                        "width": 350,
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "HORIZONTAL",
+                          "spacing": 0,
+                          "alignment": "SPACE_BETWEEN"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "name": "Subtotal Label",
+                          "properties": {
+                            "content": "Subtotal:",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Regular"
+                            },
+                            "fills": [
+                              {
+                                "color": "#6B7280",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Subtotal Amount",
+                          "properties": {
+                            "content": "$999.97",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Medium"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Shipping Row",
+                      "properties": {
+                        "width": 350,
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "HORIZONTAL",
+                          "spacing": 0,
+                          "alignment": "SPACE_BETWEEN"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "name": "Shipping Label",
+                          "properties": {
+                            "content": "Shipping:",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Regular"
+                            },
+                            "fills": [
+                              {
+                                "color": "#6B7280",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Shipping Amount",
+                          "properties": {
+                            "content": "FREE",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Bold"
+                            },
+                            "fills": [
+                              {
+                                "color": "#10B981",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "name": "Tax Row",
+                      "properties": {
+                        "width": 350,
+                        "height": "HUG",
+                        "autoLayout": {
+                          "direction": "HORIZONTAL",
+                          "spacing": 0,
+                          "alignment": "SPACE_BETWEEN"
+                        }
+                      },
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "name": "Tax Label",
+                          "properties": {
+                            "content": "Tax:",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Regular"
+                            },
+                            "fills": [
+                              {
+                                "color": "#6B7280",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "TEXT",
+                          "name": "Tax Amount",
+                          "properties": {
+                            "content": "$79.99",
+                            "fontSize": 14,
+                            "font": {
+                              "family": "Inter",
+                              "style": "Medium"
+                            },
+                            "fills": [
+                              {
+                                "color": "#111827",
+                                "opacity": 1
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "RECTANGLE",
+                  "name": "Divider",
+                  "properties": {
+                    "width": 350,
+                    "height": 1,
+                    "fills": [
+                      {
+                        "color": "#D1D5DB",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Total Row",
+                  "properties": {
+                    "width": 350,
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "HORIZONTAL",
+                      "spacing": 0,
+                      "alignment": "SPACE_BETWEEN"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "name": "Total Label",
+                      "properties": {
+                        "content": "Total:",
+                        "fontSize": 18,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Bold"
+                        },
+                        "fills": [
+                          {
+                            "color": "#111827",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TEXT",
+                      "name": "Total Amount",
+                      "properties": {
+                        "content": "$1,079.96",
+                        "fontSize": 20,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Bold"
+                        },
+                        "fills": [
+                          {
+                            "color": "#3B82F6",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Promo Code",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "VERTICAL",
+                      "spacing": 8,
+                      "alignment": "FLEX_START"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "INPUT",
+                      "name": "Promo Code Input",
+                      "properties": {
+                        "placeholder": "Enter promo code",
+                        "width": 350
+                      }
+                    },
+                    {
+                      "type": "BUTTON",
+                      "name": "Apply Promo",
+                      "text": "Apply Code",
+                      "properties": {
+                        "fills": [],
+                        "stroke": [
+                          {
+                            "color": "#6B7280",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "cornerRadius": 6,
+                        "fontSize": 12,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Medium"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "BUTTON",
+                  "name": "Checkout Button",
+                  "text": "Proceed to Checkout",
+                  "properties": {
+                    "fills": [
+                      {
+                        "color": "#3B82F6",
+                        "opacity": 1
+                      }
+                    ],
+                    "cornerRadius": 8,
+                    "fontSize": 16,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Bold"
+                    },
+                    "effects": [
+                      {
+                        "type": "DROP_SHADOW",
+                        "color": "#3B82F6",
+                        "opacity": 0.25,
+                        "offset": { "x": 0, "y": 4 },
+                        "radius": 12
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Recommended Products",
+          "properties": {
+            "x": 0,
+            "y": 600,
+            "width": 1200,
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 32,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 60,
+                "bottom": 60,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Recommended Title",
+              "properties": {
+                "content": "You Might Also Like",
+                "fontSize": 28,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#111827",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "PRODUCT_GRID",
+              "name": "Recommended Products Grid",
+              "properties": {
+                "width": 1120,
+                "columns": 4,
+                "gap": 24,
+                "products": [
+                  {
+                    "name": "Bluetooth Speaker",
+                    "price": "$89.99",
+                    "rating": 4,
+                    "reviews": 156
+                  },
+                  {
+                    "name": "Phone Case",
+                    "price": "$24.99",
+                    "originalPrice": "$34.99",
+                    "onSale": true,
+                    "rating": 5,
+                    "reviews": 89
+                  },
+                  {
+                    "name": "Wireless Charger",
+                    "price": "$49.99",
+                    "rating": 4,
+                    "reviews": 203
+                  },
+                  {
+                    "name": "USB-C Cable",
+                    "price": "$19.99",
+                    "rating": 4,
+                    "reviews": 412
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

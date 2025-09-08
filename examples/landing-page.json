@@ -1,0 +1,651 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Landing Page",
+      "children": [
+        {
+          "type": "HEADER",
+          "name": "Landing Header",
+          "properties": {
+            "x": 0,
+            "y": 0,
+            "width": 1200,
+            "brand": "Draftly",
+            "logo": true,
+            "navigation": [
+              {
+                "text": "Features",
+                "active": false
+              },
+              {
+                "text": "Pricing",
+                "active": false
+              },
+              {
+                "text": "About",
+                "active": false
+              },
+              {
+                "text": "Blog",
+                "active": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "button",
+                "text": "Sign In",
+                "variant": "secondary"
+              },
+              {
+                "type": "button",
+                "text": "Get Started Free",
+                "variant": "primary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FRAME",
+          "name": "Hero Section",
+          "properties": {
+            "x": 0,
+            "y": 80,
+            "width": 1200,
+            "height": "HUG",
+            "fills": [
+              {
+                "color": "#F8FAFC",
+                "opacity": 1
+              }
+            ],
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 48,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 120,
+                "bottom": 120,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "FRAME",
+              "name": "Hero Content",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "VERTICAL",
+                  "spacing": 24,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "BADGE",
+                  "name": "New Badge",
+                  "text": "✨ New: AI-Powered Design",
+                  "properties": {
+                    "variant": "primary",
+                    "size": "medium"
+                  }
+                },
+                {
+                  "type": "TEXT",
+                  "name": "Hero Title",
+                  "properties": {
+                    "content": "Transform JSON into Beautiful Figma Designs",
+                    "fontSize": 56,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Bold"
+                    },
+                    "fills": [
+                      {
+                        "color": "#111827",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "TEXT",
+                  "name": "Hero Subtitle",
+                  "properties": {
+                    "content": "Create stunning design systems, landing pages, and UI components instantly. No design skills required.",
+                    "fontSize": 20,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Regular"
+                    },
+                    "fills": [
+                      {
+                        "color": "#6B7280",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Hero CTA",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 16,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "BUTTON",
+                  "name": "Primary CTA",
+                  "text": "Start Creating Free",
+                  "properties": {
+                    "fills": [
+                      {
+                        "color": "#3B82F6",
+                        "opacity": 1
+                      }
+                    ],
+                    "cornerRadius": 8,
+                    "fontSize": 16,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Medium"
+                    },
+                    "effects": [
+                      {
+                        "type": "DROP_SHADOW",
+                        "color": "#3B82F6",
+                        "opacity": 0.3,
+                        "offset": { "x": 0, "y": 4 },
+                        "radius": 12
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "BUTTON",
+                  "name": "Secondary CTA",
+                  "text": "Watch Demo",
+                  "properties": {
+                    "fills": [
+                      {
+                        "color": "#FFFFFF",
+                        "opacity": 1
+                      }
+                    ],
+                    "stroke": [
+                      {
+                        "color": "#D1D5DB",
+                        "opacity": 1
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "cornerRadius": 8,
+                    "fontSize": 16,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Medium"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Features Section",
+          "properties": {
+            "x": 0,
+            "y": 450,
+            "width": 1200,
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 64,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 120,
+                "bottom": 120,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "FRAME",
+              "name": "Features Header",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "VERTICAL",
+                  "spacing": 16,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "TEXT",
+                  "name": "Features Title",
+                  "properties": {
+                    "content": "Powerful Features",
+                    "fontSize": 42,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Bold"
+                    },
+                    "fills": [
+                      {
+                        "color": "#111827",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "TEXT",
+                  "name": "Features Subtitle",
+                  "properties": {
+                    "content": "Everything you need to create professional designs from simple JSON",
+                    "fontSize": 18,
+                    "font": {
+                      "family": "Inter",
+                      "style": "Regular"
+                    },
+                    "fills": [
+                      {
+                        "color": "#6B7280",
+                        "opacity": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "name": "Features Grid",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 32,
+                  "alignment": "FLEX_START"
+                }
+              },
+              "children": [
+                {
+                  "type": "CARD",
+                  "name": "Feature Card 1",
+                  "properties": {
+                    "width": 350,
+                    "title": "Atomic Design System",
+                    "description": "Build components using atomic design principles. From atoms to organisms, create scalable design systems.",
+                    "actions": [
+                      {
+                        "text": "Learn More",
+                        "variant": "primary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CARD",
+                  "name": "Feature Card 2",
+                  "properties": {
+                    "width": 350,
+                    "title": "Smart Auto Layout",
+                    "description": "Intelligent spacing and alignment. Your designs automatically adapt to content changes.",
+                    "actions": [
+                      {
+                        "text": "See Examples",
+                        "variant": "primary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CARD",
+                  "name": "Feature Card 3",
+                  "properties": {
+                    "width": 350,
+                    "title": "One-Click Export",
+                    "description": "Export your designs directly to Figma, Sketch, or code. Ready for development in seconds.",
+                    "actions": [
+                      {
+                        "text": "Try Export",
+                        "variant": "primary"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Social Proof Section",
+          "properties": {
+            "x": 0,
+            "y": 850,
+            "width": 1200,
+            "height": "HUG",
+            "fills": [
+              {
+                "color": "#F9FAFB",
+                "opacity": 1
+              }
+            ],
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 48,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 80,
+                "bottom": 80,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Social Proof Title",
+              "properties": {
+                "content": "Trusted by 10,000+ Designers",
+                "fontSize": 32,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#111827",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "FRAME",
+              "name": "Stats Row",
+              "properties": {
+                "width": "HUG",
+                "height": "HUG",
+                "autoLayout": {
+                  "direction": "HORIZONTAL",
+                  "spacing": 64,
+                  "alignment": "CENTER"
+                }
+              },
+              "children": [
+                {
+                  "type": "FRAME",
+                  "name": "Stat 1",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "VERTICAL",
+                      "spacing": 8,
+                      "alignment": "CENTER"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Number 1",
+                      "properties": {
+                        "content": "10,000+",
+                        "fontSize": 36,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Bold"
+                        },
+                        "fills": [
+                          {
+                            "color": "#3B82F6",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Label 1",
+                      "properties": {
+                        "content": "Active Users",
+                        "fontSize": 16,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Regular"
+                        },
+                        "fills": [
+                          {
+                            "color": "#6B7280",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Stat 2",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "VERTICAL",
+                      "spacing": 8,
+                      "alignment": "CENTER"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Number 2",
+                      "properties": {
+                        "content": "50,000+",
+                        "fontSize": 36,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Bold"
+                        },
+                        "fills": [
+                          {
+                            "color": "#10B981",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Label 2",
+                      "properties": {
+                        "content": "Designs Created",
+                        "fontSize": 16,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Regular"
+                        },
+                        "fills": [
+                          {
+                            "color": "#6B7280",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "name": "Stat 3",
+                  "properties": {
+                    "width": "HUG",
+                    "height": "HUG",
+                    "autoLayout": {
+                      "direction": "VERTICAL",
+                      "spacing": 8,
+                      "alignment": "CENTER"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Number 3",
+                      "properties": {
+                        "content": "99.9%",
+                        "fontSize": 36,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Bold"
+                        },
+                        "fills": [
+                          {
+                            "color": "#F59E0B",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "TEXT",
+                      "name": "Stat Label 3",
+                      "properties": {
+                        "content": "Uptime",
+                        "fontSize": 16,
+                        "font": {
+                          "family": "Inter",
+                          "style": "Regular"
+                        },
+                        "fills": [
+                          {
+                            "color": "#6B7280",
+                            "opacity": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "CTA Section",
+          "properties": {
+            "x": 0,
+            "y": 1100,
+            "width": 1200,
+            "height": "HUG",
+            "fills": [
+              {
+                "color": "#1F2937",
+                "opacity": 1
+              }
+            ],
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 32,
+              "alignment": "CENTER",
+              "padding": {
+                "top": 80,
+                "bottom": 80,
+                "left": 40,
+                "right": 40
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "CTA Title",
+              "properties": {
+                "content": "Ready to Transform Your Design Process?",
+                "fontSize": 42,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "fills": [
+                  {
+                    "color": "#FFFFFF",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "TEXT",
+              "name": "CTA Subtitle",
+              "properties": {
+                "content": "Join thousands of designers who are already creating faster with Draftly",
+                "fontSize": 18,
+                "font": {
+                  "family": "Inter",
+                  "style": "Regular"
+                },
+                "fills": [
+                  {
+                    "color": "#D1D5DB",
+                    "opacity": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BUTTON",
+              "name": "Final CTA",
+              "text": "Get Started Free →",
+              "properties": {
+                "fills": [
+                  {
+                    "color": "#3B82F6",
+                    "opacity": 1
+                  }
+                ],
+                "cornerRadius": 8,
+                "fontSize": 18,
+                "font": {
+                  "family": "Inter",
+                  "style": "Bold"
+                },
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": "#3B82F6",
+                    "opacity": 0.4,
+                    "offset": { "x": 0, "y": 8 },
+                    "radius": 24
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
