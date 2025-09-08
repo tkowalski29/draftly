@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Input Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Input Variations",
+          "properties": {
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 24,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "INPUT",
+              "name": "Basic Input",
+              "properties": {
+                "label": "Full Name",
+                "placeholder": "Enter your full name",
+                "width": 280
+              }
+            },
+            {
+              "type": "INPUT",
+              "name": "Email Input",
+              "properties": {
+                "label": "Email Address",
+                "placeholder": "user@example.com",
+                "width": 320,
+                "helperText": "We'll never share your email with others"
+              }
+            },
+            {
+              "type": "INPUT",
+              "name": "Password Input",
+              "properties": {
+                "label": "Password",
+                "placeholder": "Enter password",
+                "width": 280,
+                "helperText": "Must be at least 8 characters"
+              }
+            },
+            {
+              "type": "INPUT",
+              "name": "Wide Input",
+              "properties": {
+                "label": "Company Name",
+                "placeholder": "Enter your company name",
+                "width": 400
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

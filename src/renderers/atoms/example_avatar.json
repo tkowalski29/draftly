@@ -1,0 +1,171 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Avatar Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Avatar Sizes",
+          "properties": {
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 16,
+              "alignment": "CENTER"
+            }
+          },
+          "children": [
+            {
+              "type": "AVATAR",
+              "name": "Small Avatar",
+              "properties": {
+                "size": 24,
+                "backgroundColor": "#EF4444",
+                "initials": "XS"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Medium Avatar",
+              "properties": {
+                "size": 32,
+                "backgroundColor": "#F59E0B",
+                "initials": "SM"
+              }
+            },
+            {
+              "type": "AVATAR", 
+              "name": "Default Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#3B82F6",
+                "initials": "MD"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Large Avatar",
+              "properties": {
+                "size": 48,
+                "backgroundColor": "#10B981",
+                "initials": "LG"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Extra Large Avatar",
+              "properties": {
+                "size": 64,
+                "backgroundColor": "#8B5CF6",
+                "initials": "XL"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Avatar Colors",
+          "properties": {
+            "y": 80,
+            "width": "HUG", 
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 16,
+              "alignment": "CENTER"
+            }
+          },
+          "children": [
+            {
+              "type": "AVATAR",
+              "name": "Blue Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#3B82F6",
+                "initials": "AB"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Green Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#10B981",
+                "initials": "CD"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Purple Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#8B5CF6",
+                "initials": "EF"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Orange Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#F59E0B",
+                "initials": "GH"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Red Avatar",
+              "properties": {
+                "size": 40,
+                "backgroundColor": "#EF4444",
+                "initials": "IJ"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Image Avatars",
+          "properties": {
+            "y": 160,
+            "width": "HUG",
+            "height": "HUG", 
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 16,
+              "alignment": "CENTER"
+            }
+          },
+          "children": [
+            {
+              "type": "AVATAR",
+              "name": "Profile Photo 1",
+              "properties": {
+                "size": 40,
+                "imageUrl": "https://example.com/user1.jpg"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Profile Photo 2", 
+              "properties": {
+                "size": 48,
+                "imageUrl": "https://example.com/user2.jpg"
+              }
+            },
+            {
+              "type": "AVATAR",
+              "name": "Profile Photo 3",
+              "properties": {
+                "size": 56,
+                "imageUrl": "https://example.com/user3.jpg"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

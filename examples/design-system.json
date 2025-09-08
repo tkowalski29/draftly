@@ -184,7 +184,8 @@
                   "name": "Small Avatar",
                   "properties": {
                     "size": 32,
-                    "backgroundColor": "#3B82F6"
+                    "backgroundColor": "#3B82F6",
+                    "initials": "AB"
                   }
                 },
                 {
@@ -192,7 +193,8 @@
                   "name": "Medium Avatar",
                   "properties": {
                     "size": 40,
-                    "backgroundColor": "#10B981"
+                    "backgroundColor": "#10B981",
+                    "initials": "CD"
                   }
                 },
                 {
@@ -200,7 +202,8 @@
                   "name": "Large Avatar",
                   "properties": {
                     "size": 48,
-                    "backgroundColor": "#F59E0B"
+                    "backgroundColor": "#F59E0B",
+                    "initials": "EF"
                   }
                 }
               ]

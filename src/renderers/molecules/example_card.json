@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Card Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Card Variations",
+          "properties": {
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 24,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "CARD",
+              "name": "Full Card",
+              "properties": {
+                "width": 320,
+                "image": true,
+                "imageHeight": 180,
+                "title": "Complete Card Example",
+                "description": "This card includes an image, title, description, and multiple action buttons to demonstrate the full capabilities.",
+                "actions": [
+                  {
+                    "text": "Primary Action",
+                    "variant": "primary"
+                  },
+                  {
+                    "text": "Secondary",
+                    "variant": "secondary"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "CARD",
+              "name": "Simple Card",
+              "properties": {
+                "width": 280,
+                "title": "Simple Card",
+                "description": "This is a simple card without an image, featuring just title, description and a single action button.",
+                "actions": [
+                  {
+                    "text": "Learn More",
+                    "variant": "primary"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "CARD",
+              "name": "Image Card",
+              "properties": {
+                "width": 300,
+                "image": true,
+                "imageHeight": 200,
+                "title": "Image-focused Card",
+                "description": "Card with larger image area for visual content.",
+                "actions": [
+                  {
+                    "text": "View Gallery",
+                    "variant": "primary"
+                  },
+                  {
+                    "text": "Download",
+                    "variant": "secondary"
+                  },
+                  {
+                    "text": "Share",
+                    "variant": "secondary"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

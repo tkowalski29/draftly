@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Form Field Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Form Field States",
+          "properties": {
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 32,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "FORM_FIELD",
+              "name": "Default Field",
+              "properties": {
+                "label": "Full Name",
+                "placeholder": "Enter your name",
+                "width": 280,
+                "state": "default",
+                "helperText": "First and last name"
+              }
+            },
+            {
+              "type": "FORM_FIELD",
+              "name": "Error Field",
+              "properties": {
+                "label": "Email",
+                "value": "invalid-email",
+                "width": 280,
+                "state": "error",
+                "required": true,
+                "errorText": "Please enter a valid email address"
+              }
+            },
+            {
+              "type": "FORM_FIELD",
+              "name": "Success Field",
+              "properties": {
+                "label": "Username",
+                "value": "john_doe",
+                "width": 280,
+                "state": "success"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Form Field Variants",
+          "properties": {
+            "y": 120,
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "VERTICAL",
+              "spacing": 24,
+              "alignment": "FLEX_START"
+            }
+          },
+          "children": [
+            {
+              "type": "FORM_FIELD",
+              "name": "Required Field",
+              "properties": {
+                "label": "Password",
+                "placeholder": "Enter password",
+                "width": 320,
+                "state": "default",
+                "required": true,
+                "helperText": "Must be at least 8 characters with numbers and letters"
+              }
+            },
+            {
+              "type": "FORM_FIELD",
+              "name": "Wide Field",
+              "properties": {
+                "label": "Company Address",
+                "placeholder": "Enter full business address",
+                "width": 480,
+                "state": "default",
+                "helperText": "Include street, city, state, and postal code"
+              }
+            },
+            {
+              "type": "FORM_FIELD",
+              "name": "Disabled Field",
+              "properties": {
+                "label": "Account Type",
+                "value": "Premium",
+                "width": 280,
+                "state": "disabled",
+                "helperText": "Cannot be changed"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

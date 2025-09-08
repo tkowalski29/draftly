@@ -17,6 +17,58 @@ function log(message: string, level: 'info' | 'warn' | 'error' | 'debug' = 'info
   }
 }
 
+// Component creation and management
+function createComponentFromNode(node: SceneNode, name: string): ComponentNode {
+  log(`🔧 Tworzę komponent: ${name}`, 'debug');
+  
+  // Create component
+  const component = figma.createComponent();
+  component.name = `🧩 ${name}`;
+  
+  // Clone the node and add to component
+  const clonedNode = node.clone();
+  component.appendChild(clonedNode);
+  
+  // Resize component to fit content
+  component.resize(node.width, node.height);
+  
+  // Add component to current page for library access
+  const currentPage = figma.currentPage;
+  
+  // Check if components section exists
+  let componentsSection = currentPage.children.find(child => 
+    child.type === 'FRAME' && child.name === '🧩 Components Library'
+  ) as FrameNode;
+  
+  if (!componentsSection) {
+    componentsSection = figma.createFrame();
+    componentsSection.name = '🧩 Components Library';
+    componentsSection.layoutMode = 'HORIZONTAL';
+    componentsSection.itemSpacing = 24;
+    componentsSection.paddingTop = 24;
+    componentsSection.paddingBottom = 24;
+    componentsSection.paddingLeft = 24;
+    componentsSection.paddingRight = 24;
+    componentsSection.primaryAxisSizingMode = 'AUTO';
+    componentsSection.counterAxisSizingMode = 'AUTO';
+    componentsSection.fills = [{ type: 'SOLID', color: { r: 0.98, g: 0.98, b: 1 }, opacity: 1 }];
+    componentsSection.y = -200; // Place above main content
+    currentPage.appendChild(componentsSection);
+    log(`📦 Utworzono sekcję biblioteki komponentów`, 'info');
+  }
+  
+  componentsSection.appendChild(component);
+  log(`✅ Komponent ${name} dodany do biblioteki`, 'info');
+  
+  return component;
+}
+
+function createInstanceFromComponent(component: ComponentNode): InstanceNode {
+  const instance = component.createInstance();
+  log(`📋 Utworzono instancję komponentu: ${component.name}`, 'debug');
+  return instance;
+}
+
 function hexToRgb(hex: string): RGB {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
@@ -77,26 +129,66 @@ async function renderIcon(nodeData: any): Promise<RectangleNode> {
 }
 
 // Avatar atom renderer
-async function renderAvatar(nodeData: any): Promise<EllipseNode> {
+async function renderAvatar(nodeData: any): Promise<FrameNode> {
   log(`[ATOM] Renderuję avatar: ${nodeData.name}`, 'debug', { 
     size: nodeData.properties?.size,
-    initials: nodeData.properties?.initials
+    initials: nodeData.properties?.initials,
+    backgroundColor: nodeData.properties?.backgroundColor
   });
   
-  const avatar = figma.createEllipse();
+  const avatar = figma.createFrame();
+  avatar.name = nodeData.name;
+  
+  // Avatar properties
   const size = nodeData.properties?.size || 40;
+  const backgroundColor = nodeData.properties?.backgroundColor || '#3B82F6';
+  const initials = nodeData.properties?.initials || 'U';
+  const imageUrl = nodeData.properties?.imageUrl;
   
+  // Create circular avatar
   avatar.resize(size, size);
-  avatar.fills = [{ 
-    type: 'SOLID', 
-    color: nodeData.properties?.backgroundColor ? hexToRgb(nodeData.properties.backgroundColor) : { r: 0.86, g: 0.92, b: 1 }, 
-    opacity: 1 
-  }];
+  avatar.cornerRadius = size / 2; // Perfect circle
   
-  // If initials are provided, add them as text
-  if (nodeData.properties?.initials) {
-    // Note: In real implementation, we'd create a frame with text inside
-    // For now, just the circle
+  if (imageUrl) {
+    // Image placeholder
+    avatar.fills = [{ 
+      type: 'SOLID', 
+      color: { r: 0.9, g: 0.9, b: 0.9 }, 
+      opacity: 1 
+    }];
+    
+    // Add image placeholder text
+    const imagePlaceholder = figma.createText();
+    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    imagePlaceholder.characters = '📷';
+    imagePlaceholder.fontSize = size * 0.4;
+    imagePlaceholder.textAlignHorizontal = 'CENTER';
+    imagePlaceholder.textAlignVertical = 'CENTER';
+    imagePlaceholder.resize(size, size);
+    avatar.appendChild(imagePlaceholder);
+  } else {
+    // Use background color and initials
+    const color = hexToRgb(backgroundColor);
+    avatar.fills = [{ 
+      type: 'SOLID', 
+      color: color, 
+      opacity: 1 
+    }];
+    
+    // Add initials text
+    const initialsText = figma.createText();
+    await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+    initialsText.characters = initials.substring(0, 2).toUpperCase();
+    initialsText.fontSize = size * 0.4;
+    initialsText.textAlignHorizontal = 'CENTER';
+    initialsText.textAlignVertical = 'CENTER';
+    initialsText.fills = [{ 
+      type: 'SOLID', 
+      color: { r: 1, g: 1, b: 1 }, 
+      opacity: 1 
+    }];
+    initialsText.resize(size, size);
+    avatar.appendChild(initialsText);
   }
   
   log(`[ATOM] Avatar ${nodeData.name} wyrenderowany pomyślnie`, 'debug');
@@ -1102,8 +1194,22 @@ async function renderNode(nodeData: any, parent: BaseNode & ChildrenMixin): Prom
     throw error;
   }
   
-  parent.appendChild(node);
-  log(`[RENDER] Węzeł ${nodeData.name} dodany do rodzica`, 'debug');
+  // Check if this is an atomic element that should become a component
+  const atomicTypes = ['ICON', 'INPUT', 'BADGE', 'AVATAR', 'DIVIDER', 'BUTTON'];
+  const isAtomic = atomicTypes.includes(nodeData.type);
+  
+  if (isAtomic) {
+    // Create component and use instance instead
+    const component = createComponentFromNode(node, `${nodeData.type}-${nodeData.name}`);
+    const instance = createInstanceFromComponent(component);
+    instance.name = nodeData.name;
+    parent.appendChild(instance);
+    log(`[COMPONENT] Węzeł atomowy ${nodeData.name} przekonwertowany na komponent i instancję`, 'info');
+  } else {
+    // Regular node, add directly
+    parent.appendChild(node);
+    log(`[RENDER] Węzeł ${nodeData.name} dodany do rodzica`, 'debug');
+  }
 
   if (nodeData.children && 'appendChild' in node) {
     log(`[RENDER] Renderuję ${nodeData.children.length} dzieci węzła: ${nodeData.name}`, 'debug');

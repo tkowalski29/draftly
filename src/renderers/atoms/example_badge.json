@@ -1,0 +1,113 @@
+{
+  "version": "1.0", 
+  "pages": [
+    {
+      "name": "Badge Examples",
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Badge Variants",
+          "properties": {
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 12,
+              "alignment": "CENTER"
+            }
+          },
+          "children": [
+            {
+              "type": "BADGE",
+              "name": "Default Badge",
+              "text": "Default",
+              "properties": {
+                "variant": "default",
+                "size": "medium"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Primary Badge",
+              "text": "Primary",
+              "properties": {
+                "variant": "primary",
+                "size": "medium"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Success Badge",
+              "text": "Success",
+              "properties": {
+                "variant": "success",
+                "size": "medium"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Warning Badge",
+              "text": "Warning",
+              "properties": {
+                "variant": "warning",
+                "size": "medium"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Danger Badge",
+              "text": "Danger",
+              "properties": {
+                "variant": "danger",
+                "size": "medium"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Badge Sizes",
+          "properties": {
+            "y": 80,
+            "width": "HUG",
+            "height": "HUG",
+            "autoLayout": {
+              "direction": "HORIZONTAL",
+              "spacing": 12,
+              "alignment": "CENTER"
+            }
+          },
+          "children": [
+            {
+              "type": "BADGE",
+              "name": "Small Badge",
+              "text": "Small",
+              "properties": {
+                "variant": "primary",
+                "size": "small"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Medium Badge",
+              "text": "Medium",
+              "properties": {
+                "variant": "primary",
+                "size": "medium"
+              }
+            },
+            {
+              "type": "BADGE",
+              "name": "Large Badge",
+              "text": "Large",
+              "properties": {
+                "variant": "primary",
+                "size": "large"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
