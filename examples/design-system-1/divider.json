@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Divider Component",
+      "children": [
+        {
+          "type": "DIVIDER",
+          "name": "Thin Divider",
+          "properties": {
+            "width": 300,
+            "height": 1,
+            "color": "#E5E7EB"
+          }
+        },
+        {
+          "type": "DIVIDER",
+          "name": "Thick Divider",
+          "properties": {
+            "width": 300,
+            "height": 3,
+            "color": "#D1D5DB"
+          }
+        },
+        {
+          "type": "DIVIDER",
+          "name": "Colored Divider",
+          "properties": {
+            "width": 300,
+            "height": 2,
+            "color": "#3B82F6"
+          }
+        }
+      ]
+    }
+  ]
+}

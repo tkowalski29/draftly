@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Avatar Component",
+      "children": [
+        {
+          "type": "AVATAR",
+          "name": "Small Avatar",
+          "properties": {
+            "size": 32,
+            "backgroundColor": "#3B82F6",
+            "initials": "AB"
+          }
+        },
+        {
+          "type": "AVATAR",
+          "name": "Medium Avatar",
+          "properties": {
+            "size": 40,
+            "backgroundColor": "#10B981",
+            "initials": "CD"
+          }
+        },
+        {
+          "type": "AVATAR",
+          "name": "Large Avatar",
+          "properties": {
+            "size": 48,
+            "backgroundColor": "#F59E0B",
+            "initials": "EF"
+          }
+        },
+        {
+          "type": "AVATAR",
+          "name": "Extra Large Avatar",
+          "properties": {
+            "size": 64,
+            "backgroundColor": "#8B5CF6",
+            "initials": "GH"
+          }
+        }
+      ]
+    }
+  ]
+}

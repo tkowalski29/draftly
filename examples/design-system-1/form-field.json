@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Form Field Component",
+      "children": [
+        {
+          "type": "FORM_FIELD",
+          "name": "Default Field",
+          "properties": {
+            "label": "Full Name",
+            "placeholder": "Enter your name",
+            "width": 280,
+            "state": "default",
+            "helperText": "First and last name"
+          }
+        },
+        {
+          "type": "FORM_FIELD",
+          "name": "Error Field",
+          "properties": {
+            "label": "Email",
+            "value": "invalid-email",
+            "width": 280,
+            "state": "error",
+            "required": true,
+            "errorText": "Please enter a valid email address"
+          }
+        },
+        {
+          "type": "FORM_FIELD",
+          "name": "Success Field",
+          "properties": {
+            "label": "Username",
+            "value": "john_doe",
+            "width": 280,
+            "state": "success"
+          }
+        }
+      ]
+    }
+  ]
+}

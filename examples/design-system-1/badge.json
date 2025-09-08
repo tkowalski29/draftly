@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Badge Component",
+      "children": [
+        {
+          "type": "BADGE",
+          "name": "Default Badge",
+          "text": "Default",
+          "properties": {
+            "variant": "default",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BADGE",
+          "name": "Primary Badge",
+          "text": "Primary",
+          "properties": {
+            "variant": "primary",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BADGE",
+          "name": "Success Badge",
+          "text": "Success",
+          "properties": {
+            "variant": "success",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BADGE",
+          "name": "Warning Badge",
+          "text": "Warning",
+          "properties": {
+            "variant": "warning",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BADGE",
+          "name": "Danger Badge",
+          "text": "Danger",
+          "properties": {
+            "variant": "danger",
+            "size": "medium"
+          }
+        }
+      ]
+    }
+  ]
+}

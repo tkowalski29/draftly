@@ -23,7 +23,7 @@ function createComponentFromNode(node: SceneNode, name: string): ComponentNode {
   
   // Create component
   const component = figma.createComponent();
-  component.name = `🧩 ${name}`;
+  component.name = `🤖 ${name}`;
   
   // Clone the node and add to component
   const clonedNode = node.clone();
@@ -37,12 +37,12 @@ function createComponentFromNode(node: SceneNode, name: string): ComponentNode {
   
   // Check if components section exists
   let componentsSection = currentPage.children.find(child => 
-    child.type === 'FRAME' && child.name === '🧩 Components Library'
+    child.type === 'FRAME' && child.name === '🤖 Components Library'
   ) as FrameNode;
   
   if (!componentsSection) {
     componentsSection = figma.createFrame();
-    componentsSection.name = '🧩 Components Library';
+    componentsSection.name = '🤖 Components Library';
     componentsSection.layoutMode = 'HORIZONTAL';
     componentsSection.itemSpacing = 24;
     componentsSection.paddingTop = 24;
@@ -68,6 +68,78 @@ function createInstanceFromComponent(component: ComponentNode): InstanceNode {
   log(`📋 Utworzono instancję komponentu: ${component.name}`, 'debug');
   return instance;
 }
+
+// Design System folder renderer
+async function renderDesignSystemFolder(folderData: {[key: string]: string}): Promise<void> {
+  log(`🎨 Rozpoczynam renderowanie Design Systemu z ${Object.keys(folderData).length} plików`, 'info');
+  
+  // Create main design system page with white background
+  const page = figma.createPage();
+  page.name = '🤖 Design System';
+  figma.currentPage = page;
+  
+  // Process each file in folder and categorize components
+  const sortedFiles = Object.keys(folderData).sort();
+  const componentsByType: {[key: string]: any[]} = {};
+  
+  for (const fileName of sortedFiles) {
+    try {
+      log(`📝 Przetwarzam plik: ${fileName}`, 'debug');
+      const jsonData = JSON.parse(folderData[fileName]);
+      
+      if (jsonData && jsonData.pages && jsonData.pages[0] && jsonData.pages[0].children) {
+        const components = jsonData.pages[0].children;
+        
+        // Group components by type
+        for (const component of components) {
+          const type = component.type;
+          if (!componentsByType[type]) {
+            componentsByType[type] = [];
+          }
+          componentsByType[type].push(component);
+        }
+      }
+    } catch (error: any) {
+      log(`❌ BŁĄD podczas parsowania ${fileName}: ${error.message}`, 'error');
+    }
+  }
+  
+  // Render components: same type in column, different types in rows
+  let yOffset = 50;
+  const rowSpacing = 120;
+  const columnSpacing = 40;
+  
+  for (const [componentType, components] of Object.entries(componentsByType)) {
+    if (components.length > 0) {
+      log(`📦 Renderuję ${components.length} komponentów typu ${componentType}`, 'info');
+      
+      let xOffset = 50;
+      for (const component of components) {
+        try {
+          const renderedComponent = await renderNode(component, page);
+          if (renderedComponent) {
+            // Position component
+            renderedComponent.x = xOffset;
+            renderedComponent.y = yOffset;
+            
+            // Update x position for next component in row  
+            xOffset += renderedComponent.width + columnSpacing;
+            
+            log(`✅ Komponent ${component.name} typu ${componentType} wyrenderowany na pozycji (${renderedComponent.x}, ${renderedComponent.y})`, 'debug');
+          }
+        } catch (error: any) {
+          log(`❌ BŁĄD renderowania ${component.name}: ${error.message}`, 'error');
+        }
+      }
+      
+      // Move to next row for different component type
+      yOffset += rowSpacing;
+    }
+  }
+  
+  log(`✅ Design System wyrenderowany pomyślnie z ${Object.keys(componentsByType).length} typów komponentów`, 'info');
+}
+
 
 function hexToRgb(hex: string): RGB {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -1194,17 +1266,24 @@ async function renderNode(nodeData: any, parent: BaseNode & ChildrenMixin): Prom
     throw error;
   }
   
-  // Check if this is an atomic element that should become a component
-  const atomicTypes = ['ICON', 'INPUT', 'BADGE', 'AVATAR', 'DIVIDER', 'BUTTON'];
-  const isAtomic = atomicTypes.includes(nodeData.type);
+  // Check if this is a design system element that should become a component
+  const designSystemTypes = [
+    // Atoms
+    'ICON', 'INPUT', 'BADGE', 'AVATAR', 'DIVIDER', 'BUTTON', 'TEXT',
+    // Molecules  
+    'CARD', 'FORM_FIELD', 'NAVIGATION', 'STATS_CARD',
+    // Organisms
+    'HEADER', 'PRODUCT_GRID'
+  ];
+  const isDesignSystemElement = designSystemTypes.includes(nodeData.type);
   
-  if (isAtomic) {
+  if (isDesignSystemElement) {
     // Create component and use instance instead
     const component = createComponentFromNode(node, `${nodeData.type}-${nodeData.name}`);
     const instance = createInstanceFromComponent(component);
     instance.name = nodeData.name;
     parent.appendChild(instance);
-    log(`[COMPONENT] Węzeł atomowy ${nodeData.name} przekonwertowany na komponent i instancję`, 'info');
+    log(`[COMPONENT] Element design systemu ${nodeData.name} przekonwertowany na komponent i instancję`, 'info');
   } else {
     // Regular node, add directly
     parent.appendChild(node);
@@ -1321,18 +1400,20 @@ figma.ui.onmessage = async (msg) => {
     }
   }
 
-  if (msg.type === 'render-url') {
-    const url = msg.data;
-    log(`Fetching data from URL: ${url}`);
+  if (msg.type === 'render-folder') {
+    const folderData = msg.data;
+    const importType = msg.importType;
+    log(`📁 Renderowanie folderu w trybie: ${importType}`, 'info');
+    log(`📊 Znaleziono ${Object.keys(folderData).length} plików`, 'info');
+    
     try {
-      const response = await fetch(url);
-      const jsonString = await response.text();
-      const data = parseAndValidate(jsonString);
-      if (data) {
-        await renderTree(data);
+      if (importType === 'design-system') {
+        await renderDesignSystemFolder(folderData);
+      } else {
+        log('❌ Nieobsługiwany typ importu folderu', 'error');
       }
-    } catch (e: any) {
-      log(`Error fetching from URL: ${e.message}`, 'error');
+    } catch (error: any) {
+      log(`❌ BŁĄD podczas renderowania folderu: ${error.message}`, 'error');
     }
   }
   

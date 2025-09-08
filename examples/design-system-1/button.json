@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Button Component",
+      "children": [
+        {
+          "type": "BUTTON",
+          "name": "Primary Button",
+          "properties": {
+            "text": "Primary Button",
+            "variant": "primary",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Secondary Button",
+          "properties": {
+            "text": "Secondary Button",
+            "variant": "secondary",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Danger Button",
+          "properties": {
+            "text": "Delete",
+            "variant": "danger",
+            "size": "medium"
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Large Button",
+          "properties": {
+            "text": "Large Button",
+            "variant": "primary",
+            "size": "large"
+          }
+        },
+        {
+          "type": "BUTTON",
+          "name": "Small Button",
+          "properties": {
+            "text": "Small",
+            "variant": "secondary",
+            "size": "small"
+          }
+        }
+      ]
+    }
+  ]
+}

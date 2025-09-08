@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Text Component",
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Heading 1",
+          "properties": {
+            "content": "Large Heading",
+            "fontSize": 36,
+            "font": {
+              "family": "Inter",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Heading 2",
+          "properties": {
+            "content": "Medium Heading",
+            "fontSize": 24,
+            "font": {
+              "family": "Inter",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Body Text",
+          "properties": {
+            "content": "This is regular body text for paragraphs and content.",
+            "fontSize": 16,
+            "font": {
+              "family": "Inter",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "type": "TEXT",
+          "name": "Small Text",
+          "properties": {
+            "content": "Small supporting text",
+            "fontSize": 12,
+            "font": {
+              "family": "Inter",
+              "style": "Regular"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
