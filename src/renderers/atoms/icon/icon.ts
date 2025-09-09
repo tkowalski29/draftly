@@ -209,81 +209,112 @@ function createIconVariant(
   return iconComponent;
 }
 
-export function renderIcon(nodeData: any, targetPage?: PageNode): ComponentSetNode | SceneNode {
-  // Check if using new variant structure
+export function renderIcon(nodeData: any, targetPage?: PageNode): ComponentSetNode[] | ComponentSetNode | SceneNode {
+  // Check if using new variant structure  
   if (nodeData.variants && Array.isArray(nodeData.variants)) {
     const baseProperties = nodeData.properties || {};
     
     // Ensure we're on the correct page throughout the entire process
-    const originalPage = figma.currentPage;
     log(`🔧 renderIcon called with targetPage: ${targetPage?.name || 'undefined'}`, 'log');
-    log(`🔧 Current page at start of renderIcon: ${figma.currentPage.name}`, 'log');
     
     if (targetPage) {
-      // Immediately force the page switch - multiple times to ensure it sticks
-      figma.currentPage = targetPage;
-      figma.currentPage = targetPage;
       figma.currentPage = targetPage;
       log(`🔧 Switched to target page: ${targetPage.name} for icon creation`, 'log');
-      log(`🔧 Verify page after switch: ${figma.currentPage.name}`, 'log');
-      
-      // If it's still wrong, force it again
-      if (figma.currentPage.name !== targetPage.name) {
-        log(`❌ Page switch failed! Forcing again...`, 'error');
-        figma.currentPage = targetPage;
-        log(`🔧 After force retry: ${figma.currentPage.name}`, 'log');
-      }
     }
     
-    // Create variants directly for ComponentSet (no double creation)
-    const componentVariants: ComponentNode[] = [];
-    for (const variant of nodeData.variants) {
-      // Ensure page is still correct before each variant creation
+    // NEW APPROACH: Group variants by icon type to create separate ComponentSets
+    const iconGroups = groupVariantsByIconType(nodeData.variants);
+    const componentSets: ComponentSetNode[] = [];
+    
+    for (const [iconType, variants] of Object.entries(iconGroups)) {
+      log(`🔧 Creating ComponentSet for icon type: ${iconType} with ${variants.length} size variants`, 'log');
+      
+      // Create variants for this specific icon type
+      const componentVariants: ComponentNode[] = [];
+      
+      for (const variant of variants) {
+        if (targetPage) {
+          figma.currentPage = targetPage;
+        }
+        
+        const variantComponent = createIconVariant(
+          variant.name,
+          variant,
+          baseProperties
+        );
+        
+        // Set proper variant naming for Figma (Size=Small, Size=Medium, etc.)
+        const size = extractSizeFromVariant(variant.name);
+        variantComponent.name = `Size=${size}`;
+        
+        componentVariants.push(variantComponent);
+      }
+      
+      // Position variants before combining
+      const spacing = 100;
+      const itemsPerRow = Math.ceil(Math.sqrt(componentVariants.length));
+      componentVariants.forEach((variant, index) => {
+        const row = Math.floor(index / itemsPerRow);
+        const col = index % itemsPerRow;
+        variant.x = col * spacing;
+        variant.y = row * spacing;
+      });
+      
+      // Create ComponentSet for this icon type
       if (targetPage) {
         figma.currentPage = targetPage;
       }
       
-      const variantComponent = createIconVariant(
-        variant.name,
-        variant,
-        baseProperties
-      );
-      // Don't append to page - combineAsVariants will handle this
-      componentVariants.push(variantComponent);
+      const componentSet = figma.combineAsVariants(componentVariants, targetPage || figma.currentPage);
+      componentSet.name = `[Icon] ${iconType}`;
+      
+      log(`✅ Created ComponentSet: ${componentSet.name} with ${componentVariants.length} size variants`, 'log');
+      componentSets.push(componentSet);
     }
     
-    // If only one variant, return it directly
-    if (componentVariants.length === 1) {
-      log(`✅ Single icon variant created: ${componentVariants[0].name}`, 'log');
-      return componentVariants[0];
-    }
+    log(`✅ Created ${componentSets.length} icon ComponentSets`, 'log');
     
-    // Position variants before combining
-    const spacing = 100;
-    const itemsPerRow = Math.ceil(Math.sqrt(componentVariants.length));
-    componentVariants.forEach((variant, index) => {
-      const row = Math.floor(index / itemsPerRow);
-      const col = index % itemsPerRow;
-      variant.x = col * spacing;
-      variant.y = row * spacing;
-    });
-    
-    // Create ComponentSet - ensure we're on the correct page
-    if (targetPage) {
-      figma.currentPage = targetPage;
-      log(`🔧 Final page check before ComponentSet creation: ${figma.currentPage.name}`, 'log');
-    }
-    
-    log(`🔧 Creating ComponentSet with ${componentVariants.length} variants`, 'log');
-    const page = targetPage || figma.currentPage;
-    const componentSet = figma.combineAsVariants(componentVariants, page);
-    componentSet.name = nodeData.name || 'Icon System';
-    
-    log(`✅ ComponentSet created: ${componentSet.name}`, 'log');
-    
-    return componentSet;
+    // Return single ComponentSet if only one, otherwise array
+    return componentSets.length === 1 ? componentSets[0] : componentSets;
   }
   
   // If no variants provided, throw error
   throw new Error('Icon requires variants array. Please provide variants with getFromParent system.');
+}
+
+// Helper function to group variants by icon type
+function groupVariantsByIconType(variants: any[]): {[iconType: string]: any[]} {
+  const groups: {[iconType: string]: any[]} = {};
+  
+  variants.forEach(variant => {
+    const iconType = extractIconTypeFromVariant(variant.name);
+    if (!groups[iconType]) {
+      groups[iconType] = [];
+    }
+    groups[iconType].push(variant);
+  });
+  
+  return groups;
+}
+
+// Helper function to extract icon type from variant name
+function extractIconTypeFromVariant(variantName: string): string {
+  const parts = variantName.split('-');
+  // Assume first part is the icon type (arrow, plus, home, etc.)
+  return parts[0] || 'Icon';
+}
+
+// Helper function to extract size from variant name  
+function extractSizeFromVariant(variantName: string): string {
+  const parts = variantName.split('-');
+  
+  for (const part of parts) {
+    const lowerPart = part.toLowerCase();
+    if (lowerPart.includes('small') || lowerPart.includes('16')) return 'Small';
+    if (lowerPart.includes('medium') || lowerPart.includes('20')) return 'Medium';
+    if (lowerPart.includes('large') || lowerPart.includes('24')) return 'Large';  
+    if (lowerPart.includes('xlarge') || lowerPart.includes('32')) return 'XLarge';
+  }
+  
+  return 'Medium'; // Default
 }

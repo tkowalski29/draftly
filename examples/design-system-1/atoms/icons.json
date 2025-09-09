@@ -239,6 +239,642 @@
               "cornerRadius": 0.1
             }
           ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Media",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#8B5CF6",
+            "opacity": 1,
+            "useStroke": false,
+            "strokeWidth": 2
+          },
+          "variants": [
+            {
+              "name": "Play",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.1 L 0.8 0.5 L 0.2 0.9 Z"
+                }
+              ]
+            },
+            {
+              "name": "Pause",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.1 L 0.4 0.1 L 0.4 0.9 L 0.2 0.9 Z M 0.6 0.1 L 0.8 0.1 L 0.8 0.9 L 0.6 0.9 Z"
+                }
+              ]
+            },
+            {
+              "name": "Stop",
+              "getFromParent": true,
+              "shapeType": "rectangle",
+              "cornerRadius": 0.02
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Navigation",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#1F2937",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Home",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.9 0.4 L 0.8 0.4 L 0.8 0.9 L 0.6 0.9 L 0.6 0.6 L 0.4 0.6 L 0.4 0.9 L 0.2 0.9 L 0.2 0.4 L 0.1 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Menu",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.1 0.2 L 0.9 0.2 L 0.9 0.3 L 0.1 0.3 Z M 0.1 0.45 L 0.9 0.45 L 0.9 0.55 L 0.1 0.55 Z M 0.1 0.7 L 0.9 0.7 L 0.9 0.8 L 0.1 0.8 Z"
+                }
+              ]
+            },
+            {
+              "name": "Back",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.7 0.2 L 0.3 0.5 L 0.7 0.8 L 0.6 0.9 L 0.1 0.5 L 0.6 0.1 Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] File",
+          "properties": {
+            "shapeType": "rectangle",
+            "size": 20,
+            "color": "#4B5563",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2,
+            "cornerRadius": 0.05
+          },
+          "variants": [
+            {
+              "name": "Document",
+              "getFromParent": true
+            },
+            {
+              "name": "Folder",
+              "getFromParent": true,
+              "color": "#F59E0B"
+            },
+            {
+              "name": "Download",
+              "getFromParent": true,
+              "color": "#059669"
+            },
+            {
+              "name": "Upload",
+              "getFromParent": true,
+              "color": "#DC2626"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Social",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#3B82F6",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Twitter",
+              "getFromParent": true,
+              "color": "#1DA1F2"
+            },
+            {
+              "name": "Facebook",
+              "getFromParent": true,
+              "color": "#1877F2"
+            },
+            {
+              "name": "LinkedIn",
+              "getFromParent": true,
+              "color": "#0A66C2"
+            },
+            {
+              "name": "Instagram",
+              "getFromParent": true,
+              "color": "#E4405F"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Status",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#10B981",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Success",
+              "getFromParent": true
+            },
+            {
+              "name": "Warning",
+              "getFromParent": true,
+              "color": "#F59E0B"
+            },
+            {
+              "name": "Error",
+              "getFromParent": true,
+              "color": "#EF4444"
+            },
+            {
+              "name": "Info",
+              "getFromParent": true,
+              "color": "#3B82F6"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Shopping",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#7C2D12",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Cart",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.1 0.1 L 0.2 0.1 L 0.3 0.3 L 0.9 0.3 L 0.8 0.7 L 0.4 0.7 L 0.3 0.5 L 0.2 0.2 L 0.1 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "Bag",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.3 0.2 L 0.7 0.2 L 0.8 0.9 L 0.2 0.9 Z M 0.35 0.2 L 0.35 0.1 L 0.65 0.1 L 0.65 0.2"
+                }
+              ]
+            },
+            {
+              "name": "Price",
+              "getFromParent": true,
+              "shapeType": "rectangle",
+              "cornerRadius": 0.1
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Weather",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#F59E0B",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Sun",
+              "getFromParent": true
+            },
+            {
+              "name": "Moon",
+              "getFromParent": true,
+              "color": "#6366F1"
+            },
+            {
+              "name": "Cloud",
+              "getFromParent": true,
+              "color": "#9CA3AF"
+            },
+            {
+              "name": "Rain",
+              "getFromParent": true,
+              "color": "#3B82F6"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Technology",
+          "properties": {
+            "shapeType": "rectangle",
+            "size": 20,
+            "color": "#1F2937",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2,
+            "cornerRadius": 0.05
+          },
+          "variants": [
+            {
+              "name": "Computer",
+              "getFromParent": true
+            },
+            {
+              "name": "Mobile",
+              "getFromParent": true,
+              "size": 16,
+              "cornerRadius": 0.15
+            },
+            {
+              "name": "Tablet",
+              "getFromParent": true,
+              "size": 24,
+              "cornerRadius": 0.1
+            },
+            {
+              "name": "Watch",
+              "getFromParent": true,
+              "size": 18,
+              "cornerRadius": 0.2
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Security",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#DC2626",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Lock",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.3 0.4 L 0.3 0.3 L 0.7 0.3 L 0.7 0.4 L 0.8 0.4 L 0.8 0.9 L 0.2 0.9 L 0.2 0.4 Z M 0.4 0.3 L 0.4 0.2 L 0.6 0.2 L 0.6 0.3"
+                }
+              ]
+            },
+            {
+              "name": "Unlock",
+              "getFromParent": true,
+              "color": "#10B981",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.3 0.4 L 0.8 0.4 L 0.8 0.9 L 0.2 0.9 L 0.2 0.4 Z M 0.4 0.4 L 0.4 0.2 L 0.6 0.2 L 0.6 0.3"
+                }
+              ]
+            },
+            {
+              "name": "Shield",
+              "getFromParent": true,
+              "color": "#3B82F6",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.8 0.3 L 0.8 0.6 L 0.5 0.9 L 0.2 0.6 L 0.2 0.3 Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Health",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#EF4444",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Heart",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.8 L 0.2 0.5 L 0.2 0.3 L 0.4 0.3 L 0.5 0.4 L 0.6 0.3 L 0.8 0.3 L 0.8 0.5 Z"
+                }
+              ]
+            },
+            {
+              "name": "Cross",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 L 0.6 0.6 L 0.6 0.9 L 0.4 0.9 L 0.4 0.6 L 0.1 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Pulse",
+              "getFromParent": true,
+              "color": "#10B981",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.1 0.5 L 0.3 0.5 L 0.4 0.2 L 0.5 0.8 L 0.6 0.3 L 0.7 0.5 L 0.9 0.5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Transport",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#6366F1",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Car",
+              "getFromParent": true,
+              "shapeType": "rectangle",
+              "cornerRadius": 0.15
+            },
+            {
+              "name": "Plane",
+              "getFromParent": true
+            },
+            {
+              "name": "Train",
+              "getFromParent": true,
+              "color": "#059669"
+            },
+            {
+              "name": "Bike",
+              "getFromParent": true,
+              "color": "#F59E0B"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Education",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#7C3AED",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Book",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.2 L 0.4 0.2 L 0.4 0.8 L 0.2 0.8 Z M 0.6 0.2 L 0.8 0.2 L 0.8 0.8 L 0.6 0.8 Z M 0.5 0.1 L 0.5 0.9"
+                }
+              ]
+            },
+            {
+              "name": "Graduation",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.9 0.3 L 0.5 0.5 L 0.1 0.3 Z M 0.2 0.35 L 0.2 0.7 L 0.5 0.85 L 0.8 0.7 L 0.8 0.35"
+                }
+              ]
+            },
+            {
+              "name": "School",
+              "getFromParent": true,
+              "color": "#059669",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.1 0.9 L 0.9 0.9 L 0.9 0.4 L 0.5 0.1 L 0.1 0.4 Z M 0.3 0.5 L 0.7 0.5 L 0.7 0.8 L 0.3 0.8 Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Gaming",
+          "properties": {
+            "shapeType": "rectangle",
+            "size": 20,
+            "color": "#EC4899",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2,
+            "cornerRadius": 0.25
+          },
+          "variants": [
+            {
+              "name": "Controller",
+              "getFromParent": true
+            },
+            {
+              "name": "Dice",
+              "getFromParent": true,
+              "cornerRadius": 0.1
+            },
+            {
+              "name": "Trophy",
+              "getFromParent": true,
+              "color": "#F59E0B",
+              "useStroke": false,
+              "shapeType": "vector",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.3 0.2 L 0.7 0.2 L 0.7 0.5 L 0.6 0.6 L 0.6 0.7 L 0.7 0.7 L 0.7 0.8 L 0.3 0.8 L 0.3 0.7 L 0.4 0.7 L 0.4 0.6 L 0.3 0.5 Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON", 
+          "name": "[Icon] Food",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#F97316",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Pizza",
+              "getFromParent": true
+            },
+            {
+              "name": "Coffee",
+              "getFromParent": true,
+              "color": "#92400E",
+              "shapeType": "rectangle",
+              "cornerRadius": 0.05
+            },
+            {
+              "name": "Cake",
+              "getFromParent": true,
+              "color": "#EC4899"
+            },
+            {
+              "name": "Apple",
+              "getFromParent": true,
+              "color": "#DC2626"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Time",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#374151",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2
+          },
+          "variants": [
+            {
+              "name": "Clock",
+              "getFromParent": true
+            },
+            {
+              "name": "Calendar",
+              "getFromParent": true,
+              "shapeType": "rectangle",
+              "cornerRadius": 0.05,
+              "color": "#059669"
+            },
+            {
+              "name": "Timer",
+              "getFromParent": true,
+              "color": "#DC2626"
+            },
+            {
+              "name": "Alarm",
+              "getFromParent": true,
+              "color": "#F59E0B"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Nature",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#059669",
+            "opacity": 1,
+            "useStroke": false
+          },
+          "variants": [
+            {
+              "name": "Tree",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.8 0.4 L 0.7 0.4 L 0.9 0.6 L 0.1 0.6 L 0.3 0.4 L 0.2 0.4 Z M 0.45 0.6 L 0.55 0.6 L 0.55 0.9 L 0.45 0.9 Z"
+                }
+              ]
+            },
+            {
+              "name": "Leaf",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.8 L 0.8 0.2 L 0.8 0.4 L 0.6 0.6 L 0.4 0.6 L 0.2 0.8 Z M 0.2 0.8 L 0.6 0.4"
+                }
+              ]
+            },
+            {
+              "name": "Flower",
+              "getFromParent": true,
+              "color": "#EC4899",
+              "shapeType": "ellipse"
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Business",
+          "properties": {
+            "shapeType": "rectangle",
+            "size": 20,
+            "color": "#1F2937",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2,
+            "cornerRadius": 0.05
+          },
+          "variants": [
+            {
+              "name": "Briefcase",
+              "getFromParent": true
+            },
+            {
+              "name": "Chart",
+              "getFromParent": true,
+              "color": "#3B82F6"
+            },
+            {
+              "name": "Target",
+              "getFromParent": true,
+              "color": "#DC2626",
+              "shapeType": "ellipse"
+            },
+            {
+              "name": "Building",
+              "getFromParent": true,
+              "cornerRadius": 0.02
+            }
+          ]
         }
       ]
     }

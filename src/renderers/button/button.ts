@@ -481,45 +481,48 @@ async function addPropertiesToComponentSet(componentSet: ComponentSetNode, compo
           log(`🔧 Implementing INSTANCE_SWAP property: ${propName}`, 'log');
           
           try {
-            // Find the icon ComponentSet on current page by the key specified in config
-            const targetComponentSetName = config.defaultValue;
-            log(`🔍 Looking for ComponentSet: ${targetComponentSetName}`, 'log');
+            // Find ALL icon ComponentSets with [Icon] prefix
+            const iconComponentSets = figma.currentPage.children.filter((node: any) => 
+              node.type === 'COMPONENT_SET' && node.name.startsWith('[Icon]')
+            ) as ComponentSetNode[];
             
-            const iconComponentSet = figma.currentPage.findChild((node: any) => 
-              node.type === 'COMPONENT_SET' && node.name === targetComponentSetName
-            ) as ComponentSetNode | null;
+            log(`🔍 Found ${iconComponentSets.length} icon ComponentSets with [Icon] prefix`, 'log');
+            iconComponentSets.forEach(cs => log(`  - ${cs.name}`, 'log'));
             
-            if (iconComponentSet) {
-              log(`✅ Found icon ComponentSet: ${iconComponentSet.name} (key: ${iconComponentSet.key})`, 'log');
+            if (iconComponentSets.length > 0) {
+              // Use first ComponentSet as default, but include all in preferredValues
+              const defaultIconComponentSet = iconComponentSets[0];
+              const defaultIconComponent = defaultIconComponentSet.defaultVariant;
               
-              // Get the default component from the ComponentSet (first variant)
-              const defaultIconComponent = iconComponentSet.defaultVariant;
               if (defaultIconComponent) {
-                log(`✅ Found default icon variant: ${defaultIconComponent.name}`, 'log');
-                log(`🔍 Default component - ID: ${defaultIconComponent.id}, Key: ${defaultIconComponent.key}`, 'log');
-                log(`🔍 ComponentSet - ID: ${iconComponentSet.id}, Key: ${iconComponentSet.key}`, 'log');
+                log(`✅ Using default from: ${defaultIconComponentSet.name}`, 'log');
                 
-                // Create INSTANCE_SWAP property with preferredValues
-                const preferredValues = config.preferredValues?.map((pv: any) => ({
-                  type: pv.type,
-                  key: iconComponentSet.key // Use the actual ComponentSet key
-                })) || [];
+                // Create preferredValues from ALL icon ComponentSets  
+                const preferredValues: any[] = [];
                 
-                // Try using component ID instead of key for INSTANCE_SWAP
+                iconComponentSets.forEach(componentSet => {
+                  preferredValues.push({
+                    type: 'COMPONENT_SET' as const,
+                    key: componentSet.id // Use ComponentSet ID
+                  });
+                  log(`📋 Added ComponentSet to preferred values: ${componentSet.name} (ID: ${componentSet.id})`, 'log');
+                });
+                
+                log(`🔧 Creating INSTANCE_SWAP with ${preferredValues.length} ComponentSets as preferred values`, 'log');
+                
                 propertyIds[propName] = componentSet.addComponentProperty(
                   propName, 
                   'INSTANCE_SWAP', 
-                  defaultIconComponent.id, // Use component ID instead of key
-                  { preferredValues }
+                  defaultIconComponent.id, // Default variant ID from first ComponentSet
+                  { preferredValues } // All icon ComponentSets as preferred values
                 );
                 
-                log(`✅ Created INSTANCE_SWAP property ${propName} with ID: ${defaultIconComponent.id}`, 'log');
-                log(`🔧 PreferredValues: ${JSON.stringify(preferredValues)}`, 'log');
+                log(`✅ Created INSTANCE_SWAP property ${propName} with ${preferredValues.length} ComponentSets`, 'log');
               } else {
-                log(`❌ No default variant found in ComponentSet: ${targetComponentSetName}`, 'error');
+                log(`❌ No default variant found in ComponentSet: ${defaultIconComponentSet.name}`, 'error');
               }
             } else {
-              log(`❌ Icon ComponentSet not found: ${targetComponentSetName}. Available components:`, 'error');
+              log(`❌ No icon ComponentSets found with [Icon] prefix. Available components:`, 'error');
               figma.currentPage.children.forEach(child => {
                 if (child.type === 'COMPONENT_SET') {
                   log(`  - ComponentSet: ${child.name}`, 'log');
