@@ -1,0 +1,246 @@
+{
+  "version": "1.0",
+  "dependencies": [],
+  "pages": [
+    {
+      "name": "Icon System",
+      "children": [
+        {
+          "type": "ICON",
+          "name": "[Icon] Arrow System",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#000000",
+            "opacity": 1,
+            "useStroke": false,
+            "strokeWidth": 2,
+            "strokeCap": "ROUND",
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 L 0.3 0.2 Z"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "ArrowRight-Small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "ArrowRight-Medium", 
+              "getFromParent": true
+            },
+            {
+              "name": "ArrowRight-Large",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "ArrowLeft-Small",
+              "getFromParent": true,
+              "size": 16,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 L 0.7 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "ArrowLeft-Medium",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO", 
+                  "data": "M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 L 0.7 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "ArrowLeft-Large",
+              "getFromParent": true,
+              "size": 24,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 L 0.7 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "ArrowRight-Red",
+              "getFromParent": true,
+              "color": "#EF4444"
+            },
+            {
+              "name": "ArrowLeft-Blue",
+              "getFromParent": true,
+              "color": "#3B82F6",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 L 0.7 0.2 Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON", 
+          "name": "[Icon] Action",
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#6B7280",
+            "opacity": 1,
+            "useStroke": false,
+            "strokeWidth": 2
+          },
+          "variants": [
+            {
+              "name": "Plus",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 L 0.6 0.6 L 0.6 0.9 L 0.4 0.9 L 0.4 0.6 L 0.1 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Plus-Large",
+              "getFromParent": true,
+              "size": 32,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 L 0.6 0.6 L 0.6 0.9 L 0.4 0.9 L 0.4 0.6 L 0.1 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Minus",
+              "getFromParent": true,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.1 0.4 L 0.9 0.4 L 0.9 0.6 L 0.1 0.6 Z"
+                }
+              ]
+            },
+            {
+              "name": "Check-Success",
+              "getFromParent": true,
+              "color": "#10B981",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.5 L 0.4 0.7 L 0.8 0.3 L 0.9 0.4 L 0.4 0.9 L 0.1 0.6 Z"
+                }
+              ]
+            },
+            {
+              "name": "XClose-Stroke",
+              "getFromParent": true,
+              "useStroke": true,
+              "strokeCap": "ROUND",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO", 
+                  "data": "M 0.2 0.2 L 0.8 0.8 M 0.8 0.2 L 0.2 0.8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Interface",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20,
+            "color": "#374151",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2
+          },
+          "variants": [
+            {
+              "name": "Search",
+              "getFromParent": true
+            },
+            {
+              "name": "Search-Large",
+              "getFromParent": true,
+              "size": 28
+            },
+            {
+              "name": "Settings",
+              "getFromParent": true,
+              "color": "#6B7280"
+            },
+            {
+              "name": "User-Profile",
+              "getFromParent": true,
+              "color": "#7C3AED"
+            },
+            {
+              "name": "Heart-Filled",
+              "getFromParent": true,
+              "color": "#EC4899",
+              "useStroke": false
+            },
+            {
+              "name": "Star-Filled",
+              "getFromParent": false,
+              "shapeType": "polygon",
+              "size": 20,
+              "color": "#F59E0B",
+              "useStroke": false
+            }
+          ]
+        },
+        {
+          "type": "ICON",
+          "name": "[Icon] Communication",
+          "properties": {
+            "shapeType": "rectangle",
+            "size": 20,
+            "color": "#DC2626",
+            "opacity": 1,
+            "useStroke": true,
+            "strokeWidth": 2,
+            "cornerRadius": 0.05
+          },
+          "variants": [
+            {
+              "name": "Mail",
+              "getFromParent": true
+            },
+            {
+              "name": "Mail-Large",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "Phone",
+              "getFromParent": true,
+              "color": "#059669",
+              "cornerRadius": 0.1
+            },
+            {
+              "name": "Phone-Small",
+              "getFromParent": true,
+              "size": 16,
+              "color": "#059669",
+              "cornerRadius": 0.1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

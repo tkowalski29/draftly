@@ -1,4 +1,4 @@
-import { loadFontSafely } from "../../main/utils";
+import { loadFontSafely } from "../../main/utils/index";
 
 export async function renderFormField(nodeData: any): Promise<FrameNode> {
   const formField = figma.createFrame();

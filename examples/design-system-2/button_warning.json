@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "pages": [
+    {
+      "name": "Button Warning Component",
+      "children": [
+        {
+          "type": "BUTTON",
+          "name": "Button Warning Component",
+          "properties": {
+            "text": "Button"
+          },
+          "config": {
+            "states": {
+              "Default": {
+                "name": "Default",
+                "shadowOpacity": 0
+              },
+              "Hover": {
+                "name": "Hover", 
+                "shadowOpacity": 0.15
+              },
+              "Active": {
+                "name": "Active",
+                "shadowOpacity": 0
+              },
+              "Focus": {
+                "name": "Focus",
+                "shadowOpacity": 0,
+                "hasFocusRing": true
+              },
+              "Disabled": {
+                "name": "Disabled",
+                "opacity": 0.6,
+                "shadowOpacity": 0
+              },
+              "Loading": {
+                "name": "Loading",
+                "shadowOpacity": 0
+              }
+            },
+            "sizes": {
+              "XSmall": {
+                "name": "XSmall",
+                "paddingX": 8,
+                "paddingY": 4,
+                "fontSize": 12,
+                "height": 24,
+                "iconSize": 12
+              },
+              "Small": {
+                "name": "Small",
+                "paddingX": 12,
+                "paddingY": 8,
+                "fontSize": 14,
+                "height": 32,
+                "iconSize": 16
+              },
+              "Medium": {
+                "name": "Medium",
+                "paddingX": 16,
+                "paddingY": 10,
+                "fontSize": 16,
+                "height": 40,
+                "iconSize": 20
+              },
+              "Large": {
+                "name": "Large",
+                "paddingX": 20,
+                "paddingY": 12,
+                "fontSize": 18,
+                "height": 48,
+                "iconSize": 24
+              },
+              "XLarge": {
+                "name": "XLarge",
+                "paddingX": 24,
+                "paddingY": 16,
+                "fontSize": 20,
+                "height": 56,
+                "iconSize": 28
+              }
+            },
+            "colors": {
+              "Warning": {
+                "name": "Warning",
+                "default": { "r": 1, "g": 0.76, "b": 0.03 },
+                "hover": { "r": 0.85, "g": 0.65, "b": 0.03 },
+                "active": { "r": 0.75, "g": 0.55, "b": 0.03 },
+                "focus": { "r": 1, "g": 0.76, "b": 0.03 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 1, "g": 0.76, "b": 0.03 },
+                "textColor": { "r": 0.11, "g": 0.11, "b": 0.11 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

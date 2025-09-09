@@ -1,4 +1,4 @@
-import { hexToRgb } from "../../main/utils";
+import { hexToRgb } from "../../main/utils/index";
 
 export async function renderDivider(nodeData: any): Promise<FrameNode> {
   const divider = figma.createFrame();

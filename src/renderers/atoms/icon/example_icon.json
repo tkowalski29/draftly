@@ -1,0 +1,309 @@
+{
+  "version": "1.0.0",
+  "pages": [
+    {
+      "name": "Icon Examples",
+      "nodes": [
+        {
+          "name": "[Icon] Basic Rectangle",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "rectangle",
+            "color": "#3B82F6",
+            "size": 24
+          },
+          "variants": [
+            {
+              "name": "small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "large",
+              "getFromParent": true,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Rounded Rectangle",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "rectangle",
+            "color": "#10B981",
+            "size": 24,
+            "cornerRadius": 0.25
+          },
+          "variants": [
+            {
+              "name": "rounded-small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "rounded-medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "rounded-large",
+              "getFromParent": true,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Circle",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "ellipse",
+            "color": "#F59E0B",
+            "size": 24
+          },
+          "variants": [
+            {
+              "name": "circle-small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "circle-medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "circle-large",
+              "getFromParent": true,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Triangle",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "polygon",
+            "color": "#EF4444",
+            "size": 24
+          },
+          "variants": [
+            {
+              "name": "triangle-small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "triangle-medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "triangle-large",
+              "getFromParent": true,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Arrow - Vector",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "vector",
+            "color": "#8B5CF6",
+            "size": 24,
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.5 0.1 L 0.9 0.5 L 0.5 0.9 L 0.4 0.8 L 0.7 0.5 L 0.4 0.2 Z"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "arrow-right-small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "arrow-right-medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "arrow-right-large",
+              "getFromParent": true,
+              "size": 32
+            },
+            {
+              "name": "arrow-left-medium",
+              "getFromParent": true,
+              "size": 24,
+              "rotation": 180
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Plus - Vector",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "vector",
+            "color": "#06B6D4",
+            "size": 24,
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 L 0.6 0.6 L 0.6 0.9 L 0.4 0.9 L 0.4 0.6 L 0.1 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "plus-small",
+              "getFromParent": true,
+              "size": 16
+            },
+            {
+              "name": "plus-medium",
+              "getFromParent": true,
+              "size": 24
+            },
+            {
+              "name": "plus-large",
+              "getFromParent": true,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Star - Vector",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "vector",
+            "color": "#F59E0B",
+            "size": 24,
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.5 0.1 L 0.6 0.4 L 0.9 0.4 L 0.7 0.6 L 0.8 0.9 L 0.5 0.7 L 0.2 0.9 L 0.3 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "star-filled",
+              "getFromParent": true
+            },
+            {
+              "name": "star-outline",
+              "getFromParent": true,
+              "useStroke": true,
+              "strokeWidth": 2
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Heart - Vector",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "vector",
+            "color": "#EC4899",
+            "size": 24,
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.5 0.8 C 0.3 0.6 0.1 0.4 0.1 0.3 C 0.1 0.1 0.3 0.1 0.5 0.3 C 0.7 0.1 0.9 0.1 0.9 0.3 C 0.9 0.4 0.7 0.6 0.5 0.8 Z"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "heart-filled",
+              "getFromParent": true
+            },
+            {
+              "name": "heart-outline",
+              "getFromParent": true,
+              "useStroke": true,
+              "strokeWidth": 2
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Check - Vector",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "vector",
+            "color": "#10B981",
+            "size": 24,
+            "useStroke": true,
+            "strokeWidth": 3,
+            "strokeCap": "ROUND",
+            "vectorPaths": [
+              {
+                "windingRule": "NONZERO",
+                "data": "M 0.2 0.5 L 0.4 0.7 L 0.8 0.3"
+              }
+            ]
+          },
+          "variants": [
+            {
+              "name": "check-thin",
+              "getFromParent": true,
+              "strokeWidth": 2
+            },
+            {
+              "name": "check-medium",
+              "getFromParent": true,
+              "strokeWidth": 3
+            },
+            {
+              "name": "check-thick",
+              "getFromParent": true,
+              "strokeWidth": 4
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Single Color",
+          "type": "ICON",
+          "properties": {
+            "shapeType": "ellipse",
+            "size": 20
+          },
+          "variants": [
+            {
+              "name": "blue",
+              "getFromParent": true,
+              "color": "#3B82F6"
+            },
+            {
+              "name": "green",
+              "getFromParent": true,
+              "color": "#10B981"
+            },
+            {
+              "name": "red",
+              "getFromParent": true,
+              "color": "#EF4444"
+            },
+            {
+              "name": "yellow",
+              "getFromParent": true,
+              "color": "#F59E0B"
+            },
+            {
+              "name": "purple",
+              "getFromParent": true,
+              "color": "#8B5CF6"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

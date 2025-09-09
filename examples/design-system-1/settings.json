@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "designSystem": {
+    "name": "Design System 1",
+    "pageName": "🤖 Design System",
+    "organization": {
+      "enableSectionCards": true,
+      "cardBackground": "#FFFFFF",
+      "cardCornerRadius": 12,
+      "cardShadow": {
+        "type": "DROP_SHADOW",
+        "color": { "r": 0, "g": 0, "b": 0, "a": 0.08 },
+        "offset": { "x": 0, "y": 2 },
+        "radius": 8
+      },
+      "spacing": {
+        "cardPadding": 32,
+        "columnSpacing": 40,
+        "rowSpacing": 60,
+        "sectionSpacing": 100
+      }
+    },
+    "atomicDesign": {
+      "enabled": true,
+      "hierarchy": {
+        "atoms": {
+          "level": 0,
+          "types": ["ICON", "BADGE", "AVATAR", "INPUT", "TEXT", "DIVIDER"]
+        },
+        "molecules": {
+          "level": 1,
+          "types": ["BUTTON", "CARD", "FORM_FIELD"]
+        },
+        "organisms": {
+          "level": 2,
+          "types": ["HEADER", "PRODUCT_GRID"]
+        }
+      }
+    }
+  },
+  "rendering": {
+    "createNewPage": true,
+    "switchToPageAfterCreation": true,
+    "clearExistingContent": false,
+    "preserveExistingPages": true
+  },
+  "dependencies": {
+    "loadOrder": [
+      "icons.json", 
+      "button.json"
+    ],
+    "strictOrdering": true
+  }
+}

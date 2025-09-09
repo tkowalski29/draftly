@@ -1,4 +1,4 @@
-import { loadFontSafely, hexToRgb } from "../../main/utils";
+import { loadFontSafely, hexToRgb } from "../../main/utils/index";
 
 export async function renderAvatar(nodeData: any): Promise<FrameNode> {
   const avatar = figma.createFrame();

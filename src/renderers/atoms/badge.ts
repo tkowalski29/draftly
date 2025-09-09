@@ -1,4 +1,4 @@
-import { loadFontSafely } from "../../main/utils";
+import { loadFontSafely } from "../../main/utils/index";
 
 export async function renderBadge(nodeData: any): Promise<FrameNode> {
   const badge = figma.createFrame();

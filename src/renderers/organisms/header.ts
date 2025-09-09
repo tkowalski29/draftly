@@ -1,4 +1,4 @@
-import { hexToRgb,loadFontSafely } from "../../main/utils";
+import { hexToRgb,loadFontSafely } from "../../main/utils/index";
 
 export async function renderHeader(nodeData: any): Promise<FrameNode> {
   const header = figma.createFrame();

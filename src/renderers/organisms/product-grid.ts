@@ -1,4 +1,4 @@
-import { loadFontSafely } from "../../main/utils";
+import { loadFontSafely } from "../../main/utils/index";
 
 export async function renderProductGrid(nodeData: any): Promise<FrameNode> {
   const grid = figma.createFrame();

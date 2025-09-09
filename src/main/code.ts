@@ -1,6 +1,6 @@
 import { parseAndValidate } from './parser';
 import { renderTree } from './renderer';
-import { log } from './utils';
+import { log } from './utils/index';
 import { logger } from './logger';
 
 console.log('🚀 DRAFTLY - Plugin code loaded!');

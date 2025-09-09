@@ -1,4 +1,4 @@
-import { log } from "./utils";
+import { log } from "./utils/index";
 
 // Ten plik będzie zawierał logikę do parsowania i walidacji JSONa
 

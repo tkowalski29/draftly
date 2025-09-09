@@ -1,0 +1,1990 @@
+{
+  "session": "2025-09-09_14-54-49",
+  "generated": "2025-09-09T12:55:08.507Z",
+  "totalLogs": 329,
+  "logs": [
+    {
+      "timestamp": "2025-09-09T12:54:58.764Z",
+      "type": "info",
+      "message": "📨 Otrzymano wiadomość typu: render-folder",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.764Z",
+      "type": "info",
+      "message": "📁 Renderowanie folderu w trybie: design-system",
+      "data": null,
+      "importType": "design-system",
+      "filesCount": 3,
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.764Z",
+      "type": "info",
+      "message": "📊 Znaleziono 3 plików",
+      "data": null,
+      "importType": "design-system",
+      "filesCount": 3,
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.765Z",
+      "type": "info",
+      "message": "Rozpoczynam renderowanie...",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.767Z",
+      "type": "info",
+      "message": "🎨 Rozpoczynam renderowanie Design Systemu z 3 plików",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.768Z",
+      "type": "info",
+      "message": "⚙️ Załadowano ustawienia z settings.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.799Z",
+      "type": "info",
+      "message": "📄 Utworzono stronę: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:58.800Z",
+      "type": "info",
+      "message": "🔍 Próba 1/5: Sprawdzanie czy strona 🤖 Design System istnieje...",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:59.002Z",
+      "type": "warn",
+      "message": "⚠️ Próba 1: Nie udało się przełączyć na stronę 🤖 Design System, aktualnie: Main",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:59.002Z",
+      "type": "info",
+      "message": "⏰ Czekam 2s przed następną próbą...",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:54:59.002Z",
+      "type": "info",
+      "message": "🔍 Próba 2/5: Sprawdzanie czy strona 🤖 Design System istnieje...",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.005Z",
+      "type": "info",
+      "message": "✅ Strona 🤖 Design System zweryfikowana i gotowa (próba 2)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.005Z",
+      "type": "info",
+      "message": "📋 Settings order: icons.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.005Z",
+      "type": "info",
+      "message": "📋 Settings order: button.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.006Z",
+      "type": "info",
+      "message": "🔄 Settings-based order: icons.json → button.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.006Z",
+      "type": "info",
+      "message": "📝 Przetwarzam plik: icons.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.006Z",
+      "type": "info",
+      "message": "📝 Przetwarzam plik: button.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.007Z",
+      "type": "info",
+      "message": "⚙️ Using atomic design order from settings",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.007Z",
+      "type": "info",
+      "message": "🔧 Added ICON to render order from icons.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.008Z",
+      "type": "info",
+      "message": "🔧 Added BUTTON to render order from button.json",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.008Z",
+      "type": "info",
+      "message": "📦 Renderuję 4 komponentów typu ICON",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.020Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering ICON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.020Z",
+      "type": "info",
+      "message": "🔧 About to call renderIcon with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.022Z",
+      "type": "info",
+      "message": "🔧 renderIcon called with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.022Z",
+      "type": "info",
+      "message": "🔧 Current page at start of renderIcon: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.028Z",
+      "type": "info",
+      "message": "🔧 Switched to target page: 🤖 Design System for icon creation",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.030Z",
+      "type": "info",
+      "message": "🔧 Verify page after switch: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.037Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowRight-Small: shapeType=vector, size=16, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.043Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 16, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.048Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=16, original=\"M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 ...\", scaled=\"M 3.2 4.8 L 9.6 8 L 3.2 11.2 L 4.8 12.8 L 12.8 8 L...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.056Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 16x16",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.069Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowRight-Medium: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.071Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.075Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 ...\", scaled=\"M 4 6 L 12 10 L 4 14 L 6 16 L 16 10 L 6 4 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.078Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.087Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowRight-Large: shapeType=vector, size=24, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.089Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 24, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.092Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=24, original=\"M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 ...\", scaled=\"M 4.800000000000001 7.199999999999999 L 14.3999999...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.096Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 24x24",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.106Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowLeft-Small: shapeType=vector, size=16, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.110Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 16, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.113Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=16, original=\"M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 ...\", scaled=\"M 12.8 4.8 L 6.4 8 L 12.8 11.2 L 11.2 12.8 L 3.2 8...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.116Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 16x16",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.121Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowLeft-Medium: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.124Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.127Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 ...\", scaled=\"M 16 6 L 8 10 L 16 14 L 14 16 L 4 10 L 14 4 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.131Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.140Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowLeft-Large: shapeType=vector, size=24, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.142Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 24, color: #000000, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.147Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=24, original=\"M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 ...\", scaled=\"M 19.200000000000003 7.199999999999999 L 9.6000000...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.152Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 24x24",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.157Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowRight-Red: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.159Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #EF4444, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.162Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 ...\", scaled=\"M 4 6 L 12 10 L 4 14 L 6 16 L 16 10 L 6 4 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.167Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.176Z",
+      "type": "info",
+      "message": "✅ Merged variant ArrowLeft-Blue: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.178Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #3B82F6, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.179Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.8 0.3 L 0.4 0.5 L 0.8 0.7 L 0.7 0.8 L 0.2 0.5 ...\", scaled=\"M 16 6 L 8 10 L 16 14 L 14 16 L 4 10 L 14 4 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.182Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.197Z",
+      "type": "info",
+      "message": "🔧 Final page check before ComponentSet creation: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.198Z",
+      "type": "info",
+      "message": "🔧 Creating ComponentSet with 8 variants",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.219Z",
+      "type": "info",
+      "message": "✅ ComponentSet created: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.220Z",
+      "type": "info",
+      "message": "🔧 renderIcon returned, currentPage is now: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.220Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.220Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.221Z",
+      "type": "info",
+      "message": "✅ Stworzono [Icon] Arrow System ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.222Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering ICON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.222Z",
+      "type": "info",
+      "message": "🔧 About to call renderIcon with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.223Z",
+      "type": "info",
+      "message": "🔧 renderIcon called with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.224Z",
+      "type": "info",
+      "message": "🔧 Current page at start of renderIcon: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.232Z",
+      "type": "info",
+      "message": "🔧 Switched to target page: 🤖 Design System for icon creation",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.233Z",
+      "type": "info",
+      "message": "🔧 Verify page after switch: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.239Z",
+      "type": "info",
+      "message": "✅ Merged variant Plus: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.241Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #6B7280, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.242Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 ...\", scaled=\"M 8 2 L 12 2 L 12 8 L 18 8 L 18 12 L 12 12 L 12 18...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.245Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.253Z",
+      "type": "info",
+      "message": "✅ Merged variant Plus-Large: shapeType=vector, size=32, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.254Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 32, color: #6B7280, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.256Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=32, original=\"M 0.4 0.1 L 0.6 0.1 L 0.6 0.4 L 0.9 0.4 L 0.9 0.6 ...\", scaled=\"M 12.8 3.2 L 19.2 3.2 L 19.2 12.8 L 28.8 12.8 L 28...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.258Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 32x32",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.268Z",
+      "type": "info",
+      "message": "✅ Merged variant Minus: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.271Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #6B7280, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.273Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.1 0.4 L 0.9 0.4 L 0.9 0.6 L 0.1 0.6 Z...\", scaled=\"M 2 8 L 18 8 L 18 12 L 2 12 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.278Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.286Z",
+      "type": "info",
+      "message": "✅ Merged variant Check-Success: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.288Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #10B981, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.291Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.2 0.5 L 0.4 0.7 L 0.8 0.3 L 0.9 0.4 L 0.4 0.9 ...\", scaled=\"M 4 10 L 8 14 L 16 6 L 18 8 L 8 18 L 2 12 Z...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.297Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.306Z",
+      "type": "info",
+      "message": "✅ Merged variant XClose-Stroke: shapeType=vector, size=20, hasVectorPaths=true",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.307Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: vector, size: 20, color: #6B7280, vectorPaths: 1",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.309Z",
+      "type": "info",
+      "message": "🔧 Scaling vectorPath[0]: size=20, original=\"M 0.2 0.2 L 0.8 0.8 M 0.8 0.2 L 0.2 0.8...\", scaled=\"M 4 4 L 16 16 M 16 4 L 4 16...\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.313Z",
+      "type": "info",
+      "message": "✅ Vector created with 1 paths, size: 20x20",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.323Z",
+      "type": "info",
+      "message": "🔧 Final page check before ComponentSet creation: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.323Z",
+      "type": "info",
+      "message": "🔧 Creating ComponentSet with 5 variants",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.335Z",
+      "type": "info",
+      "message": "✅ ComponentSet created: [Icon] Action",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.336Z",
+      "type": "info",
+      "message": "🔧 renderIcon returned, currentPage is now: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.336Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.336Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.337Z",
+      "type": "info",
+      "message": "✅ Stworzono [Icon] Action ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.338Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering ICON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.338Z",
+      "type": "info",
+      "message": "🔧 About to call renderIcon with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.344Z",
+      "type": "info",
+      "message": "🔧 renderIcon called with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.346Z",
+      "type": "info",
+      "message": "🔧 Current page at start of renderIcon: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.351Z",
+      "type": "info",
+      "message": "🔧 Switched to target page: 🤖 Design System for icon creation",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.351Z",
+      "type": "info",
+      "message": "🔧 Verify page after switch: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.357Z",
+      "type": "info",
+      "message": "✅ Merged variant Search: shapeType=ellipse, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.359Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: ellipse, size: 20, color: #374151, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.372Z",
+      "type": "info",
+      "message": "✅ Merged variant Search-Large: shapeType=ellipse, size=28, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.374Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: ellipse, size: 28, color: #374151, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.384Z",
+      "type": "info",
+      "message": "✅ Merged variant Settings: shapeType=ellipse, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.387Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: ellipse, size: 20, color: #6B7280, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.398Z",
+      "type": "info",
+      "message": "✅ Merged variant User-Profile: shapeType=ellipse, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.401Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: ellipse, size: 20, color: #7C3AED, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.410Z",
+      "type": "info",
+      "message": "✅ Merged variant Heart-Filled: shapeType=ellipse, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.411Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: ellipse, size: 20, color: #EC4899, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.420Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: polygon, size: 20, color: #F59E0B, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.433Z",
+      "type": "info",
+      "message": "🔧 Final page check before ComponentSet creation: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.434Z",
+      "type": "info",
+      "message": "🔧 Creating ComponentSet with 6 variants",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.445Z",
+      "type": "info",
+      "message": "✅ ComponentSet created: [Icon] Interface",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.446Z",
+      "type": "info",
+      "message": "🔧 renderIcon returned, currentPage is now: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.446Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.446Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.448Z",
+      "type": "info",
+      "message": "✅ Stworzono [Icon] Interface ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.448Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering ICON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.449Z",
+      "type": "info",
+      "message": "🔧 About to call renderIcon with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.450Z",
+      "type": "info",
+      "message": "🔧 renderIcon called with targetPage: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.451Z",
+      "type": "info",
+      "message": "🔧 Current page at start of renderIcon: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.459Z",
+      "type": "info",
+      "message": "🔧 Switched to target page: 🤖 Design System for icon creation",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.460Z",
+      "type": "info",
+      "message": "🔧 Verify page after switch: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.463Z",
+      "type": "info",
+      "message": "✅ Merged variant Mail: shapeType=rectangle, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.465Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: rectangle, size: 20, color: #DC2626, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.477Z",
+      "type": "info",
+      "message": "✅ Merged variant Mail-Large: shapeType=rectangle, size=24, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.478Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: rectangle, size: 24, color: #DC2626, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.489Z",
+      "type": "info",
+      "message": "✅ Merged variant Phone: shapeType=rectangle, size=20, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.490Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: rectangle, size: 20, color: #059669, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.507Z",
+      "type": "info",
+      "message": "✅ Merged variant Phone-Small: shapeType=rectangle, size=16, hasVectorPaths=false",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.510Z",
+      "type": "info",
+      "message": "🎨 Creating icon shape: rectangle, size: 16, color: #059669, vectorPaths: 0",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.523Z",
+      "type": "info",
+      "message": "🔧 Final page check before ComponentSet creation: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.523Z",
+      "type": "info",
+      "message": "🔧 Creating ComponentSet with 4 variants",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.533Z",
+      "type": "info",
+      "message": "✅ ComponentSet created: [Icon] Communication",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.533Z",
+      "type": "info",
+      "message": "🔧 renderIcon returned, currentPage is now: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.533Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.533Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.534Z",
+      "type": "info",
+      "message": "✅ Stworzono [Icon] Communication ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.536Z",
+      "type": "info",
+      "message": "📦 Renderuję 2 komponentów typu BUTTON",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.545Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering BUTTON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.546Z",
+      "type": "info",
+      "message": "🔧 Creating Button ComponentSet with properties system",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.551Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-medium: state=default, size=medium, color=#3B82F6",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.582Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.881Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.883Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-medium as [X] default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.884Z",
+      "type": "info",
+      "message": "✅ Merged button variant hover-medium: state=hover, size=medium, color=#2563EB",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:01.896Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.153Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.155Z",
+      "type": "info",
+      "message": "🎨 Created button variant: hover-medium as [X] hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.157Z",
+      "type": "info",
+      "message": "✅ Merged button variant active-medium: state=active, size=medium, color=#1D4ED8",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.166Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.343Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.345Z",
+      "type": "info",
+      "message": "🎨 Created button variant: active-medium as [X] active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.347Z",
+      "type": "info",
+      "message": "✅ Merged button variant focus-medium: state=focus, size=medium, color=#3B82F6",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.360Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.605Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.606Z",
+      "type": "info",
+      "message": "🎨 Created button variant: focus-medium as [X] focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.608Z",
+      "type": "info",
+      "message": "✅ Merged button variant disabled-medium: state=disabled, size=medium, color=#E5E7EB",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.617Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.817Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.819Z",
+      "type": "info",
+      "message": "🎨 Created button variant: disabled-medium as [X] disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.820Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-small: state=default, size=small, color=#3B82F6",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:02.830Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.086Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.089Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-small as [X] default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.091Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-large: state=default, size=large, color=#3B82F6",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.108Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.439Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.441Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-large as [X] default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.457Z",
+      "type": "info",
+      "message": "🔍 ComponentSet has 7 children",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.457Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.458Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-medium\" → \"Property 1=default-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.458Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] hover-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.459Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] hover-medium\" → \"Property 1=hover-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.459Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] active-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.459Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] active-medium\" → \"Property 1=active-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.460Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] focus-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.460Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] focus-medium\" → \"Property 1=focus-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.461Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] disabled-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.461Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] disabled-medium\" → \"Property 1=disabled-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.461Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-small\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.462Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-small\" → \"Property 1=default-small\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.462Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-large\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.462Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-large\" → \"Property 1=default-large\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.463Z",
+      "type": "info",
+      "message": "📋 Adding properties to ComponentSet: [Button] System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.463Z",
+      "type": "info",
+      "message": "✅ VARIANT property recognized: size",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.463Z",
+      "type": "info",
+      "message": "✅ VARIANT property recognized: color",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.464Z",
+      "type": "info",
+      "message": "✅ VARIANT property recognized: state",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.476Z",
+      "type": "info",
+      "message": "✅ Added BOOLEAN property: enableIconLeft with ID: enableIconLeft#32:320",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.501Z",
+      "type": "info",
+      "message": "✅ Added BOOLEAN property: enableIconRight with ID: enableIconRight#32:328",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.506Z",
+      "type": "info",
+      "message": "✅ Added BOOLEAN property: addLineBeforeIconRight with ID: addLineBeforeIconRight#32:336",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.516Z",
+      "type": "info",
+      "message": "✅ Added BOOLEAN property: addLineBeforeIconLeft with ID: addLineBeforeIconLeft#32:344",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.517Z",
+      "type": "info",
+      "message": "🔧 Implementing INSTANCE_SWAP property: iconLeft",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.517Z",
+      "type": "info",
+      "message": "🔍 Looking for ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.518Z",
+      "type": "info",
+      "message": "✅ Found icon ComponentSet: [Icon] Arrow System (key: 59a5991a4928c7cd620b78e2ca9a2454ee816f37)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.518Z",
+      "type": "info",
+      "message": "✅ Found default icon variant: Icon=ArrowRight, Size=Small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.519Z",
+      "type": "info",
+      "message": "🔍 Default component - ID: 32:2376, Key: c5d9f442141952bda0628281842bdfa5826f528b",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.519Z",
+      "type": "info",
+      "message": "🔍 ComponentSet - ID: 32:2392, Key: 59a5991a4928c7cd620b78e2ca9a2454ee816f37",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.536Z",
+      "type": "info",
+      "message": "✅ Created INSTANCE_SWAP property iconLeft with ID: 32:2376",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.536Z",
+      "type": "info",
+      "message": "🔧 PreferredValues: [{\"type\":\"COMPONENT_SET\",\"key\":\"59a5991a4928c7cd620b78e2ca9a2454ee816f37\"}]",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.536Z",
+      "type": "info",
+      "message": "🔧 Implementing INSTANCE_SWAP property: iconRight",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.536Z",
+      "type": "info",
+      "message": "🔍 Looking for ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.537Z",
+      "type": "info",
+      "message": "✅ Found icon ComponentSet: [Icon] Arrow System (key: 59a5991a4928c7cd620b78e2ca9a2454ee816f37)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.537Z",
+      "type": "info",
+      "message": "✅ Found default icon variant: Icon=ArrowRight, Size=Small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.537Z",
+      "type": "info",
+      "message": "🔍 Default component - ID: 32:2376, Key: c5d9f442141952bda0628281842bdfa5826f528b",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.537Z",
+      "type": "info",
+      "message": "🔍 ComponentSet - ID: 32:2392, Key: 59a5991a4928c7cd620b78e2ca9a2454ee816f37",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.548Z",
+      "type": "info",
+      "message": "✅ Created INSTANCE_SWAP property iconRight with ID: 32:2376",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.548Z",
+      "type": "info",
+      "message": "🔧 PreferredValues: [{\"type\":\"COMPONENT_SET\",\"key\":\"59a5991a4928c7cd620b78e2ca9a2454ee816f37\"}]",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.582Z",
+      "type": "info",
+      "message": "✅ Added TEXT property: text with ID: text#32:368",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.583Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.587Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.591Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.597Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.616Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.622Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.626Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.629Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.629Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.635Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.640Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.648Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.651Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.657Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.662Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.665Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.665Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.668Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.673Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.678Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.681Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.684Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.688Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.691Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.691Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.694Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.698Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.701Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.706Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.709Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.715Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.718Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.718Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.721Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.725Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.731Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.735Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.739Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.743Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.747Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.748Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.752Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.755Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.760Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.764Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.768Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.772Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.775Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.775Z",
+      "type": "info",
+      "message": "🔗 Binding properties in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.779Z",
+      "type": "info",
+      "message": "✅ Bound text property in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.783Z",
+      "type": "info",
+      "message": "✅ Bound Left Icon Instance visibility in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.787Z",
+      "type": "info",
+      "message": "✅ Bound Right Icon Instance visibility in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.791Z",
+      "type": "info",
+      "message": "✅ Bound iconLeft INSTANCE_SWAP in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.794Z",
+      "type": "info",
+      "message": "✅ Bound iconRight INSTANCE_SWAP in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.796Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Left Icon visibility in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.802Z",
+      "type": "info",
+      "message": "✅ Bound Line Before Right Icon visibility in variant: Property 1=default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.802Z",
+      "type": "info",
+      "message": "✅ All properties bound successfully using property IDs in ComponentSet",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.802Z",
+      "type": "info",
+      "message": "✅ Properties added to ComponentSet and bound to variant elements",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.803Z",
+      "type": "info",
+      "message": "✅ Button ComponentSet created with properties: [Button] System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.803Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.803Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.805Z",
+      "type": "info",
+      "message": "✅ Stworzono [Button] System ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.805Z",
+      "type": "info",
+      "message": "🔍 Current page before rendering BUTTON: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.806Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-medium: state=default, size=medium, color=#F59E0B",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:03.816Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.129Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.131Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-medium as [X] default-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.132Z",
+      "type": "info",
+      "message": "✅ Merged button variant hover-medium: state=hover, size=medium, color=#D97706",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.144Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.399Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.402Z",
+      "type": "info",
+      "message": "🎨 Created button variant: hover-medium as [X] hover-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.403Z",
+      "type": "info",
+      "message": "✅ Merged button variant active-medium: state=active, size=medium, color=#B45309",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.416Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.645Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.647Z",
+      "type": "info",
+      "message": "🎨 Created button variant: active-medium as [X] active-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.648Z",
+      "type": "info",
+      "message": "✅ Merged button variant focus-medium: state=focus, size=medium, color=#F59E0B",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.658Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.875Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.877Z",
+      "type": "info",
+      "message": "🎨 Created button variant: focus-medium as [X] focus-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.880Z",
+      "type": "info",
+      "message": "✅ Merged button variant disabled-medium: state=disabled, size=medium, color=#E5E7EB",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:04.890Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.135Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.137Z",
+      "type": "info",
+      "message": "🎨 Created button variant: disabled-medium as [X] disabled-medium",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.138Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-small: state=default, size=small, color=#F59E0B",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.146Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.351Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.353Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-small as [X] default-small",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.354Z",
+      "type": "info",
+      "message": "✅ Merged button variant default-large: state=default, size=large, color=#F59E0B",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.364Z",
+      "type": "info",
+      "message": "✅ Created left icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.621Z",
+      "type": "info",
+      "message": "✅ Created right icon instance from ComponentSet: [Icon] Arrow System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.623Z",
+      "type": "info",
+      "message": "🎨 Created button variant: default-large as [X] default-large",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.632Z",
+      "type": "info",
+      "message": "🔧 Creating ComponentSet with 7 variants",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.643Z",
+      "type": "info",
+      "message": "🔍 ComponentSet has 7 children",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.644Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.645Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-medium\" → \"Property 1=default-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.645Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] hover-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.646Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] hover-medium\" → \"Property 1=hover-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.646Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] active-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.647Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] active-medium\" → \"Property 1=active-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.647Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] focus-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.648Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] focus-medium\" → \"Property 1=focus-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.648Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] disabled-medium\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.648Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] disabled-medium\" → \"Property 1=disabled-medium\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.648Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-small\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.649Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-small\" → \"Property 1=default-small\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.649Z",
+      "type": "info",
+      "message": "🔍 Checking child: \"Property 1=[X] default-large\" (type: COMPONENT)",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.650Z",
+      "type": "info",
+      "message": "✅ Cleaned variant name: \"Property 1=[X] default-large\" → \"Property 1=default-large\"",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.651Z",
+      "type": "info",
+      "message": "✅ ComponentSet created: [Button] Warning",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.651Z",
+      "type": "info",
+      "message": "🔍 Current page after rendering: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.651Z",
+      "type": "info",
+      "message": "🔍 Component created on page: 🤖 Design System",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.652Z",
+      "type": "info",
+      "message": "✅ Stworzono [Button] Warning ComponentSet z wariantami",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.654Z",
+      "type": "info",
+      "message": "✅ Design System wyrenderowany pomyślnie z 2 typów komponentów",
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:05.658Z",
+      "type": "info",
+      "message": "🎉 Import folderu zakończony pomyślnie",
+      "data": null,
+      "importType": "design-system",
+      "filesCount": 3,
+      "sessionId": "2025-09-09_14-54-49"
+    },
+    {
+      "timestamp": "2025-09-09T12:55:08.506Z",
+      "type": "info",
+      "message": "📨 Otrzymano wiadomość typu: export-logs",
+      "sessionId": "2025-09-09_14-54-49"
+    }
+  ]
+}

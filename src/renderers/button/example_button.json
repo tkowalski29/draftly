@@ -1,105 +1,441 @@
 {
-  "version": "1.0",
+  "version": "1.0.0",
   "pages": [
     {
       "name": "Button Examples",
-      "children": [
+      "nodes": [
         {
+          "name": "[Button] Primary States",
           "type": "BUTTON",
-          "name": "Default Button",
-          "text": "Click Me"
-        },
-        {
-          "type": "BUTTON",
-          "name": "Primary Button",
-          "text": "Primary Action",
           "properties": {
-            "x": 0,
-            "y": 60,
-            "fills": [
-              {
-                "color": "#3B82F6",
-                "opacity": 1
-              }
-            ],
-            "cornerRadius": 8,
+            "text": "Primary Button",
+            "backgroundColor": "#3B82F6",
+            "textColor": "#FFFFFF",
             "fontSize": 16,
-            "effects": [
-              {
-                "type": "DROP_SHADOW",
-                "color": "#000000",
-                "opacity": 0.15,
-                "offset": { "x": 0, "y": 2 },
-                "radius": 4
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20
+          },
+          "variants": [
+            {
+              "name": "default",
+              "getFromParent": true,
+              "state": "default"
+            },
+            {
+              "name": "hover",
+              "getFromParent": true,
+              "state": "hover",
+              "backgroundColor": "#2563EB",
+              "shadowOpacity": 0.15
+            },
+            {
+              "name": "active",
+              "getFromParent": true,
+              "state": "active",
+              "backgroundColor": "#1D4ED8"
+            },
+            {
+              "name": "focus",
+              "getFromParent": true,
+              "state": "focus",
+              "hasFocusRing": true
+            },
+            {
+              "name": "disabled",
+              "getFromParent": true,
+              "state": "disabled",
+              "backgroundColor": "#E5E7EB",
+              "textColor": "#9CA3AF",
+              "opacity": 0.6
+            }
+          ]
+        },
+        {
+          "name": "[Button] Size Variants",
+          "type": "BUTTON",
+          "properties": {
+            "text": "Button",
+            "backgroundColor": "#10B981",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10
+          },
+          "variants": [
+            {
+              "name": "small",
+              "getFromParent": true,
+              "size": "small",
+              "fontSize": 14,
+              "paddingX": 12,
+              "paddingY": 8,
+              "iconSize": 16
+            },
+            {
+              "name": "medium",
+              "getFromParent": true,
+              "size": "medium"
+            },
+            {
+              "name": "large",
+              "getFromParent": true,
+              "size": "large",
+              "fontSize": 18,
+              "paddingX": 20,
+              "paddingY": 12,
+              "iconSize": 24
+            }
+          ]
+        },
+        {
+          "name": "[Button] Color Variants",
+          "type": "BUTTON",
+          "properties": {
+            "text": "Button",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20
+          },
+          "variants": [
+            {
+              "name": "primary",
+              "getFromParent": true,
+              "variant": "primary",
+              "backgroundColor": "#3B82F6",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "name": "secondary",
+              "getFromParent": true,
+              "variant": "secondary",
+              "backgroundColor": "#6B7280",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "name": "success",
+              "getFromParent": true,
+              "variant": "success",
+              "backgroundColor": "#10B981",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "name": "danger",
+              "getFromParent": true,
+              "variant": "danger",
+              "backgroundColor": "#EF4444",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "name": "warning",
+              "getFromParent": true,
+              "variant": "warning",
+              "backgroundColor": "#F59E0B",
+              "textColor": "#1F2937"
+            },
+            {
+              "name": "ghost",
+              "getFromParent": true,
+              "variant": "ghost",
+              "backgroundColor": "#00000000",
+              "textColor": "#374151"
+            }
+          ]
+        },
+        {
+          "name": "[Button] Icon Variants",
+          "type": "BUTTON",
+          "properties": {
+            "text": "Download",
+            "backgroundColor": "#8B5CF6",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "iconColor": "#FFFFFF"
+          },
+          "variants": [
+            {
+              "name": "both-icons",
+              "getFromParent": true,
+              "showLeftIcon": true,
+              "showRightIcon": true
+            },
+            {
+              "name": "left-icon-only",
+              "getFromParent": true,
+              "showLeftIcon": true,
+              "showRightIcon": false
+            },
+            {
+              "name": "right-icon-only",
+              "getFromParent": true,
+              "showLeftIcon": false,
+              "showRightIcon": true
+            },
+            {
+              "name": "no-icons",
+              "getFromParent": true,
+              "showLeftIcon": false,
+              "showRightIcon": false
+            }
+          ]
+        },
+        {
+          "name": "[Button] Effects Showcase",
+          "type": "BUTTON",
+          "properties": {
+            "text": "Styled Button",
+            "backgroundColor": "#EC4899",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10
+          },
+          "variants": [
+            {
+              "name": "with-shadow",
+              "getFromParent": true,
+              "shadowOpacity": 0.25,
+              "shadowY": 4,
+              "shadowRadius": 8
+            },
+            {
+              "name": "with-focus-ring",
+              "getFromParent": true,
+              "hasFocusRing": true,
+              "focusColor": { "r": 0.93, "g": 0.28, "b": 0.6, "a": 0.4 }
+            },
+            {
+              "name": "rounded-more",
+              "getFromParent": true,
+              "cornerRadius": 16
+            },
+            {
+              "name": "custom-spacing",
+              "getFromParent": true,
+              "itemSpacing": 12,
+              "paddingX": 24,
+              "paddingY": 14
+            }
+          ]
+        },
+        {
+          "type": "BUTTON",
+          "name": "Legacy Format Example",
+          "properties": {
+            "text": "Button"
+          },
+          "config": {
+            "states": {
+              "Default": {
+                "name": "Default",
+                "shadowOpacity": 0
+              },
+              "Hover": {
+                "name": "Hover", 
+                "shadowOpacity": 0.15
+              },
+              "Active": {
+                "name": "Active",
+                "shadowOpacity": 0
+              },
+              "Focus": {
+                "name": "Focus",
+                "shadowOpacity": 0,
+                "hasFocusRing": true
+              },
+              "Disabled": {
+                "name": "Disabled",
+                "opacity": 0.6,
+                "shadowOpacity": 0
+              },
+              "Loading": {
+                "name": "Loading",
+                "shadowOpacity": 0
               }
-            ]
+            },
+            "sizes": {
+              "XSmall": {
+                "name": "XSmall",
+                "paddingX": 8,
+                "paddingY": 4,
+                "fontSize": 12,
+                "height": 24,
+                "iconSize": 12
+              },
+              "Small": {
+                "name": "Small",
+                "paddingX": 12,
+                "paddingY": 8,
+                "fontSize": 14,
+                "height": 32,
+                "iconSize": 16
+              },
+              "Medium": {
+                "name": "Medium",
+                "paddingX": 16,
+                "paddingY": 10,
+                "fontSize": 16,
+                "height": 40,
+                "iconSize": 20
+              },
+              "Large": {
+                "name": "Large",
+                "paddingX": 20,
+                "paddingY": 12,
+                "fontSize": 18,
+                "height": 48,
+                "iconSize": 24
+              },
+              "XLarge": {
+                "name": "XLarge",
+                "paddingX": 24,
+                "paddingY": 16,
+                "fontSize": 20,
+                "height": 56,
+                "iconSize": 28
+              }
+            },
+            "colors": {
+              "Primary": {
+                "name": "Primary",
+                "default": { "r": 0.23, "g": 0.4, "b": 1 },
+                "hover": { "r": 0.18, "g": 0.32, "b": 0.85 },
+                "active": { "r": 0.15, "g": 0.28, "b": 0.75 },
+                "focus": { "r": 0.23, "g": 0.4, "b": 1 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 0.23, "g": 0.4, "b": 1 },
+                "textColor": { "r": 1, "g": 1, "b": 1 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Secondary": {
+                "name": "Secondary",
+                "default": { "r": 0.42, "g": 0.45, "b": 0.5 },
+                "hover": { "r": 0.35, "g": 0.38, "b": 0.42 },
+                "active": { "r": 0.28, "g": 0.31, "b": 0.35 },
+                "focus": { "r": 0.42, "g": 0.45, "b": 0.5 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 0.42, "g": 0.45, "b": 0.5 },
+                "textColor": { "r": 1, "g": 1, "b": 1 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Success": {
+                "name": "Success",
+                "default": { "r": 0.13, "g": 0.7, "b": 0.37 },
+                "hover": { "r": 0.11, "g": 0.6, "b": 0.32 },
+                "active": { "r": 0.09, "g": 0.5, "b": 0.27 },
+                "focus": { "r": 0.13, "g": 0.7, "b": 0.37 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 0.13, "g": 0.7, "b": 0.37 },
+                "textColor": { "r": 1, "g": 1, "b": 1 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Danger": {
+                "name": "Danger",
+                "default": { "r": 0.94, "g": 0.27, "b": 0.27 },
+                "hover": { "r": 0.8, "g": 0.22, "b": 0.22 },
+                "active": { "r": 0.7, "g": 0.18, "b": 0.18 },
+                "focus": { "r": 0.94, "g": 0.27, "b": 0.27 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 0.94, "g": 0.27, "b": 0.27 },
+                "textColor": { "r": 1, "g": 1, "b": 1 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Warning": {
+                "name": "Warning",
+                "default": { "r": 1, "g": 0.76, "b": 0.03 },
+                "hover": { "r": 0.85, "g": 0.65, "b": 0.03 },
+                "active": { "r": 0.75, "g": 0.55, "b": 0.03 },
+                "focus": { "r": 1, "g": 0.76, "b": 0.03 },
+                "disabled": { "r": 0.94, "g": 0.95, "b": 0.96 },
+                "loading": { "r": 1, "g": 0.76, "b": 0.03 },
+                "textColor": { "r": 0.11, "g": 0.11, "b": 0.11 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Ghost": {
+                "name": "Ghost",
+                "default": { "r": 0, "g": 0, "b": 0, "a": 0 },
+                "hover": { "r": 0.96, "g": 0.97, "b": 0.98 },
+                "active": { "r": 0.91, "g": 0.92, "b": 0.94 },
+                "focus": { "r": 0, "g": 0, "b": 0, "a": 0 },
+                "disabled": { "r": 0, "g": 0, "b": 0, "a": 0 },
+                "loading": { "r": 0, "g": 0, "b": 0, "a": 0 },
+                "textColor": { "r": 0.17, "g": 0.24, "b": 0.31 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              }
+            }
+          }
+        },
+        {
+          "type": "BUTTON", 
+          "name": "Minimal Button Example",
+          "properties": {
+            "text": "Simple Button"
+          },
+          "config": {
+            "states": {
+              "Default": { "shadowOpacity": 0 },
+              "Hover": { "shadowOpacity": 0.1 }
+            },
+            "sizes": {
+              "Medium": {
+                "paddingX": 16, "paddingY": 10,
+                "fontSize": 16, "height": 40, "iconSize": 20
+              }
+            },
+            "colors": {
+              "Primary": {
+                "default": { "r": 0.2, "g": 0.4, "b": 1 },
+                "hover": { "r": 0.15, "g": 0.3, "b": 0.9 },
+                "textColor": { "r": 1, "g": 1, "b": 1 }
+              }
+            }
           }
         },
         {
           "type": "BUTTON",
-          "name": "Secondary Button",
-          "text": "Secondary",
+          "name": "Custom Brand Button",
           "properties": {
-            "x": 0,
-            "y": 120,
-            "fills": [
-              {
-                "color": "#FFFFFF",
-                "opacity": 1
+            "text": "Brand Action"
+          },
+          "config": {
+            "states": {
+              "Default": { "shadowOpacity": 0 },
+              "Hover": { "shadowOpacity": 0.2 },
+              "Focus": { "hasFocusRing": true },
+              "Disabled": { "opacity": 0.5 }
+            },
+            "sizes": {
+              "Small": {
+                "paddingX": 12, "paddingY": 6,
+                "fontSize": 14, "height": 32, "iconSize": 16
+              },
+              "Large": {
+                "paddingX": 24, "paddingY": 14,
+                "fontSize": 18, "height": 50, "iconSize": 24
               }
-            ],
-            "stroke": [
-              {
-                "color": "#D1D5DB",
-                "opacity": 1
+            },
+            "colors": {
+              "Brand": {
+                "default": { "r": 0.8, "g": 0.2, "b": 0.6 },
+                "hover": { "r": 0.7, "g": 0.15, "b": 0.5 },
+                "focus": { "r": 0.8, "g": 0.2, "b": 0.6 },
+                "disabled": { "r": 0.9, "g": 0.9, "b": 0.9 },
+                "textColor": { "r": 1, "g": 1, "b": 1 },
+                "disabledTextColor": { "r": 0.6, "g": 0.6, "b": 0.6 }
+              },
+              "Neutral": {
+                "default": { "r": 0.95, "g": 0.95, "b": 0.95 },
+                "hover": { "r": 0.9, "g": 0.9, "b": 0.9 },
+                "focus": { "r": 0.95, "g": 0.95, "b": 0.95 },
+                "disabled": { "r": 0.98, "g": 0.98, "b": 0.98 },
+                "textColor": { "r": 0.2, "g": 0.2, "b": 0.2 },
+                "disabledTextColor": { "r": 0.7, "g": 0.7, "b": 0.7 }
               }
-            ],
-            "strokeWeight": 1,
-            "cornerRadius": 8,
-            "fontSize": 14
-          }
-        },
-        {
-          "type": "BUTTON",
-          "name": "Danger Button",
-          "text": "Delete",
-          "properties": {
-            "x": 0,
-            "y": 180,
-            "fills": [
-              {
-                "color": "#EF4444",
-                "opacity": 1
-              }
-            ],
-            "cornerRadius": 6,
-            "fontSize": 14,
-            "effects": [
-              {
-                "type": "DROP_SHADOW",
-                "color": "#EF4444",
-                "opacity": 0.3,
-                "offset": { "x": 0, "y": 2 },
-                "radius": 8
-              }
-            ]
-          }
-        },
-        {
-          "type": "BUTTON",
-          "name": "Success Button",
-          "text": "Save Changes",
-          "properties": {
-            "x": 0,
-            "y": 240,
-            "fills": [
-              {
-                "color": "#10B981",
-                "opacity": 1
-              }
-            ],
-            "cornerRadius": 6,
-            "fontSize": 14
+            }
           }
         }
       ]

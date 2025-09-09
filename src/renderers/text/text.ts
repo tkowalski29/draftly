@@ -1,4 +1,4 @@
-import { loadFontSafely } from "../../main/utils";
+import { loadFontSafely } from "../../main/utils/index";
 
 export async function renderText(nodeData?: any): Promise<TextNode> {
   const textNode = figma.createText();

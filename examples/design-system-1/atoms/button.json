@@ -1,53 +1,362 @@
 {
-  "version": "1.0",
+  "version": "1.0.0",
+  "dependencies": [
+    "icons.json"
+  ],
   "pages": [
     {
       "name": "Button Component",
-      "children": [
+      "nodes": [
         {
+          "name": "[Button] System",
           "type": "BUTTON",
-          "name": "Primary Button",
           "properties": {
-            "text": "Primary Button",
-            "variant": "primary",
-            "size": "medium"
-          }
+            "text": "Button",
+            "backgroundColor": "#3B82F6",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8
+          },
+          "componentProperties": {
+            "size": {
+              "type": "VARIANT",
+              "defaultValue": "medium",
+              "variantOptions": [
+                {
+                  "label": "Small",
+                  "value": "small",
+                  "properties": {
+                    "fontSize": 14,
+                    "paddingX": 12,
+                    "paddingY": 8,
+                    "iconSize": 16,
+                    "height": 32
+                  }
+                },
+                {
+                  "label": "Medium", 
+                  "value": "medium",
+                  "properties": {
+                    "fontSize": 16,
+                    "paddingX": 16,
+                    "paddingY": 10,
+                    "iconSize": 20,
+                    "height": 40
+                  }
+                },
+                {
+                  "label": "Large",
+                  "value": "large", 
+                  "properties": {
+                    "fontSize": 18,
+                    "paddingX": 20,
+                    "paddingY": 12,
+                    "iconSize": 24,
+                    "height": 48
+                  }
+                }
+              ]
+            },
+            "color": {
+              "type": "VARIANT", 
+              "defaultValue": "primary",
+              "variantOptions": [
+                {
+                  "label": "Primary",
+                  "value": "primary",
+                  "properties": {
+                    "backgroundColor": "#3B82F6",
+                    "textColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#2563EB",
+                    "activeBackgroundColor": "#1D4ED8"
+                  }
+                },
+                {
+                  "label": "Secondary", 
+                  "value": "secondary",
+                  "properties": {
+                    "backgroundColor": "#6B7280",
+                    "textColor": "#FFFFFF", 
+                    "hoverBackgroundColor": "#4B5563",
+                    "activeBackgroundColor": "#374151"
+                  }
+                },
+                {
+                  "label": "Success",
+                  "value": "success",
+                  "properties": {
+                    "backgroundColor": "#10B981",
+                    "textColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#059669", 
+                    "activeBackgroundColor": "#047857"
+                  }
+                },
+                {
+                  "label": "Danger",
+                  "value": "danger", 
+                  "properties": {
+                    "backgroundColor": "#EF4444",
+                    "textColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#DC2626",
+                    "activeBackgroundColor": "#B91C1C"
+                  }
+                },
+                {
+                  "label": "Warning",
+                  "value": "warning",
+                  "properties": {
+                    "backgroundColor": "#F59E0B",
+                    "textColor": "#1F2937",
+                    "hoverBackgroundColor": "#D97706",
+                    "activeBackgroundColor": "#B45309"
+                  }
+                },
+                {
+                  "label": "Ghost",
+                  "value": "ghost",
+                  "properties": {
+                    "backgroundColor": "rgba(0,0,0,0)",
+                    "textColor": "#374151",
+                    "hoverBackgroundColor": "#F9FAFB",
+                    "activeBackgroundColor": "#F3F4F6"
+                  }
+                }
+              ]
+            },
+            "state": {
+              "type": "VARIANT",
+              "defaultValue": "default", 
+              "variantOptions": [
+                {
+                  "label": "Default",
+                  "value": "default",
+                  "properties": {
+                    "shadowOpacity": 0,
+                    "opacity": 1,
+                    "hasFocusRing": false
+                  }
+                },
+                {
+                  "label": "Hover",
+                  "value": "hover", 
+                  "properties": {
+                    "shadowOpacity": 0.15,
+                    "shadowY": 2,
+                    "shadowRadius": 4,
+                    "opacity": 1,
+                    "hasFocusRing": false
+                  }
+                },
+                {
+                  "label": "Active",
+                  "value": "active",
+                  "properties": {
+                    "shadowOpacity": 0,
+                    "opacity": 1,
+                    "hasFocusRing": false
+                  }
+                },
+                {
+                  "label": "Focus", 
+                  "value": "focus",
+                  "properties": {
+                    "shadowOpacity": 0,
+                    "opacity": 1,
+                    "hasFocusRing": true,
+                    "focusColor": {"r": 0.23, "g": 0.4, "b": 1, "a": 0.4}
+                  }
+                },
+                {
+                  "label": "Disabled",
+                  "value": "disabled",
+                  "properties": {
+                    "shadowOpacity": 0,
+                    "opacity": 0.6,
+                    "hasFocusRing": false,
+                    "backgroundColor": "#E5E7EB",
+                    "textColor": "#9CA3AF"
+                  }
+                }
+              ]
+            },
+            "enableIconLeft": {
+              "type": "BOOLEAN",
+              "defaultValue": false
+            },
+            "enableIconRight": {
+              "type": "BOOLEAN", 
+              "defaultValue": false
+            },
+            "addLineBeforeIconRight": {
+              "type": "BOOLEAN",
+              "defaultValue": false
+            },
+            "addLineBeforeIconLeft": {
+              "type": "BOOLEAN",
+              "defaultValue": false
+            },
+            "iconLeft": {
+              "type": "INSTANCE_SWAP",
+              "defaultValue": "[Icon] Arrow System",
+              "preferredValues": [
+                {"type": "COMPONENT_SET", "key": "[Icon] Arrow System"}
+              ]
+            },
+            "iconRight": {
+              "type": "INSTANCE_SWAP", 
+              "defaultValue": "[Icon] Arrow System",
+              "preferredValues": [
+                {"type": "COMPONENT_SET", "key": "[Icon] Arrow System"}
+              ]
+            },
+            "text": {
+              "type": "TEXT",
+              "defaultValue": "Button"
+            }
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium", 
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#2563EB",
+              "shadowOpacity": 0.15,
+              "shadowY": 2,
+              "shadowRadius": 4
+            },
+            {
+              "name": "active-medium",
+              "getFromParent": true,
+              "state": "active", 
+              "size": "medium",
+              "backgroundColor": "#1D4ED8"
+            },
+            {
+              "name": "focus-medium",
+              "getFromParent": true,
+              "state": "focus",
+              "size": "medium", 
+              "hasFocusRing": true,
+              "focusColor": { "r": 0.23, "g": 0.4, "b": 1, "a": 0.4 }
+            },
+            {
+              "name": "disabled-medium",
+              "getFromParent": true,
+              "state": "disabled",
+              "size": "medium",
+              "backgroundColor": "#E5E7EB",
+              "textColor": "#9CA3AF",
+              "opacity": 0.6
+            },
+            {
+              "name": "default-small",
+              "getFromParent": true,
+              "state": "default",
+              "size": "small",
+              "fontSize": 14,
+              "paddingX": 12,
+              "paddingY": 8,
+              "iconSize": 16
+            },
+            {
+              "name": "default-large",
+              "getFromParent": true,
+              "state": "default",
+              "size": "large", 
+              "fontSize": 18,
+              "paddingX": 20,
+              "paddingY": 12,
+              "iconSize": 24
+            }
+          ]
         },
         {
+          "name": "[Button] Warning",
           "type": "BUTTON",
-          "name": "Secondary Button",
           "properties": {
-            "text": "Secondary Button",
-            "variant": "secondary",
-            "size": "medium"
-          }
-        },
-        {
-          "type": "BUTTON",
-          "name": "Danger Button",
-          "properties": {
-            "text": "Delete",
-            "variant": "danger",
-            "size": "medium"
-          }
-        },
-        {
-          "type": "BUTTON",
-          "name": "Large Button",
-          "properties": {
-            "text": "Large Button",
-            "variant": "primary",
-            "size": "large"
-          }
-        },
-        {
-          "type": "BUTTON",
-          "name": "Small Button",
-          "properties": {
-            "text": "Small",
-            "variant": "secondary",
-            "size": "small"
-          }
+            "text": "Warning",
+            "backgroundColor": "#F59E0B",
+            "textColor": "#1F2937",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium", 
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#D97706",
+              "shadowOpacity": 0.15,
+              "shadowY": 2,
+              "shadowRadius": 4
+            },
+            {
+              "name": "active-medium",
+              "getFromParent": true,
+              "state": "active", 
+              "size": "medium",
+              "backgroundColor": "#B45309"
+            },
+            {
+              "name": "focus-medium",
+              "getFromParent": true,
+              "state": "focus",
+              "size": "medium", 
+              "hasFocusRing": true,
+              "focusColor": { "r": 0.96, "g": 0.62, "b": 0.04, "a": 0.4 }
+            },
+            {
+              "name": "disabled-medium",
+              "getFromParent": true,
+              "state": "disabled",
+              "size": "medium",
+              "backgroundColor": "#E5E7EB",
+              "textColor": "#9CA3AF",
+              "opacity": 0.6
+            },
+            {
+              "name": "default-small",
+              "getFromParent": true,
+              "state": "default",
+              "size": "small",
+              "fontSize": 14,
+              "paddingX": 12,
+              "paddingY": 8,
+              "iconSize": 16
+            },
+            {
+              "name": "default-large",
+              "getFromParent": true,
+              "state": "default",
+              "size": "large", 
+              "fontSize": 18,
+              "paddingX": 20,
+              "paddingY": 12,
+              "iconSize": 24
+            }
+          ]
         }
       ]
     }
