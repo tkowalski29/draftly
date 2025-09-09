@@ -106,6 +106,25 @@ async function renderComponentsByHierarchy(
   const spacing = getSpacingConfig(settings);
   const enableSectionCards = settings?.designSystem?.organization?.enableSectionCards || false;
   
+  // Create main container with auto layout for the entire design system
+  const mainContainer = figma.createFrame();
+  mainContainer.name = 'Design System Container';
+  mainContainer.x = 50;
+  mainContainer.y = 50;
+  
+  // Set up vertical auto layout for sections
+  mainContainer.layoutMode = 'VERTICAL';
+  mainContainer.primaryAxisSizingMode = 'AUTO';
+  mainContainer.counterAxisSizingMode = 'AUTO';
+  mainContainer.itemSpacing = spacing.sectionSpacing;
+  mainContainer.paddingTop = 0;
+  mainContainer.paddingBottom = 0;
+  mainContainer.paddingLeft = 0;
+  mainContainer.paddingRight = 0;
+  mainContainer.fills = []; // Transparent background
+  
+  figma.currentPage.appendChild(mainContainer);
+  
   let yOffset = 50;
   const bounds: PositionBounds = { minX: Infinity, maxX: -Infinity, maxRowHeight: 0 };
   
@@ -118,124 +137,91 @@ async function renderComponentsByHierarchy(
     
     log(`🔧 Renderowanie poziomu: ${levelName} (${componentsInLevel.join(', ')})`, 'log');
     
-    yOffset = await renderHierarchyLevel(
+    const sectionCard = await renderHierarchyLevelToContainer(
       levelName, 
       componentsInLevel, 
       componentsByType, 
-      yOffset, 
-      bounds, 
       spacing, 
       enableSectionCards,
       settings
     );
     
-    // Add spacing between sections
-    yOffset += spacing.sectionSpacing;
+    if (sectionCard) {
+      mainContainer.appendChild(sectionCard);
+    }
   }
 }
 
 /**
- * Render a single hierarchy level (atoms, molecules, organisms)
+ * Render a single hierarchy level (atoms, molecules, organisms) as a container
  */
-async function renderHierarchyLevel(
+async function renderHierarchyLevelToContainer(
   levelName: string,
   componentTypes: string[],
   componentsByType: {[key: string]: any[]},
-  startY: number,
-  bounds: PositionBounds,
   spacing: SpacingConfig,
   enableSectionCards: boolean,
   settings: any
-): Promise<number> {
-  let yOffset = startY;
-  let sectionMinX = Infinity;
-  let sectionMaxX = -Infinity;
-  let sectionHeight = 0;
-  
-  // First pass: calculate section bounds
-  for (const componentType of componentTypes) {
-    const components = componentsByType[componentType];
-    if (!components || components.length === 0) continue;
-    
-    let xOffset = 50;
-    const rowStartY = yOffset + spacing.cardPadding;
-    
-    // Calculate positions for each component (without rendering)
-    for (const component of components) {
-      // Estimate component dimensions (rough estimation)
-      const estimatedWidth = 200; // Default component width
-      const estimatedHeight = 100; // Default component height
-      
-      // Update section bounds
-      sectionMinX = Math.min(sectionMinX, xOffset - spacing.cardPadding);
-      sectionMaxX = Math.max(sectionMaxX, xOffset + estimatedWidth + spacing.cardPadding);
-      
-      xOffset += estimatedWidth + spacing.columnSpacing;
-    }
-    
-    // Move to next row
-    yOffset += 100 + spacing.rowSpacing; // Estimated row height
-    sectionHeight = yOffset - startY;
-  }
-  
-  // Create section card FIRST (if enabled) so it appears behind components
+): Promise<FrameNode | null> {
+  // Create section card with auto layout (if enabled)
   let sectionCard: FrameNode | null = null;
-  if (enableSectionCards && sectionMinX !== Infinity) {
-    const cardWidth = sectionMaxX - sectionMinX;
-    const cardHeight = sectionHeight;
-    
+  if (enableSectionCards) {
     sectionCard = createSectionCard(
       levelName,
-      sectionMinX,
-      startY,
-      cardWidth,
-      cardHeight,
+      0, // X position (will be handled by parent auto layout)
+      0, // Y position (will be handled by parent auto layout)
+      0, // Width (will be auto-sized)
+      0, // Height (will be auto-sized)
       {
         background: settings?.designSystem?.organization?.cardBackground || '#FFFFFF',
         cornerRadius: settings?.designSystem?.organization?.cardCornerRadius || 12,
         shadow: settings?.designSystem?.organization?.cardShadow
       }
     );
+  } else {
+    // Create a transparent container even if section cards are disabled
+    sectionCard = figma.createFrame();
+    sectionCard.name = `${levelName} Container`;
+    sectionCard.layoutMode = 'HORIZONTAL';
+    sectionCard.primaryAxisSizingMode = 'AUTO';
+    sectionCard.counterAxisSizingMode = 'AUTO';
+    sectionCard.itemSpacing = spacing.columnSpacing;
+    sectionCard.fills = []; // Transparent
   }
   
-  // Reset for actual rendering
-  yOffset = startY;
-  bounds.maxRowHeight = 0;
-  
-  // Second pass: actually render components
+  // Render components and add them to the section card
   for (const componentType of componentTypes) {
     const components = componentsByType[componentType];
     if (!components || components.length === 0) continue;
     
     log(`🔨 Renderowanie typu: ${componentType} (${components.length} komponentów)`, 'log');
     
-    let xOffset = 50;
-    const rowStartY = yOffset + spacing.cardPadding;
-    
     // Render each component
     for (const component of components) {
-      const renderedComponents = await renderComponent(component, componentType, xOffset, rowStartY, spacing);
+      const renderedComponents = await renderComponent(
+        component, 
+        componentType, 
+        0, // X position (will be handled by auto layout)
+        0, // Y position (will be handled by auto layout) 
+        spacing
+      );
       
       if (renderedComponents.length > 0) {
-        // Update bounds
         for (const comp of renderedComponents) {
-          bounds.minX = Math.min(bounds.minX, comp.x);
-          bounds.maxX = Math.max(bounds.maxX, comp.x + comp.width);
-          bounds.maxRowHeight = Math.max(bounds.maxRowHeight, comp.height);
+          // Reset position - auto layout will handle it
+          comp.x = 0;
+          comp.y = 0;
+          
+          if (comp.parent !== sectionCard) {
+            sectionCard.appendChild(comp);
+          }
         }
-        
-        // Update x position for next component
-        const lastComponent = renderedComponents[renderedComponents.length - 1];
-        xOffset = lastComponent.x + lastComponent.width + spacing.columnSpacing;
       }
     }
-    
-    // Move to next row
-    yOffset += bounds.maxRowHeight + spacing.rowSpacing;
-    bounds.maxRowHeight = 0; // Reset for next row
   }
   
-  return yOffset;
+  log(`✅ Completed section: ${levelName} with auto layout`, 'log');
+  return sectionCard;
 }
 
 /**
@@ -258,33 +244,24 @@ async function renderComponent(
     if (componentType === 'BUTTON') {
       const buttonSet = await renderButton(component);
       if (buttonSet) {
-        buttonSet.x = x;
-        buttonSet.y = y;
+        // No positioning - will be handled by auto layout parent
         componentSets = [buttonSet];
       }
     } else if (componentType === 'ICON') {
       const iconResult = renderIcon(component, page);
       
       if (Array.isArray(iconResult)) {
-        // Handle multiple ComponentSets - position them horizontally
-        let currentX = x;
-        iconResult.forEach((iconSet) => {
-          iconSet.x = currentX;
-          iconSet.y = y;
-          currentX += iconSet.width + spacing.columnSpacing;
-        });
+        // Handle multiple ComponentSets - auto layout will handle spacing
         componentSets = iconResult;
       } else {
-        iconResult.x = x;
-        iconResult.y = y;
+        // No positioning - will be handled by auto layout parent
         componentSets = [iconResult];
       }
     } else {
       // Handle other component types through renderNode
       const rendered = await renderNode(component, page);
       if (rendered) {
-        rendered.x = x;
-        rendered.y = y;
+        // No positioning - will be handled by auto layout parent
         componentSets = [rendered];
       }
     }

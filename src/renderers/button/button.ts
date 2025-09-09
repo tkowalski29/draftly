@@ -1,5 +1,47 @@
 import { loadFontSafely, log } from "../../main/utils/index";
 
+/**
+ * Deep search for ComponentSet in page hierarchy (including inside auto layout containers)
+ */
+function findComponentSetDeep(node: BaseNode, targetName: string): ComponentSetNode | null {
+  // Check current node
+  if (node.type === 'COMPONENT_SET' && node.name === targetName) {
+    return node as ComponentSetNode;
+  }
+  
+  // Recursively search children if node has them
+  if ('children' in node) {
+    for (const child of node.children) {
+      const found = findComponentSetDeep(child, targetName);
+      if (found) return found;
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * Deep search for ALL ComponentSets matching a criteria in page hierarchy
+ */
+function findAllComponentSetsDeep(node: BaseNode, startsWith: string): ComponentSetNode[] {
+  const results: ComponentSetNode[] = [];
+  
+  // Check current node
+  if (node.type === 'COMPONENT_SET' && node.name.startsWith(startsWith)) {
+    results.push(node as ComponentSetNode);
+  }
+  
+  // Recursively search children if node has them
+  if ('children' in node) {
+    for (const child of node.children) {
+      const found = findAllComponentSetsDeep(child, startsWith);
+      results.push(...found);
+    }
+  }
+  
+  return results;
+}
+
 function mergeWithParent(baseProperties: any, variant: any, propertyMappings?: any): any {
   if (!variant.getFromParent) {
     return variant;
@@ -167,12 +209,10 @@ async function createButtonVariant(
   // Always add left icon placeholder (for component properties)
   const iconSize = finalData.iconSize || 20;
   
-  // Find icon ComponentSet for creating proper instances
+  // Find icon ComponentSet for creating proper instances (deep search)
   let leftIconInstance: InstanceNode | null = null;
   const iconComponentSetName = '[Icon] Arrow System'; // Should match what's in JSON
-  const iconComponentSet = figma.currentPage.findChild((node: any) => 
-    node.type === 'COMPONENT_SET' && node.name === iconComponentSetName
-  ) as ComponentSetNode | null;
+  const iconComponentSet = findComponentSetDeep(figma.currentPage, iconComponentSetName);
   
   if (iconComponentSet && iconComponentSet.defaultVariant) {
     // Create instance of the icon ComponentSet's default variant
@@ -481,10 +521,8 @@ async function addPropertiesToComponentSet(componentSet: ComponentSetNode, compo
           log(`🔧 Implementing INSTANCE_SWAP property: ${propName}`, 'log');
           
           try {
-            // Find ALL icon ComponentSets with [Icon] prefix
-            const iconComponentSets = figma.currentPage.children.filter((node: any) => 
-              node.type === 'COMPONENT_SET' && node.name.startsWith('[Icon]')
-            ) as ComponentSetNode[];
+            // Find ALL icon ComponentSets with [Icon] prefix using deep search
+            const iconComponentSets = findAllComponentSetsDeep(figma.currentPage, '[Icon]');
             
             log(`🔍 Found ${iconComponentSets.length} icon ComponentSets with [Icon] prefix`, 'log');
             iconComponentSets.forEach(cs => log(`  - ${cs.name}`, 'log'));

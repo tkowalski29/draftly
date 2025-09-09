@@ -87,7 +87,19 @@ export function createSectionCard(
   card.name = `${name} Card`;
   card.x = x;
   card.y = y;
-  card.resize(width, height);
+  
+  // Set up auto layout
+  card.layoutMode = 'HORIZONTAL';
+  card.primaryAxisSizingMode = 'AUTO';
+  card.counterAxisSizingMode = 'AUTO';
+  card.itemSpacing = 40; // Default spacing between components
+  card.paddingTop = 32;
+  card.paddingBottom = 32;
+  card.paddingLeft = 32;
+  card.paddingRight = 32;
+  card.primaryAxisAlignItems = 'MIN'; // Align to start
+  card.counterAxisAlignItems = 'MIN'; // Align to start
+  
   card.fills = [{
     type: 'SOLID',
     color: { 
@@ -114,6 +126,6 @@ export function createSectionCard(
     card.effects = [shadow];
   }
   
-  log(`📦 Created section card: ${name} (${width}x${height})`, 'log');
+  log(`📦 Created auto layout section card: ${name}`, 'log');
   return card;
 }
