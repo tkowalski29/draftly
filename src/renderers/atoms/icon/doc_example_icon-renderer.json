@@ -1,0 +1,291 @@
+{
+  "version": "1.0.0",
+  "description": "Icon Renderer Examples - różne typy ikon i wariantów",
+  "pages": [
+    {
+      "name": "Icon Renderer Examples",
+      "nodes": [
+        {
+          "name": "[Icon] Arrow System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "vector",
+              "size": "${size}",
+              "color": "${color}",
+              "vectorPaths": [
+                "M7 14L12 9L17 14"
+              ],
+              "strokeWidth": 2,
+              "useStroke": false
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 20,
+            "color": "#000000",
+            "iconType": "arrow"
+          },
+          "variants": [
+            {
+              "name": "size-16",
+              "getFromParent": true,
+              "iconType": "arrow",
+              "size": 16
+            },
+            {
+              "name": "size-20", 
+              "getFromParent": true,
+              "iconType": "arrow",
+              "size": 20
+            },
+            {
+              "name": "size-24",
+              "getFromParent": true,
+              "iconType": "arrow", 
+              "size": 24
+            }
+          ]
+        },
+        {
+          "name": "[Icon] User System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "vector",
+              "size": "${size}",
+              "color": "${color}",
+              "vectorPaths": [
+                "M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21",
+                "M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+              ],
+              "strokeWidth": 2,
+              "useStroke": true,
+              "strokeCap": "ROUND"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 20,
+            "color": "#333333",
+            "iconType": "user"
+          },
+          "variants": [
+            {
+              "name": "size-16-outline",
+              "getFromParent": true,
+              "iconType": "user",
+              "size": 16,
+              "useStroke": true
+            },
+            {
+              "name": "size-20-outline",
+              "getFromParent": true, 
+              "iconType": "user",
+              "size": 20,
+              "useStroke": true
+            },
+            {
+              "name": "size-16-solid",
+              "getFromParent": true,
+              "iconType": "user",
+              "size": 16,
+              "useStroke": false
+            },
+            {
+              "name": "size-20-solid",
+              "getFromParent": true,
+              "iconType": "user", 
+              "size": 20,
+              "useStroke": false
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Star System",
+          "type": "GENERIC", 
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "vector",
+              "size": "${size}",
+              "color": "${color}",
+              "vectorPaths": [
+                "M12 2L13.09 8.26L22 9L17 14L18.18 22L12 19L5.82 22L7 14L2 9L10.91 8.26L12 2Z"
+              ],
+              "strokeWidth": 1,
+              "useStroke": false,
+              "windingRule": "EVENODD"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 24,
+            "color": "#FFD700",
+            "iconType": "star"
+          },
+          "variants": [
+            {
+              "name": "size-16-gold",
+              "getFromParent": true,
+              "iconType": "star",
+              "size": 16,
+              "color": "#FFD700"
+            },
+            {
+              "name": "size-20-gold",
+              "getFromParent": true,
+              "iconType": "star", 
+              "size": 20,
+              "color": "#FFD700"
+            },
+            {
+              "name": "size-24-gold",
+              "getFromParent": true,
+              "iconType": "star",
+              "size": 24,
+              "color": "#FFD700"
+            },
+            {
+              "name": "size-16-gray",
+              "getFromParent": true,
+              "iconType": "star",
+              "size": 16,
+              "color": "#9CA3AF"
+            },
+            {
+              "name": "size-20-gray",
+              "getFromParent": true,
+              "iconType": "star",
+              "size": 20, 
+              "color": "#9CA3AF"
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Rectangle Badge",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME", 
+            "properties": {
+              "shapeType": "rectangle",
+              "size": "${size}",
+              "color": "${color}",
+              "cornerRadius": "${cornerRadius}",
+              "opacity": "${opacity}"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 8,
+            "color": "#EF4444",
+            "cornerRadius": 4,
+            "opacity": 1,
+            "iconType": "badge"
+          },
+          "variants": [
+            {
+              "name": "small-red",
+              "getFromParent": true,
+              "iconType": "badge",
+              "size": 6,
+              "color": "#EF4444",
+              "cornerRadius": 3
+            },
+            {
+              "name": "medium-red",
+              "getFromParent": true,
+              "iconType": "badge", 
+              "size": 8,
+              "color": "#EF4444",
+              "cornerRadius": 4
+            },
+            {
+              "name": "small-green",
+              "getFromParent": true,
+              "iconType": "badge",
+              "size": 6,
+              "color": "#10B981",
+              "cornerRadius": 3
+            },
+            {
+              "name": "medium-green",
+              "getFromParent": true,
+              "iconType": "badge",
+              "size": 8,
+              "color": "#10B981", 
+              "cornerRadius": 4
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Circle Dot",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "ellipse",
+              "size": "${size}",
+              "color": "${color}",
+              "opacity": "${opacity}"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 12,
+            "color": "#3B82F6",
+            "opacity": 1,
+            "iconType": "dot"
+          },
+          "variants": [
+            {
+              "name": "size-8-blue",
+              "getFromParent": true,
+              "iconType": "dot",
+              "size": 8,
+              "color": "#3B82F6"
+            },
+            {
+              "name": "size-12-blue",
+              "getFromParent": true,
+              "iconType": "dot",
+              "size": 12,
+              "color": "#3B82F6"
+            },
+            {
+              "name": "size-8-red",
+              "getFromParent": true,
+              "iconType": "dot",
+              "size": 8,
+              "color": "#EF4444"
+            },
+            {
+              "name": "size-12-red",
+              "getFromParent": true, 
+              "iconType": "dot",
+              "size": 12,
+              "color": "#EF4444"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ export async function renderTree(json: any, importType?: string) {
 
   try {
     // Handle design system folder import (multiple JSON files)
-    if (importType === 'designSystemFolder' || 
+    if (importType === 'design-system' || importType === 'designSystemFolder' || 
         (typeof json === 'object' && !json.pages && !json.version)) {
       
       log('🎨 Renderowanie jako Design System Folder', 'log');

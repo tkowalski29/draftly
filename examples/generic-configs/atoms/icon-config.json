@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "dependencies": [],
+  "pages": [
+    {
+      "name": "Generic Icon System",
+      "nodes": [
+        {
+          "name": "[Icon] Generic System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "VECTOR",
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType",
+              "variantGroupProperty": "iconType"
+            }
+          },
+          "properties": {
+            "shapeType": "vector",
+            "size": 20,
+            "color": "#000000",
+            "opacity": 1,
+            "useStroke": false,
+            "strokeWidth": 2,
+            "strokeCap": "ROUND"
+          },
+          "variants": [
+            {
+              "name": "ArrowRight-Small",
+              "getFromParent": true,
+              "iconType": "Arrow",
+              "size": 16,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 L 0.3 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "ArrowRight-Medium", 
+              "getFromParent": true,
+              "iconType": "Arrow",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 L 0.3 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "ArrowRight-Large",
+              "getFromParent": true,
+              "iconType": "Arrow",
+              "size": 24,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.2 0.3 L 0.6 0.5 L 0.2 0.7 L 0.3 0.8 L 0.8 0.5 L 0.3 0.2 Z"
+                }
+              ]
+            },
+            {
+              "name": "Home-Small",
+              "getFromParent": true,
+              "iconType": "Home",
+              "size": 16,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.9 0.4 L 0.9 0.9 L 0.7 0.9 L 0.7 0.6 L 0.3 0.6 L 0.3 0.9 L 0.1 0.9 L 0.1 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Home-Medium",
+              "getFromParent": true,
+              "iconType": "Home",
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.9 0.4 L 0.9 0.9 L 0.7 0.9 L 0.7 0.6 L 0.3 0.6 L 0.3 0.9 L 0.1 0.9 L 0.1 0.4 Z"
+                }
+              ]
+            },
+            {
+              "name": "Star-Small",
+              "getFromParent": true,
+              "iconType": "Star",
+              "size": 16,
+              "vectorPaths": [
+                {
+                  "windingRule": "NONZERO",
+                  "data": "M 0.5 0.1 L 0.6 0.4 L 0.9 0.4 L 0.7 0.6 L 0.8 0.9 L 0.5 0.7 L 0.2 0.9 L 0.3 0.6 L 0.1 0.4 L 0.4 0.4 Z"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

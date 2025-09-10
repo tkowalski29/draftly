@@ -1,0 +1,549 @@
+{
+  "version": "1.0.0",
+  "description": "Button Renderer Examples - różne typy buttonów z ikonami i stanami",
+  "dependencies": [
+    "icon-config.json"
+  ],
+  "pages": [
+    {
+      "name": "Button Renderer Examples",
+      "nodes": [
+        {
+          "name": "[Icon] Arrow System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "vector",
+              "size": "${size}",
+              "color": "${color}",
+              "vectorPaths": [
+                "M9 18L15 12L9 6"
+              ],
+              "strokeWidth": 2,
+              "useStroke": false
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 20,
+            "color": "#FFFFFF",
+            "iconType": "arrow"
+          },
+          "variants": [
+            {
+              "name": "size-16",
+              "getFromParent": true,
+              "iconType": "arrow",
+              "size": 16
+            },
+            {
+              "name": "size-20",
+              "getFromParent": true,
+              "iconType": "arrow",
+              "size": 20
+            },
+            {
+              "name": "size-24",
+              "getFromParent": true,
+              "iconType": "arrow",
+              "size": 24
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Download System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "shapeType": "vector",
+              "size": "${size}",
+              "color": "${color}",
+              "vectorPaths": [
+                "M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15",
+                "M7 10L12 15L17 10",
+                "M12 15V3"
+              ],
+              "strokeWidth": 2,
+              "useStroke": true,
+              "strokeCap": "ROUND"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType"
+            }
+          },
+          "properties": {
+            "size": 20,
+            "color": "#FFFFFF",
+            "iconType": "download"
+          },
+          "variants": [
+            {
+              "name": "size-16",
+              "getFromParent": true,
+              "iconType": "download",
+              "size": 16
+            },
+            {
+              "name": "size-20",
+              "getFromParent": true,
+              "iconType": "download",
+              "size": 20
+            },
+            {
+              "name": "size-24",
+              "getFromParent": true,
+              "iconType": "download",
+              "size": 24
+            }
+          ]
+        },
+        {
+          "name": "[Button] Primary System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${paddingX}",
+                  "right": "${paddingX}",
+                  "top": "${paddingY}",
+                  "bottom": "${paddingY}"
+                },
+                "spacing": "${itemSpacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${text}",
+                  "fontSize": "${fontSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "Medium",
+                  "textColor": "${textColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "text": {
+                  "type": "TEXT",
+                  "defaultValue": "Button"
+                },
+                "leftIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIconLine": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Arrow System"
+                },
+                "rightIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "rightIconLine": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "rightIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Arrow System"
+                }
+              }
+            }
+          },
+          "properties": {
+            "text": "Primary Button",
+            "backgroundColor": "#3B82F6",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium",
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#2563EB"
+            },
+            {
+              "name": "active-medium",
+              "getFromParent": true,
+              "state": "active",
+              "size": "medium",
+              "backgroundColor": "#1D4ED8"
+            },
+            {
+              "name": "disabled-medium",
+              "getFromParent": true,
+              "state": "disabled",
+              "size": "medium",
+              "backgroundColor": "#E5E7EB",
+              "textColor": "#9CA3AF",
+              "opacity": 0.6
+            },
+            {
+              "name": "default-small",
+              "getFromParent": true,
+              "state": "default",
+              "size": "small",
+              "fontSize": 14,
+              "paddingX": 12,
+              "paddingY": 8,
+              "iconSize": 16
+            },
+            {
+              "name": "default-large",
+              "getFromParent": true,
+              "state": "default",
+              "size": "large",
+              "fontSize": 18,
+              "paddingX": 20,
+              "paddingY": 12,
+              "iconSize": 24
+            }
+          ]
+        },
+        {
+          "name": "[Button] Secondary System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${paddingX}",
+                  "right": "${paddingX}",
+                  "top": "${paddingY}",
+                  "bottom": "${paddingY}"
+                },
+                "spacing": "${itemSpacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "strokes": [{
+                "color": "${borderColor}",
+                "width": "${borderWidth}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${text}",
+                  "fontSize": "${fontSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "Medium",
+                  "textColor": "${textColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "text": {
+                  "type": "TEXT",
+                  "defaultValue": "Secondary"
+                },
+                "leftIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "rightIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Download System"
+                },
+                "rightIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Arrow System"
+                }
+              }
+            }
+          },
+          "properties": {
+            "text": "Secondary Button",
+            "backgroundColor": "#FFFFFF",
+            "textColor": "#374151",
+            "borderColor": "#D1D5DB",
+            "borderWidth": 1,
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium",
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#F9FAFB",
+              "borderColor": "#9CA3AF"
+            },
+            {
+              "name": "with-left-icon",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium",
+              "text": "Download",
+              "leftIconEnabled": true
+            },
+            {
+              "name": "with-right-icon",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium",
+              "text": "Continue",
+              "rightIconEnabled": true
+            },
+            {
+              "name": "with-both-icons",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium",
+              "text": "Process",
+              "leftIconEnabled": true,
+              "rightIconEnabled": true,
+              "leftIconLine": true
+            }
+          ]
+        },
+        {
+          "name": "[Button] Danger System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${paddingX}",
+                  "right": "${paddingX}",
+                  "top": "${paddingY}",
+                  "bottom": "${paddingY}"
+                },
+                "spacing": "${itemSpacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${text}",
+                  "fontSize": "${fontSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "Medium",
+                  "textColor": "${textColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "text": {
+                  "type": "TEXT",
+                  "defaultValue": "Delete"
+                },
+                "leftIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "rightIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]"
+                },
+                "rightIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]"
+                }
+              }
+            }
+          },
+          "properties": {
+            "text": "Delete",
+            "backgroundColor": "#EF4444",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium",
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#DC2626"
+            },
+            {
+              "name": "active-medium",
+              "getFromParent": true,
+              "state": "active",
+              "size": "medium",
+              "backgroundColor": "#B91C1C"
+            },
+            {
+              "name": "disabled-medium",
+              "getFromParent": true,
+              "state": "disabled",
+              "size": "medium",
+              "backgroundColor": "#F87171",
+              "opacity": 0.7
+            }
+          ]
+        },
+        {
+          "name": "[Button] Icon Only System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${padding}",
+                  "right": "${padding}",
+                  "top": "${padding}",
+                  "bottom": "${padding}"
+                },
+                "spacing": 0
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "leftIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Download System"
+                }
+              }
+            }
+          },
+          "properties": {
+            "backgroundColor": "#F3F4F6",
+            "padding": 8,
+            "iconSize": 20,
+            "cornerRadius": 6,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium",
+              "leftIconEnabled": true
+            },
+            {
+              "name": "hover-medium",
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#E5E7EB",
+              "leftIconEnabled": true
+            },
+            {
+              "name": "small-icon-only",
+              "getFromParent": true,
+              "state": "default",
+              "size": "small",
+              "padding": 6,
+              "iconSize": 16,
+              "cornerRadius": 4,
+              "leftIconEnabled": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

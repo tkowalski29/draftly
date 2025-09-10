@@ -10,8 +10,9 @@ import {
   SpacingConfig 
 } from "./component-positioning";
 import { renderNode } from "./node-renderer";
-import { renderButton } from "../../renderers/button/button";
-import { renderIcon } from "../../renderers/atoms/icon/icon";
+import { renderGenericComponent } from "../../renderers/generic-component-renderer";
+import { renderButtonWithInheritance } from "../../renderers/molecules/button/button-renderer";
+import { renderIconWithInheritance } from "../../renderers/atoms/icon/icon-renderer";
 
 /**
  * Main design system folder renderer
@@ -43,17 +44,103 @@ export async function renderDesignSystemFolder(folderData: {[key: string]: strin
     log(`❌ Could not prepare design system page, continuing with current page: ${figma.currentPage.name}`, 'error');
   }
   
-  // Parse and organize components
-  const componentsByType = await parseAndOrganizeComponents(folderData, settings);
+  // Parse and organize components by sections
+  const componentsBySection = await parseAndOrganizeComponentsBySections(folderData, settings);
   
-  // Render components by atomic design hierarchy
-  await renderComponentsByHierarchy(componentsByType, settings);
+  // Render components by sections hierarchy
+  await renderComponentsByHierarchy(componentsBySection, settings);
   
   log('🎉 Design System został pomyślnie wygenerowany!');
 }
 
 /**
- * Parse all files and organize components by type
+ * Parse all files and organize components by sections (with file filtering)
+ */
+async function parseAndOrganizeComponentsBySections(
+  folderData: {[key: string]: string}, 
+  settings: any
+): Promise<{[key: string]: any[]}> {
+  const hierarchy = settings?.designSystem?.atomicDesign?.hierarchy || getDefaultHierarchy();
+  const componentsBySection: {[key: string]: any[]} = {};
+  
+  // Initialize sections
+  for (const sectionName of Object.keys(hierarchy)) {
+    componentsBySection[sectionName] = [];
+  }
+  
+  // Resolve dependencies and get sorted file order
+  const sortedFiles = settings?.dependencies?.loadOrder 
+    ? resolveDependenciesFromSettings(folderData, settings.dependencies.loadOrder)
+    : resolveDependencies(folderData);
+  
+  for (const filePath of sortedFiles) {
+    try {
+      const fileName = filePath.split('/').pop() || filePath;
+      log(`📝 Przetwarzam plik: ${fileName}`);
+      const jsonData = JSON.parse(folderData[filePath]);
+      
+      if (jsonData && jsonData.pages && jsonData.pages[0]) {
+        // Support both old 'children' and new 'nodes' format
+        const components = jsonData.pages[0].nodes || jsonData.pages[0].children;
+        
+        if (components && Array.isArray(components)) {
+          // Find which section(s) this file belongs to
+          const sectionsForFile = findSectionsForFile(fileName, hierarchy);
+          
+          for (const sectionName of sectionsForFile) {
+            const sectionConfig = hierarchy[sectionName] || {};
+            for (const component of components) {
+              // Add metadata about source file, section, and renderer
+              const componentWithMetadata = {
+                ...component,
+                _sourceFile: fileName,
+                _section: sectionName,
+                _renderer: sectionConfig.renderer || null
+              };
+              componentsBySection[sectionName].push(componentWithMetadata);
+            }
+          }
+        }
+      }
+    } catch (error: any) {
+      log(`❌ BŁĄD podczas parsowania ${filePath}: ${error.message}`, 'error');
+    }
+  }
+  
+  return componentsBySection;
+}
+
+/**
+ * Find which sections a file should be rendered in
+ */
+function findSectionsForFile(fileName: string, hierarchy: any): string[] {
+  const sections: string[] = [];
+  
+  for (const [sectionName, sectionConfig] of Object.entries(hierarchy)) {
+    const config = sectionConfig as any;
+    
+    // Check if section has file filters
+    if (config.files && Array.isArray(config.files)) {
+      // Check both exact match and filename-only match
+      const matchesFile = config.files.some((filePath: string) => 
+        filePath === fileName || filePath.endsWith('/' + fileName)
+      );
+      
+      if (matchesFile) {
+        sections.push(sectionName);
+        log(`📂 File ${fileName} matched section: ${sectionName}`, 'log');
+      }
+    } else {
+      // If no file filter, include in all sections (backward compatibility)
+      sections.push(sectionName);
+    }
+  }
+  
+  return sections;
+}
+
+/**
+ * Legacy function - kept for potential fallback
  */
 async function parseAndOrganizeComponents(
   folderData: {[key: string]: string}, 
@@ -96,10 +183,10 @@ async function parseAndOrganizeComponents(
 }
 
 /**
- * Render components organized by atomic design hierarchy
+ * Render components organized by sections hierarchy
  */
 async function renderComponentsByHierarchy(
-  componentsByType: {[key: string]: any[]}, 
+  componentsBySection: {[key: string]: any[]}, 
   settings: any
 ): Promise<void> {
   const hierarchy = settings?.designSystem?.atomicDesign?.hierarchy || getDefaultHierarchy();
@@ -125,22 +212,18 @@ async function renderComponentsByHierarchy(
   
   figma.currentPage.appendChild(mainContainer);
   
-  let yOffset = 50;
-  const bounds: PositionBounds = { minX: Infinity, maxX: -Infinity, maxRowHeight: 0 };
-  
-  // Process each level of the atomic design hierarchy
-  for (const [levelName, levelConfig] of Object.entries(hierarchy)) {
-    const levelTypes = (levelConfig as any).types || [];
-    const componentsInLevel = levelTypes.filter((type: string) => componentsByType[type]);
+  // Process each section defined in hierarchy
+  for (const [sectionName, sectionConfig] of Object.entries(hierarchy)) {
+    const components = componentsBySection[sectionName] || [];
     
-    if (componentsInLevel.length === 0) continue;
+    if (components.length === 0) continue;
     
-    log(`🔧 Renderowanie poziomu: ${levelName} (${componentsInLevel.join(', ')})`, 'log');
+    const sourceFiles = [...new Set(components.map(c => c._sourceFile))];
+    log(`🔧 Renderowanie sekcji: ${sectionName} (${components.length} komponentów z plików: ${sourceFiles.join(', ')})`, 'log');
     
-    const sectionCard = await renderHierarchyLevelToContainer(
-      levelName, 
-      componentsInLevel, 
-      componentsByType, 
+    const sectionCard = await renderSectionToContainer(
+      sectionName, 
+      components,
       spacing, 
       enableSectionCards,
       settings
@@ -153,12 +236,11 @@ async function renderComponentsByHierarchy(
 }
 
 /**
- * Render a single hierarchy level (atoms, molecules, organisms) as a container
+ * Render a single section as a container
  */
-async function renderHierarchyLevelToContainer(
-  levelName: string,
-  componentTypes: string[],
-  componentsByType: {[key: string]: any[]},
+async function renderSectionToContainer(
+  sectionName: string,
+  components: any[],
   spacing: SpacingConfig,
   enableSectionCards: boolean,
   settings: any
@@ -167,7 +249,7 @@ async function renderHierarchyLevelToContainer(
   let sectionCard: FrameNode | null = null;
   if (enableSectionCards) {
     sectionCard = createSectionCard(
-      levelName,
+      sectionName,
       0, // X position (will be handled by parent auto layout)
       0, // Y position (will be handled by parent auto layout)
       0, // Width (will be auto-sized)
@@ -181,7 +263,7 @@ async function renderHierarchyLevelToContainer(
   } else {
     // Create a transparent container even if section cards are disabled
     sectionCard = figma.createFrame();
-    sectionCard.name = `${levelName} Container`;
+    sectionCard.name = `${sectionName} Container`;
     sectionCard.layoutMode = 'HORIZONTAL';
     sectionCard.primaryAxisSizingMode = 'AUTO';
     sectionCard.counterAxisSizingMode = 'AUTO';
@@ -190,37 +272,31 @@ async function renderHierarchyLevelToContainer(
   }
   
   // Render components and add them to the section card
-  for (const componentType of componentTypes) {
-    const components = componentsByType[componentType];
-    if (!components || components.length === 0) continue;
+  log(`🔨 Renderowanie sekcji: ${sectionName} (${components.length} komponentów)`, 'log');
+  
+  for (const component of components) {
+    const renderedComponents = await renderComponent(
+      component, 
+      component.type, 
+      0, // X position (will be handled by auto layout)
+      0, // Y position (will be handled by auto layout) 
+      spacing
+    );
     
-    log(`🔨 Renderowanie typu: ${componentType} (${components.length} komponentów)`, 'log');
-    
-    // Render each component
-    for (const component of components) {
-      const renderedComponents = await renderComponent(
-        component, 
-        componentType, 
-        0, // X position (will be handled by auto layout)
-        0, // Y position (will be handled by auto layout) 
-        spacing
-      );
-      
-      if (renderedComponents.length > 0) {
-        for (const comp of renderedComponents) {
-          // Reset position - auto layout will handle it
-          comp.x = 0;
-          comp.y = 0;
-          
-          if (comp.parent !== sectionCard) {
-            sectionCard.appendChild(comp);
-          }
+    if (renderedComponents.length > 0) {
+      for (const comp of renderedComponents) {
+        // Reset position - auto layout will handle it
+        comp.x = 0;
+        comp.y = 0;
+        
+        if (comp.parent !== sectionCard) {
+          sectionCard.appendChild(comp);
         }
       }
     }
   }
   
-  log(`✅ Completed section: ${levelName} with auto layout`, 'log');
+  log(`✅ Completed section: ${sectionName} with auto layout`, 'log');
   return sectionCard;
 }
 
@@ -241,21 +317,39 @@ async function renderComponent(
     
     let componentSets: SceneNode[] = [];
     
-    if (componentType === 'BUTTON') {
-      const buttonSet = await renderButton(component);
-      if (buttonSet) {
-        // No positioning - will be handled by auto layout parent
-        componentSets = [buttonSet];
-      }
-    } else if (componentType === 'ICON') {
-      const iconResult = renderIcon(component, page);
+    if (componentType === 'GENERIC') {
+      // Use renderer type from settings (via _renderer metadata)
+      const rendererType = component._renderer;
       
-      if (Array.isArray(iconResult)) {
-        // Handle multiple ComponentSets - auto layout will handle spacing
-        componentSets = iconResult;
+      if (rendererType === 'BUTTON_INHERITANCE') {
+        // Use button renderer with inheritance (from settings)
+        log(`🎯 Using ButtonRenderer with inheritance for: ${component.name}`, 'log');
+        const buttonResult = await renderButtonWithInheritance(component, page);
+        componentSets = Array.isArray(buttonResult) ? buttonResult : [buttonResult];
+        
+      } else if (rendererType === 'ICON_INHERITANCE') {
+        // Use icon renderer with inheritance (from settings)
+        log(`🎯 Using IconRenderer with inheritance for: ${component.name}`, 'log');
+        const iconResult = await renderIconWithInheritance(component, page);
+        componentSets = Array.isArray(iconResult) ? iconResult : [iconResult];
+        
+      } else if (component.name && component.name.includes('[Button]')) {
+        // Fallback: Use button renderer with inheritance (name-based)
+        log(`🔄 Fallback to ButtonRenderer for: ${component.name}`, 'log');
+        const buttonResult = await renderButtonWithInheritance(component, page);
+        componentSets = Array.isArray(buttonResult) ? buttonResult : [buttonResult];
+        
+      } else if (component.name && component.name.includes('[Icon]')) {
+        // Fallback: Use icon renderer with inheritance (name-based)
+        log(`🔄 Fallback to IconRenderer for: ${component.name}`, 'log');
+        const iconResult = await renderIconWithInheritance(component, page);
+        componentSets = Array.isArray(iconResult) ? iconResult : [iconResult];
+        
       } else {
-        // No positioning - will be handled by auto layout parent
-        componentSets = [iconResult];
+        // Use generic renderer for other configurable components
+        log(`🎨 Using generic renderer for: ${component.name}`, 'log');
+        const genericResult = await renderGenericComponent(component, page);
+        componentSets = Array.isArray(genericResult) ? genericResult : [genericResult];
       }
     } else {
       // Handle other component types through renderNode
@@ -288,15 +382,15 @@ function getDefaultHierarchy() {
   return {
     atoms: {
       level: 0,
-      types: ["ICON", "BADGE", "AVATAR", "INPUT", "TEXT", "DIVIDER"]
+      types: ["GENERIC", "ICON", "BADGE", "AVATAR", "INPUT", "TEXT", "DIVIDER"]
     },
     molecules: {
       level: 1,
-      types: ["BUTTON", "CARD", "FORM_FIELD"]
+      types: ["GENERIC", "BUTTON", "CARD", "FORM_FIELD"]
     },
     organisms: {
       level: 2,
-      types: ["HEADER", "PRODUCT_GRID"]
+      types: ["GENERIC", "HEADER", "PRODUCT_GRID"]
     }
   };
 }

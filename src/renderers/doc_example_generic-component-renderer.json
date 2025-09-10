@@ -1,0 +1,658 @@
+{
+  "version": "1.0.0",
+  "description": "Generic Component Renderer Examples - demonstracja elastyczności systemu",
+  "pages": [
+    {
+      "name": "Generic Renderer Examples",
+      "nodes": [
+        {
+          "name": "[Card] Product System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "VERTICAL",
+                "padding": {
+                  "left": "${padding}",
+                  "right": "${padding}",
+                  "top": "${padding}",
+                  "bottom": "${padding}"
+                },
+                "spacing": "${spacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "strokes": [{
+                "color": "${borderColor}",
+                "width": "${borderWidth}"
+              }],
+              "width": "${width}",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "RECTANGLE",
+                "properties": {
+                  "width": "FILL",
+                  "height": "${imageHeight}",
+                  "fills": [{
+                    "color": "${imageColor}"
+                  }],
+                  "cornerRadius": "${imageCornerRadius}"
+                }
+              },
+              {
+                "figmaNodeType": "FRAME",
+                "properties": {
+                  "autoLayout": {
+                    "direction": "VERTICAL",
+                    "spacing": "${contentSpacing}"
+                  },
+                  "width": "FILL",
+                  "height": "HUG"
+                },
+                "children": [
+                  {
+                    "figmaNodeType": "TEXT",
+                    "properties": {
+                      "text": "${title}",
+                      "fontSize": "${titleSize}",
+                      "fontFamily": "Inter",
+                      "fontWeight": "Bold",
+                      "textColor": "${titleColor}"
+                    }
+                  },
+                  {
+                    "figmaNodeType": "TEXT",
+                    "properties": {
+                      "text": "${description}",
+                      "fontSize": "${descriptionSize}",
+                      "fontFamily": "Inter",
+                      "fontWeight": "Regular",
+                      "textColor": "${descriptionColor}"
+                    }
+                  },
+                  {
+                    "figmaNodeType": "FRAME",
+                    "properties": {
+                      "autoLayout": {
+                        "direction": "HORIZONTAL",
+                        "spacing": "${priceSpacing}",
+                        "alignment": "CENTER"
+                      },
+                      "width": "FILL",
+                      "height": "HUG"
+                    },
+                    "children": [
+                      {
+                        "figmaNodeType": "TEXT",
+                        "properties": {
+                          "text": "${price}",
+                          "fontSize": "${priceSize}",
+                          "fontFamily": "Inter",
+                          "fontWeight": "Bold",
+                          "textColor": "${priceColor}"
+                        }
+                      },
+                      {
+                        "figmaNodeType": "TEXT",
+                        "properties": {
+                          "text": "${originalPrice}",
+                          "fontSize": "${originalPriceSize}",
+                          "fontFamily": "Inter", 
+                          "fontWeight": "Regular",
+                          "textColor": "${originalPriceColor}",
+                          "textDecoration": "STRIKETHROUGH"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "title": {
+                  "type": "TEXT",
+                  "defaultValue": "Product Name"
+                },
+                "description": {
+                  "type": "TEXT",
+                  "defaultValue": "Product description goes here"
+                },
+                "price": {
+                  "type": "TEXT",
+                  "defaultValue": "$29.99"
+                },
+                "showOriginalPrice": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                }
+              }
+            }
+          },
+          "properties": {
+            "title": "Wireless Headphones",
+            "description": "Premium quality sound with noise cancellation",
+            "price": "$199.99",
+            "originalPrice": "$249.99",
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "#E5E7EB",
+            "borderWidth": 1,
+            "titleColor": "#1F2937",
+            "descriptionColor": "#6B7280",
+            "priceColor": "#059669",
+            "originalPriceColor": "#9CA3AF",
+            "imageColor": "#F3F4F6",
+            "width": 280,
+            "imageHeight": 180,
+            "padding": 16,
+            "spacing": 12,
+            "contentSpacing": 8,
+            "priceSpacing": 8,
+            "cornerRadius": 8,
+            "imageCornerRadius": 6,
+            "titleSize": 18,
+            "descriptionSize": 14,
+            "priceSize": 16,
+            "originalPriceSize": 14,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default",
+              "getFromParent": true
+            },
+            {
+              "name": "compact",
+              "getFromParent": true,
+              "width": 240,
+              "imageHeight": 140,
+              "padding": 12,
+              "spacing": 8,
+              "titleSize": 16,
+              "descriptionSize": 13
+            },
+            {
+              "name": "wide",
+              "getFromParent": true,
+              "width": 320,
+              "imageHeight": 200,
+              "padding": 20,
+              "spacing": 16
+            }
+          ]
+        },
+        {
+          "name": "[Badge] Status System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${paddingX}",
+                  "right": "${paddingX}",
+                  "top": "${paddingY}",
+                  "bottom": "${paddingY}"
+                },
+                "spacing": "${iconSpacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "ELLIPSE",
+                "properties": {
+                  "width": "${dotSize}",
+                  "height": "${dotSize}",
+                  "fills": [{
+                    "color": "${dotColor}"
+                  }]
+                }
+              },
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${text}",
+                  "fontSize": "${fontSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "${fontWeight}",
+                  "textColor": "${textColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType",
+              "variantGroupProperty": "status",
+              "componentProperties": {
+                "text": {
+                  "type": "TEXT",
+                  "defaultValue": "Active"
+                },
+                "showDot": {
+                  "type": "BOOLEAN",
+                  "defaultValue": true
+                }
+              }
+            }
+          },
+          "properties": {
+            "text": "Active",
+            "backgroundColor": "#DBEAFE",
+            "textColor": "#1D4ED8",
+            "dotColor": "#3B82F6",
+            "fontSize": 12,
+            "fontWeight": "Medium",
+            "paddingX": 8,
+            "paddingY": 4,
+            "dotSize": 6,
+            "iconSpacing": 6,
+            "cornerRadius": 12,
+            "opacity": 1,
+            "status": "active"
+          },
+          "variants": [
+            {
+              "name": "active",
+              "getFromParent": true,
+              "status": "active",
+              "text": "Active"
+            },
+            {
+              "name": "inactive",
+              "getFromParent": true,
+              "status": "inactive", 
+              "text": "Inactive",
+              "backgroundColor": "#F3F4F6",
+              "textColor": "#6B7280",
+              "dotColor": "#9CA3AF"
+            },
+            {
+              "name": "success",
+              "getFromParent": true,
+              "status": "success",
+              "text": "Success", 
+              "backgroundColor": "#D1FAE5",
+              "textColor": "#065F46",
+              "dotColor": "#10B981"
+            },
+            {
+              "name": "warning",
+              "getFromParent": true,
+              "status": "warning",
+              "text": "Warning",
+              "backgroundColor": "#FEF3C7", 
+              "textColor": "#92400E",
+              "dotColor": "#F59E0B"
+            },
+            {
+              "name": "error",
+              "getFromParent": true,
+              "status": "error",
+              "text": "Error",
+              "backgroundColor": "#FEE2E2",
+              "textColor": "#991B1B", 
+              "dotColor": "#EF4444"
+            }
+          ]
+        },
+        {
+          "name": "[Input] Text Field System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "VERTICAL",
+                "spacing": "${labelSpacing}"
+              },
+              "width": "${width}",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${label}",
+                  "fontSize": "${labelSize}",
+                  "fontFamily": "Inter", 
+                  "fontWeight": "Medium",
+                  "textColor": "${labelColor}"
+                }
+              },
+              {
+                "figmaNodeType": "FRAME",
+                "properties": {
+                  "autoLayout": {
+                    "direction": "HORIZONTAL",
+                    "padding": {
+                      "left": "${inputPaddingX}",
+                      "right": "${inputPaddingX}",
+                      "top": "${inputPaddingY}",
+                      "bottom": "${inputPaddingY}"
+                    },
+                    "spacing": "${inputSpacing}"
+                  },
+                  "cornerRadius": "${cornerRadius}",
+                  "fills": [{
+                    "color": "${inputBackground}"
+                  }],
+                  "strokes": [{
+                    "color": "${borderColor}",
+                    "width": "${borderWidth}"
+                  }],
+                  "width": "FILL",
+                  "height": "HUG"
+                },
+                "children": [
+                  {
+                    "figmaNodeType": "TEXT",
+                    "properties": {
+                      "text": "${placeholder}",
+                      "fontSize": "${inputSize}",
+                      "fontFamily": "Inter",
+                      "fontWeight": "Regular",
+                      "textColor": "${placeholderColor}"
+                    }
+                  },
+                  {
+                    "figmaNodeType": "RECTANGLE",
+                    "properties": {
+                      "width": "${iconSize}",
+                      "height": "${iconSize}",
+                      "fills": [{
+                        "color": "${iconColor}"
+                      }],
+                      "cornerRadius": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${helpText}",
+                  "fontSize": "${helpSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "Regular", 
+                  "textColor": "${helpColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "label": {
+                  "type": "TEXT",
+                  "defaultValue": "Label"
+                },
+                "placeholder": {
+                  "type": "TEXT", 
+                  "defaultValue": "Enter text..."
+                },
+                "helpText": {
+                  "type": "TEXT",
+                  "defaultValue": "Helper text"
+                },
+                "showIcon": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "showHelp": {
+                  "type": "BOOLEAN",
+                  "defaultValue": true
+                }
+              }
+            }
+          },
+          "properties": {
+            "label": "Email address",
+            "placeholder": "Enter your email",
+            "helpText": "We'll never share your email",
+            "width": 300,
+            "labelSize": 14,
+            "inputSize": 16,
+            "helpSize": 12,
+            "labelColor": "#374151",
+            "placeholderColor": "#9CA3AF",
+            "helpColor": "#6B7280",
+            "inputBackground": "#FFFFFF",
+            "borderColor": "#D1D5DB",
+            "iconColor": "#9CA3AF",
+            "borderWidth": 1,
+            "cornerRadius": 6,
+            "labelSpacing": 6,
+            "inputPaddingX": 12,
+            "inputPaddingY": 8,
+            "inputSpacing": 8,
+            "iconSize": 16
+          },
+          "variants": [
+            {
+              "name": "default",
+              "getFromParent": true
+            },
+            {
+              "name": "focused",
+              "getFromParent": true,
+              "borderColor": "#3B82F6",
+              "borderWidth": 2
+            },
+            {
+              "name": "error",
+              "getFromParent": true,
+              "borderColor": "#EF4444",
+              "helpText": "This field is required",
+              "helpColor": "#EF4444"
+            },
+            {
+              "name": "disabled",
+              "getFromParent": true,
+              "inputBackground": "#F9FAFB",
+              "placeholderColor": "#D1D5DB",
+              "borderColor": "#E5E7EB"
+            }
+          ]
+        },
+        {
+          "name": "[Avatar] User System", 
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "spacing": "${spacing}"
+              },
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "ELLIPSE",
+                "properties": {
+                  "width": "${size}",
+                  "height": "${size}",
+                  "fills": [{
+                    "color": "${avatarBackground}"
+                  }],
+                  "strokes": [{
+                    "color": "${borderColor}",
+                    "width": "${borderWidth}"
+                  }]
+                }
+              },
+              {
+                "figmaNodeType": "FRAME",
+                "properties": {
+                  "autoLayout": {
+                    "direction": "VERTICAL",
+                    "spacing": "${textSpacing}"
+                  },
+                  "width": "HUG",
+                  "height": "HUG"
+                },
+                "children": [
+                  {
+                    "figmaNodeType": "TEXT",
+                    "properties": {
+                      "text": "${name}",
+                      "fontSize": "${nameSize}",
+                      "fontFamily": "Inter",
+                      "fontWeight": "Medium",
+                      "textColor": "${nameColor}"
+                    }
+                  },
+                  {
+                    "figmaNodeType": "TEXT",
+                    "properties": {
+                      "text": "${title}",
+                      "fontSize": "${titleSize}",
+                      "fontFamily": "Inter",
+                      "fontWeight": "Regular",
+                      "textColor": "${titleColor}"
+                    }
+                  }
+                ]
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byProperty",
+              "variantGroupProperty": "size",
+              "componentProperties": {
+                "name": {
+                  "type": "TEXT",
+                  "defaultValue": "John Doe"
+                },
+                "title": {
+                  "type": "TEXT",
+                  "defaultValue": "Software Engineer"
+                },
+                "showTitle": {
+                  "type": "BOOLEAN",
+                  "defaultValue": true
+                }
+              }
+            }
+          },
+          "properties": {
+            "name": "John Doe",
+            "title": "Software Engineer",
+            "size": 48,
+            "nameSize": 16,
+            "titleSize": 14,
+            "nameColor": "#1F2937",
+            "titleColor": "#6B7280",
+            "avatarBackground": "#3B82F6",
+            "borderColor": "#E5E7EB",
+            "borderWidth": 2,
+            "spacing": 12,
+            "textSpacing": 2
+          },
+          "variants": [
+            {
+              "name": "small",
+              "getFromParent": true,
+              "size": 32,
+              "nameSize": 14,
+              "titleSize": 12,
+              "spacing": 8
+            },
+            {
+              "name": "medium",
+              "getFromParent": true,
+              "size": 48,
+              "nameSize": 16, 
+              "titleSize": 14,
+              "spacing": 12
+            },
+            {
+              "name": "large",
+              "getFromParent": true,
+              "size": 64,
+              "nameSize": 18,
+              "titleSize": 16,
+              "spacing": 16
+            }
+          ]
+        },
+        {
+          "name": "[Icon] Custom Vector System",
+          "type": "GENERIC", 
+          "componentConfig": {
+            "figmaNodeType": "VECTOR",
+            "properties": {
+              "vectorPaths": ["${iconPath}"],
+              "size": "${size}",
+              "color": "${color}",
+              "useStroke": "${useStroke}",
+              "strokeWidth": "${strokeWidth}",
+              "opacity": "${opacity}"
+            },
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "byType",
+              "variantGroupProperty": "iconType"
+            }
+          },
+          "properties": {
+            "iconPath": "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
+            "size": 24,
+            "color": "#6B7280",
+            "useStroke": false,
+            "strokeWidth": 2,
+            "opacity": 1,
+            "iconType": "moon"
+          },
+          "variants": [
+            {
+              "name": "moon-16",
+              "getFromParent": true,
+              "iconType": "moon",
+              "size": 16
+            },
+            {
+              "name": "moon-24",
+              "getFromParent": true, 
+              "iconType": "moon",
+              "size": 24
+            },
+            {
+              "name": "sun-16",
+              "getFromParent": true,
+              "iconType": "sun",
+              "size": 16,
+              "iconPath": "M12 3V1M12 23V21M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22M12 8A4 4 0 1112 16A4 4 0 0112 8Z",
+              "color": "#F59E0B"
+            },
+            {
+              "name": "sun-24", 
+              "getFromParent": true,
+              "iconType": "sun",
+              "size": 24,
+              "iconPath": "M12 3V1M12 23V21M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22M12 8A4 4 0 1112 16A4 4 0 0112 8Z",
+              "color": "#F59E0B"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

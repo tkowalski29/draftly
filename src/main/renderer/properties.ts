@@ -47,20 +47,22 @@ export async function applyProperties(node: SceneNode, props: any) {
   // Tekst
   if (props.text && node.type === 'TEXT') {
     const textNode = node as TextNode;
+    
+    // Load font BEFORE setting text
+    if (props.fontFamily || props.fontWeight) {
+      const loadedFont = await loadFontSafely(props.fontFamily, props.fontWeight);
+      textNode.fontName = loadedFont;
+    } else {
+      // Load default font if no specific font requested
+      const defaultFont = await loadFontSafely('Inter', 'Regular');
+      textNode.fontName = defaultFont;
+    }
+
+    // Now safe to set text
     textNode.characters = props.text;
 
     if (props.fontSize) {
-      if (props.fontFamily || props.fontWeight) {
-        await loadFontSafely(props.fontFamily, props.fontWeight);
-      }
       textNode.fontSize = props.fontSize;
-    }
-
-    if (props.fontFamily && props.fontWeight) {
-      textNode.fontName = {
-        family: props.fontFamily,
-        style: props.fontWeight
-      };
     }
 
     if (props.textColor) {

@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "designSystem": {
+    "pageName": "🤖 Design System",
+    "atomicDesign": {
+      "hierarchy": {
+        "Atoms": {
+          "level": 0,
+          "types": ["GENERIC"],
+          "files": ["generic-configs/atoms/icon-config.json"],
+          "renderer": "ICON_INHERITANCE"
+        },
+        "Molecules": {
+          "level": 1,
+          "types": ["GENERIC"],
+          "files": ["generic-configs/molecules/button-config.json"],
+          "renderer": "BUTTON_INHERITANCE"
+        }
+      }
+    },
+    "organization": {
+      "enableSectionCards": true,
+      "cardBackground": "#FFFFFF",
+      "cardCornerRadius": 12,
+      "cardShadow": {
+        "color": { "r": 0, "g": 0, "b": 0, "a": 0.08 },
+        "offset": { "x": 0, "y": 2 },
+        "radius": 8,
+        "spread": 0,
+        "visible": true,
+        "blendMode": "NORMAL"
+      },
+      "spacing": {
+        "cardPadding": 32,
+        "columnSpacing": 40,
+        "rowSpacing": 60,
+        "sectionSpacing": 100
+      }
+    }
+  },
+  "dependencies": {
+    "loadOrder": [
+      "generic-configs/atoms/icon-config.json",
+      "generic-configs/molecules/button-config.json"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "dependencies": [
+    "icon-config.json"
+  ],
+  "pages": [
+    {
+      "name": "Generic Button Component",
+      "nodes": [
+        {
+          "name": "[Button] Generic System",
+          "type": "GENERIC",
+          "componentConfig": {
+            "figmaNodeType": "FRAME",
+            "properties": {
+              "autoLayout": {
+                "direction": "HORIZONTAL",
+                "padding": {
+                  "left": "${paddingX}",
+                  "right": "${paddingX}",
+                  "top": "${paddingY}",
+                  "bottom": "${paddingY}"
+                },
+                "spacing": "${itemSpacing}"
+              },
+              "cornerRadius": "${cornerRadius}",
+              "fills": [{
+                "color": "${backgroundColor}",
+                "opacity": "${opacity}"
+              }],
+              "width": "HUG",
+              "height": "HUG"
+            },
+            "children": [
+              {
+                "figmaNodeType": "TEXT",
+                "properties": {
+                  "text": "${text}",
+                  "fontSize": "${fontSize}",
+                  "fontFamily": "Inter",
+                  "fontWeight": "Medium",
+                  "textColor": "${textColor}"
+                }
+              }
+            ],
+            "behavior": {
+              "createVariants": true,
+              "variantGrouping": "single",
+              "componentProperties": {
+                "text": {
+                  "type": "TEXT",
+                  "defaultValue": "Button"
+                },
+                "leftIconEnabled": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIconLine": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "leftIcon": {
+                  "type": "INSTANCE_SWAP",
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Arrow System"
+                },
+                "rightIconEnabled": {
+                  "type": "BOOLEAN", 
+                  "defaultValue": false
+                },
+                "rightIconLine": {
+                  "type": "BOOLEAN",
+                  "defaultValue": false
+                },
+                "rightIcon": {
+                  "type": "INSTANCE_SWAP", 
+                  "searchPattern": "[Icon]",
+                  "defaultValue": "[Icon] Arrow System"
+                }
+              }
+            }
+          },
+          "properties": {
+            "text": "Button",
+            "backgroundColor": "#3B82F6",
+            "textColor": "#FFFFFF",
+            "fontSize": 16,
+            "paddingX": 16,
+            "paddingY": 10,
+            "iconSize": 20,
+            "cornerRadius": 8,
+            "itemSpacing": 8,
+            "opacity": 1
+          },
+          "variants": [
+            {
+              "name": "default-medium",
+              "getFromParent": true,
+              "state": "default",
+              "size": "medium"
+            },
+            {
+              "name": "hover-medium", 
+              "getFromParent": true,
+              "state": "hover",
+              "size": "medium",
+              "backgroundColor": "#2563EB",
+              "shadowOpacity": 0.15,
+              "shadowY": 2,
+              "shadowRadius": 4
+            },
+            {
+              "name": "active-medium",
+              "getFromParent": true,
+              "state": "active", 
+              "size": "medium",
+              "backgroundColor": "#1D4ED8"
+            },
+            {
+              "name": "disabled-medium",
+              "getFromParent": true,
+              "state": "disabled",
+              "size": "medium",
+              "backgroundColor": "#E5E7EB",
+              "textColor": "#9CA3AF",
+              "opacity": 0.6
+            },
+            {
+              "name": "default-small",
+              "getFromParent": true,
+              "state": "default",
+              "size": "small",
+              "fontSize": 14,
+              "paddingX": 12,
+              "paddingY": 8,
+              "iconSize": 16
+            },
+            {
+              "name": "default-large",
+              "getFromParent": true,
+              "state": "default",
+              "size": "large", 
+              "fontSize": 18,
+              "paddingX": 20,
+              "paddingY": 12,
+              "iconSize": 24
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
