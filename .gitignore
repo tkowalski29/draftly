@@ -108,3 +108,21 @@ temp/
 src/main/code-simple.ts
 src/main/code-old.ts
 src/main/code-backup.ts
+
+# CUSTOM
+## CC
+.claude/*
+.claude/**/*
+.gemini/*
+.gemini/**/*
+.codex/*
+.codex/**/*
+.spec/*
+
+## DOC
+.doc/.vitepress/dist/
+.doc/.vitepress/.temp/
+.doc/.vitepress/cache/
+.doc/.vitepress/config.js
+.doc/node_modules/
+.doc/temp/
